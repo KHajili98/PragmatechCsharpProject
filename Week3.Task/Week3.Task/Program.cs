@@ -27,6 +27,33 @@ namespace Week3.Task
              * "Ortalama 45-e beraber ve ya boyukdurmu?" : "40"(Ortalamadir) : Beli ve ya Xeyr
              */
 
+            //---------------------------------------------------  Solution :
+
+            /*
+            Console.WriteLine("Zehmet olmasa 1-ci imtahan neticesini elave edin :");
+            var netice1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\nZehmet olmasa 2-ci imtahan neticesini elave edin :");
+            var netice2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\nZehmet olmasa 3-cu imtahan neticesini elave edin :");
+            var netice3 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\n1-ci Netice : " + netice1);
+            Console.WriteLine("2-ci Netice : " + netice2);
+            Console.WriteLine("3-cu Netice : " + netice3);
+
+            Console.WriteLine("\nOrtalama 45-e beraber ve ya boyukdurmu?\n");
+
+
+            var ortalama = (netice1 + netice2 + netice3) / 3;
+            string yekunNetice = ortalama >= 45
+                ? "Beli.Sizin ortalamaniz : " + ortalama
+                : "Xeyr.Sizin ortalamaniz :" + ortalama;
+            Console.WriteLine(yekunNetice);
+            */
+
+
 
 
             /*
@@ -47,9 +74,56 @@ namespace Week3.Task
             * Ortalama : 35
             */
 
+            //---------------------------------------------------  Solution :
+
+            /*
+            Console.Write("Zehmet olmasa adinizi daxil edin: ");
+            var ad = Console.ReadLine();
+            Console.Write("Zehmet olmasa soyadinizi daxil edin: ");
+            var soyad = Console.ReadLine();
+
+            var shexs = ad + " " + soyad;
+
+            Console.Write("\nZehmet olmasa 1-ci imtahan neticesini elave edin :");
+            var netice1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Zehmet olmasa 2-ci imtahan neticesini elave edin :");
+            var netice2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Zehmet olmasa 3-cu imtahan neticesini elave edin :");
+            var netice3 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Zehmet olmasa 4-cu imtahan neticesini elave edin :");
+            var netice4 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\nAd ve Soyad : " + shexs);
+            Console.WriteLine("\n1-ci Netice : " + netice1);
+            Console.WriteLine("2-ci Netice : " + netice2);
+            Console.WriteLine("3-cu Netice : " + netice3);
+            Console.WriteLine("4-cu Netice : " + netice4);
+
+            var ortalama = (netice1 + netice2 + netice3 + netice4) / 4;
+
+            Console.WriteLine("\nOrtalama : " + ortalama);
+            */
+
+
             #endregion
 
-            #region 2. while ile consoledan daxil edilen ededden geriye dogru loop
+            #region 2. while ile consoledan daxil edilen ededden geriye dogru loop 
+            //---------------------------------------------------  Solution :
+
+            /*
+            Console.Write("Ededi daxil edin :");
+            var eded = Convert.ToInt32(Console.ReadLine());
+
+            while (eded >= 0)
+            {
+                Console.WriteLine(eded);
+                eded--;
+            }
+            */
+
 
             #endregion
 
