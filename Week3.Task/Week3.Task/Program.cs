@@ -129,10 +129,38 @@ namespace Week3.Task
 
             #region 3. while ile 0 ile 100 arasindaki tek ededlerin cemi
 
+            //---------------------------------------------------  Solution :
+
+            /*
+            var a = 0;
+            var result = 0;
+            while (a < 100)
+            {
+                if(a%2 != 0)
+                {
+                    result += a;
+                }
+                a++;
+            }
+            Console.Write("0 ile 100 arasindaki tek ededlerin cemi : "+result);
+            */
 
             #endregion
 
             #region 4. while ile faktorialin hesablanmasi
+            //---------------------------------------------------  Solution :
+
+            /*
+            var factorialNumber = 5;
+            var result = 1;
+            while (factorialNumber > 1)
+            {
+                result *= factorialNumber;
+                factorialNumber--;
+            }
+            Console.WriteLine(result);
+            */
+
 
             #endregion
 
@@ -156,9 +184,36 @@ namespace Week3.Task
              *
              */
 
+            //---------------------------------------------------  Solution :
+
+            /*
+             
+            var username = "admin";
+            var password = "6gH123";
+
+            Console.Write("Zehmet olmasa username daxil edin : ");
+            var usernameInput = Console.ReadLine();
+            Console.Write("Zehmet olmasa password daxil edin : ");
+            var passwordInput = Console.ReadLine();
+
+            if (passwordInput != password || usernameInput != username)
+            {
+              Console.WriteLine("Daxil edilen username ve ya sifre dogru deyil !");
+            }
+            else
+            {
+              Console.WriteLine("Login emeliyyati ugurla basha catdi !");
+            }
+                
+            */
+
+
+
             #endregion
 
             #region exam
+
+            // dogru cavabin qarshisina "+++++++++++" qeyd olunacaqdir.
 
             /*
              * 1. int num1=10;
@@ -168,7 +223,7 @@ namespace Week3.Task
              *  asagidakilardan hansi uygun gelir ?
              *
              *  num1 deyeri num2 deyerinden kicikdir ve bool tipinde olan result
-             *  deyiseni bu iki deyerin muqayisesinden false deyerini alir.
+             *  deyiseni bu iki deyerin muqayisesinden false deyerini alir. ++++++++++++++++++++++++++++++++++++++
              *
              * num1 deyeri num2 deyerine beraberdir ve bool tipinde olan result
              *  deyiseni true-dur.
@@ -183,7 +238,7 @@ namespace Week3.Task
              *    Console.WriteLine(result);
              *
              * Result : 33;
-             * Result : 55;
+             * Result : 55; +++++++++++++++++++++++++++++++++++++++++
              * Result : 66;
              * ******************
              * 3. Boyuk beraberdir  ve beraber deyildir operatorlari hansilardir.
@@ -191,7 +246,7 @@ namespace Week3.Task
              * =! , ==
              * == , <=
              * >= , <=
-             * >= , !=
+             * >= , !=  +++++++++++++++++++++++++++++++++++++++++++++++++
              */
 
             #endregion
