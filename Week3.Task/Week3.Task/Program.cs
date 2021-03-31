@@ -543,18 +543,18 @@ namespace Week3.Task
              * 
              */
             //------------------------------------------------ solution : 
-            /*
-                        for (var i=1; i<=10; i++)
-                        {
-                            for(var j=1; j<=10; j++)
-                            {
-                                Console.Write("  "+i + " * " + j + " = " + i * j);
-                            }
-                            Console.WriteLine();
-                        }
 
-                          //--- concole boyuk pencere weklinde acin zehmet olmasa :)
-            */
+            for (var i = 1; i <= 10; i++)
+            {
+                for (var j = 1; j <= 10; j++)
+                {
+                    Console.Write(" " + i + " * " + j + " = " + i * j);
+                }
+                Console.WriteLine();
+            }
+
+            //--- concole boyuk pencere weklinde acin zehmet olmasa :)
+
 
 
             #endregion
