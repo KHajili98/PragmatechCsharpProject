@@ -405,6 +405,95 @@ namespace Week3.Task
              *
              * qeyd: hem normal switchden istifade edin hem de expressionla olan variantla
              */
+
+            //-----------------------------------------------solution with switch :
+
+            /*
+            Console.WriteLine("----Menu-----");
+            Console.WriteLine("1- Toplama:");
+            Console.WriteLine("2- Cixma:");
+            Console.WriteLine("3- Vurma:");
+            Console.WriteLine("4- Bolme:");
+            Console.WriteLine("----Menu-----");
+
+            Console.Write("Emeliyyat nomresini daxil edin: ");
+            int operation = Convert.ToInt32(Console.ReadLine());
+
+            switch (operation)
+            {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    {
+                        Console.Write("Brinci nomresini daxil edin: ");
+                        decimal number1 = Convert.ToInt32(Console.ReadLine());
+                        Console.Write("ikinci nomresini daxil edin: ");
+                        decimal number2 = Convert.ToInt32(Console.ReadLine());
+                        switch (operation)
+                        {
+                            case 1: Console.WriteLine("Netice: " + (number1 + number2)); break;
+                            case 2: Console.WriteLine("Netice: " + (number1 - number2)); break;
+                            case 3: Console.WriteLine("Netice: " + (number1 * number2)); break;
+                            case 4:
+                                {
+                                    switch (number2)
+                                    {
+                                        case 0: Console.WriteLine("Bolen 0 ola bilmez"); break;
+                                        default: Console.WriteLine("Netice: " + (number1 / number2)); break;
+
+                                    }
+                                }
+                                break;
+
+                        }
+
+                    }
+                    break;
+                default: Console.WriteLine("Duzgun emeliyyat nomresi daxil edin"); break;
+            }
+
+           */
+
+            //-----------------------------------------------solution with switch expressionla :
+
+            /*
+            Console.WriteLine("----Menu-----");
+            Console.WriteLine("1- Toplama:");
+            Console.WriteLine("2- Cixma:");
+            Console.WriteLine("3- Vurma:");
+            Console.WriteLine("4- Bolme:");
+            Console.WriteLine("----Menu-----");
+
+            Console.Write("Emeliyyat nomresini daxil edin: ");
+            var option = Console.ReadLine();
+
+            Console.Write("Brinci ededi daxil edin: ");
+            var a = Convert.ToInt32( Console.ReadLine());
+
+            Console.Write("ikinci ededi daxil edin: ");
+            var b = Convert.ToInt32( Console.ReadLine());
+
+            var wrong = "duzgun emeliyyat nomresi sec";
+            string toplama = Convert.ToString(a + b);
+            var cixma = Convert.ToString(a - b);
+            var vurma = Convert.ToString(a * b);
+            string bolme = b != 0 ? Convert.ToString(a / b) :"0-a bolmek olmaz";
+
+
+            var netice = option switch
+            {
+                "1" => toplama,
+                "2" => cixma,
+                "3" => vurma,
+                "4" => bolme,
+                _ => wrong
+           
+            };
+
+            Console.WriteLine("Netice: " + netice);
+            */
+
             #endregion
 
             #region 7. menfi musbet
@@ -413,6 +502,34 @@ namespace Week3.Task
              *
              * qeyd: if ve ternary istifade edin ayri ayri
              */
+
+            //-----------------------------------------------------------solution with if :
+            /*
+                        Console.Write("eded daxil edin : ");
+                      var  eded = Console.ReadLine();
+                        if (eded.StartsWith('-'))
+                        {
+                            Console.WriteLine("eded menfidir");
+                        }
+                        else if(eded =="0")
+                        {
+                            Console.WriteLine("eded 0-dir");
+                        }
+                        else
+                        {
+                            Console.WriteLine("eded musbetdir");
+
+                        }
+            */
+
+            //-----------------------------------------------------------solution with ternary :
+
+            /*
+            Console.Write("eded daxil edin : ");
+            var eded = Console.ReadLine();
+            Console.WriteLine(eded.StartsWith('-') ? "eded menfidir" : (eded=="0"? "eded 0-dir": "eded musbetdir") );
+
+            */
             #endregion
 
             #region 8. vurma cedveli
@@ -425,6 +542,21 @@ namespace Week3.Task
              * 2 * 1 = 2   2 * 2 = 4  2 * 3 = 6
              * 
              */
+            //------------------------------------------------ solution : 
+            /*
+                        for (var i=1; i<=10; i++)
+                        {
+                            for(var j=1; j<=10; j++)
+                            {
+                                Console.Write("  "+i + " * " + j + " = " + i * j);
+                            }
+                            Console.WriteLine();
+                        }
+
+                          //--- concole boyuk pencere weklinde acin zehmet olmasa :)
+            */
+
+
             #endregion
 
             #region exam
