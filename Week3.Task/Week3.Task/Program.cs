@@ -135,6 +135,69 @@ namespace Week3.Task
            */
 
 
+            //---------------------------------------------------  Solution :
+
+            /* 
+             
+            Console.Write("Zehmet olmasa adinizi daxil edin: ");
+            var ad = Console.ReadLine();
+            Console.Write("Zehmet olmasa soyadinizi daxil edin: ");
+            var soyad = Console.ReadLine();
+
+            var shexs = ad + " " + soyad;
+
+            Console.WriteLine("! ! ! Ortalamalar 1-100 arasinda olmalidir ! ! !\n");
+
+            Console.Write("\nZehmet olmasa 1-ci imtahan neticesini elave edin :");
+            var netice1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Zehmet olmasa 2-ci imtahan neticesini elave edin :");
+            var netice2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Zehmet olmasa 3-cu imtahan neticesini elave edin :");
+            var netice3 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Zehmet olmasa 4-cu imtahan neticesini elave edin :");
+            var netice4 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("\nAd ve Soyad : " + shexs);
+            Console.WriteLine("\n1-ci Netice : " + netice1);
+            Console.WriteLine("2-ci Netice : " + netice2);
+            Console.WriteLine("3-cu Netice : " + netice3);
+            Console.WriteLine("4-cu Netice : " + netice4);
+
+            var ortalama = (netice1 + netice2 + netice3 + netice4) / 4;
+
+            Console.WriteLine("\nOrtalama : " + ortalama);
+
+            if (ortalama< 100)
+            {
+                if (ortalama < 45)
+                {
+                    Console.WriteLine("Semestr Yekunu : " + "qeyri-kafi Kece bilmediz");
+                    // qeyri -kafi 
+                }else if(ortalama == 45 || ortalama < 70)
+                {
+                    Console.WriteLine("Semestr Yekunu : " + "Meqbul");
+
+                    // meqbul
+                }
+                else if (ortalama ==70 || ortalama < 90)
+                {
+                    Console.WriteLine("Semestr Yekunu : " + "yaxsi");
+
+                    //yaxwi 
+                }
+                else if(ortalama>90 || ortalama <= 100){
+                    //ela
+                    Console.WriteLine("Semestr Yekunu : " + "ela");
+
+                }
+
+            }
+
+            */
+
             #endregion
 
             #region 2. while ile consoledan daxil edilen ededden geriye dogru loop 
@@ -211,7 +274,7 @@ namespace Week3.Task
              **  qeyd: eyni taski, if, ternary operator ve switch ile yazin!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
              */
 
-            //---------------------------------------------------  Solution :
+            //---------------------------------------------------  Solution with if  :
 
             /*
              
@@ -234,6 +297,53 @@ namespace Week3.Task
                 
             */
 
+            //---------------------------------------------------  Solution with ternary  :
+            /*
+            var username = "admin";
+            var password = "6gH123";
+
+            Console.Write("Zehmet olmasa username daxil edin : ");
+            var usernameInput = Console.ReadLine();
+            Console.Write("Zehmet olmasa password daxil edin : ");
+            var passwordInput = Console.ReadLine();
+
+            var trueMessage = "Login emeliyyati ugurla basha catdi !";
+            var falseMessage = "Daxil edilen username ve ya sifre dogru deyil !";
+
+            Console.WriteLine(passwordInput != password || usernameInput != username ? falseMessage : trueMessage);
+            */
+
+            //---------------------------------------------------  Solution with switch  :
+
+            /*
+            var username = "admin";
+            var password = "6gH123";
+            var resultValue = username + password;
+
+
+            Console.Write("Zehmet olmasa username daxil edin : ");
+            var usernameInput = Console.ReadLine();
+            Console.Write("Zehmet olmasa password daxil edin : ");
+            var passwordInput = Console.ReadLine();
+             var inputValue = usernameInput+passwordInput;
+            var checkedBool = inputValue == resultValue;
+
+            var trueMessage = "Login emeliyyati ugurla basha catdi !";
+            var falseMessage = "Daxil edilen username ve ya sifre dogru deyil !";
+
+            
+
+            switch(checkedBool)
+            {
+                case true:
+                    Console.WriteLine(trueMessage);
+                    break;
+                case false:
+                    Console.WriteLine(falseMessage);
+                    break;
+            }
+            */
+
             /*
              * Istifadeciden role(selahiyyet) isteyerek daxil etdiyi role uygun mesaj verin.
              *
@@ -248,6 +358,43 @@ namespace Week3.Task
              *
              * switchden istifade edin.
              */
+
+            //---------------------------------------------------  Solution :
+
+            /*
+            var adminMessage = "\nAdmin selahiyyetlerine sahibsiniz.";
+            var moderatorMessage = "\nModerator selahiyyetlerine sahibsiniz.";
+            var muhasibMessages = "\nMuhasib selahiyyetlerine sahibsiniz.";
+            var standartMessages = "\nStandart selahiyyetlerine sahibsiniz.";
+            var wrongMessages = "\nDaxil edilen selahiyyet dogru deyil";
+
+
+            Console.Write("Zehmet olmasa Istifadeci selahiyyeti (I.S)  daxil edin : ");
+            var role = Console.ReadLine();
+
+            switch (role)
+            {
+                case "AA":
+                case "BB":
+                case "CC":
+                    Console.WriteLine(adminMessage);
+                    break;
+                case "MM":
+                    Console.WriteLine(moderatorMessage);
+                    break;
+                case "MH":
+                    Console.WriteLine(muhasibMessages);
+                    break;
+                case "UU":
+                    Console.WriteLine(standartMessages);
+                    break;
+                default:
+                    Console.WriteLine(wrongMessages);
+                    break;
+            }
+
+            */
+
 
             #endregion
 
