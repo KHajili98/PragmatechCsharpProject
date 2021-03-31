@@ -107,6 +107,33 @@ namespace Week3.Task
             Console.WriteLine("\nOrtalama : " + ortalama);
             */
 
+            /*
+           * 3.Bal Ortalamasinin Hesablanmasi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+           *
+           * istifadeciden ad ve soyadini ,
+           *  4 eded imtahan neticesini daxil etmesini isteyirik.
+           *
+            *
+            * ortalama 45-den kicikdirse : qeyri-kafi Kece bilmediz
+            * ortalama 45-e beraber ve ya 70-den  kicikdirse :  Meqbul
+            * ortalama 70-e beraber ve ya 90-dan  kicikdirse :  Yaxsi
+            * ortalama 90 ile  100 arasinda (100-de daxil) :  Ela
+            *
+            * qeyd : ortalama 100-den boyuk ola bilmez.
+            *
+           * netice asagidaki kimi olmalidir.
+           *
+           * Ad ve Soyad : Parviz Aliyev
+           *
+           * Netice : 50
+           * Netice : 40
+           * Netice : 30
+           * Netice : 20
+           *
+           * Ortalama : 35
+           * Semestr Yekunu : qeyri-kafi Kece bilmediz
+           */
+
 
             #endregion
 
@@ -181,7 +208,7 @@ namespace Week3.Task
              *
              *  daxil edilen username ve ya sifrenin dogru olmadigi mesajini verin.
              *
-             *
+             **  qeyd: eyni taski, if, ternary operator ve switch ile yazin!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
              */
 
             //---------------------------------------------------  Solution :
@@ -207,8 +234,50 @@ namespace Week3.Task
                 
             */
 
+            /*
+             * Istifadeciden role(selahiyyet) isteyerek daxil etdiyi role uygun mesaj verin.
+             *
+             *  Istifadeci selahiyyeti (I.S) :
+             *
+             * I.S = AA , BB , CC ise "Admin selahiyyetlerine sahibsiniz."
+             * I.S = MM "Moderator selahiyyetlerine sahibsiniz."
+             * I.S = MH "Muhasib selahiyyetlerine sahibsiniz."
+             * I.S = UU "Standart istifadeci selahiyyetlerine sahibsiniz."
+             *
+             * qeyd edilenlerden ferqli olarsa : "Daxil edilen selahiyyet dogru deyil"
+             *
+             * switchden istifade edin.
+             */
+
+            #endregion
 
 
+            #region 6. calculator : switch
+            /*
+             * switch istifade ederek calculator yazin
+             *
+             * qeyd: hem normal switchden istifade edin hem de expressionla olan variantla
+             */
+            #endregion
+
+            #region 7. menfi musbet
+            /*
+             * Daxil edilen ededin menfi ve ya musbet oldugunu yoxlayin ona uygun geriye deyer qaytarin.
+             *
+             * qeyd: if ve ternary istifade edin ayri ayri
+             */
+            #endregion
+
+            #region 8. vurma cedveli
+            /*
+             * vurma cedveli hazirlayin.
+             *
+             * netice asagidaki kimi olsun
+             *
+             * 1 * 1 = 1   1 * 2 = 2  1 * 3 = 3 belece davam edir
+             * 2 * 1 = 2   2 * 2 = 4  2 * 3 = 6
+             * 
+             */
             #endregion
 
             #region exam
