@@ -143,6 +143,8 @@ namespace Week4.Task
              *
              */
 
+          
+
             #endregion
 
             #region 5. tek ededlerin kublari cemi
@@ -173,22 +175,22 @@ namespace Week4.Task
 
             //----------------------------------------------------- Solution :
 
-/*
-            DateTime today = DateTime.Today;
+            /*
+                        DateTime today = DateTime.Today;
 
-            Console.WriteLine("dogum tarixini daxil edin (gun,ay,il) : ");
+                        Console.WriteLine("dogum tarixini daxil edin (gun,ay,il) : ");
 
-            string birthDay=  Console.ReadLine();
-            
-            string[] birthDayArray = new string[3];
+                        string birthDay=  Console.ReadLine();
 
-            birthDay.Split(',').CopyTo(birthDayArray, 0);
+                        string[] birthDayArray = new string[3];
 
-            var age = today.Year - Convert.ToInt32(birthDayArray[2]);
+                        birthDay.Split(',').CopyTo(birthDayArray, 0);
 
-            Console.WriteLine("Sizin yawiniz : "+age);
-*/
-            
+                        var age = today.Year - Convert.ToInt32(birthDayArray[2]);
+
+                        Console.WriteLine("Sizin yawiniz : "+age);
+            */
+
 
 
 
@@ -202,6 +204,44 @@ namespace Week4.Task
              * deyil toplama emeliyyati ile ekrana cap edin.
              */
 
+            //----------------------------------------------------- Solution :
+
+/*
+            int sum = 0;
+            int firstNumber = 0;
+            int  secondNumber = 0;
+
+
+
+            while (true)
+            {
+                Console.WriteLine("Birinci vurugu elave edin : ");
+                 firstNumber = Convert.ToInt32(Console.ReadLine());
+                if (firstNumber < 0)
+                    Console.Write("Birinci vuruq musbet eded deyil. Zehmet olmasa musbet eded daxil edin. ");
+                else
+                    break;
+            }
+
+            while (true)
+            {
+
+
+                Console.WriteLine("Ikinci vurugu elave edin : ");
+                 secondNumber = Convert.ToInt32(Console.ReadLine());
+                if (secondNumber < 0)
+                    Console.Write("Ikinci vuruq musbet eded deyil. Zehmet olmasa musbet eded daxil edin. ");
+                else
+                    break;
+            }
+
+            for (var i = secondNumber; i > 0; i--)
+            {
+                sum += firstNumber;
+            }
+
+            Console.WriteLine("Daxil edilen vuruqlarin hasili : " +sum);
+*/
 
 
 
