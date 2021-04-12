@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio\\source\\repos\\PragmatechCsharpProject\\Week4.Task\\Week4.Task\\Week4.Task.csproj",
+      "projectUniqueName": "C:\\Users\\shaba\\Source\\Repos\\PragmatechCsharpProject\\Week4.Task\\Week4.Task\\Week4.Task.csproj",
       "projectName": "Week4.Task",
-      "projectPath": "D:\\Visual Studio\\source\\repos\\PragmatechCsharpProject\\Week4.Task\\Week4.Task\\Week4.Task.csproj",
+      "projectPath": "C:\\Users\\shaba\\Source\\Repos\\PragmatechCsharpProject\\Week4.Task\\Week4.Task\\Week4.Task.csproj",
       "packagesPath": "C:\\Users\\shaba\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studio\\source\\repos\\PragmatechCsharpProject\\Week4.Task\\Week4.Task\\obj\\",
+      "outputPath": "C:\\Users\\shaba\\Source\\Repos\\PragmatechCsharpProject\\Week4.Task\\Week4.Task\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

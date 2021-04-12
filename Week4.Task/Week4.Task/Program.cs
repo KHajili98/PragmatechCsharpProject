@@ -18,7 +18,7 @@ namespace Week4.Task
 
             // ------------------------------------------- Solution :
 
-            /*
+          /*
                         int[] intArray = { 2, 9, 4, 3, 5, 1, 7 };
                         int temp = 0;
 

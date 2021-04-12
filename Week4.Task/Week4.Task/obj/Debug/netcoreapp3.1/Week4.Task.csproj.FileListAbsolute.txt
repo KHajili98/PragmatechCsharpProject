@@ -11,3 +11,16 @@ D:\Visual Studio\source\repos\PragmatechCsharpProject\Week4.Task\Week4.Task\obj\
 D:\Visual Studio\source\repos\PragmatechCsharpProject\Week4.Task\Week4.Task\obj\Debug\netcoreapp3.1\Week4.Task.dll
 D:\Visual Studio\source\repos\PragmatechCsharpProject\Week4.Task\Week4.Task\obj\Debug\netcoreapp3.1\Week4.Task.pdb
 D:\Visual Studio\source\repos\PragmatechCsharpProject\Week4.Task\Week4.Task\obj\Debug\netcoreapp3.1\Week4.Task.genruntimeconfig.cache
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\bin\Debug\netcoreapp3.1\Week4.Task.exe
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\bin\Debug\netcoreapp3.1\Week4.Task.deps.json
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\bin\Debug\netcoreapp3.1\Week4.Task.runtimeconfig.json
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\bin\Debug\netcoreapp3.1\Week4.Task.runtimeconfig.dev.json
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\bin\Debug\netcoreapp3.1\Week4.Task.dll
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\bin\Debug\netcoreapp3.1\Week4.Task.pdb
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\obj\Debug\netcoreapp3.1\Week4.Task.csprojAssemblyReference.cache
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\obj\Debug\netcoreapp3.1\Week4.Task.AssemblyInfoInputs.cache
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\obj\Debug\netcoreapp3.1\Week4.Task.AssemblyInfo.cs
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\obj\Debug\netcoreapp3.1\Week4.Task.csproj.CoreCompileInputs.cache
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\obj\Debug\netcoreapp3.1\Week4.Task.dll
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\obj\Debug\netcoreapp3.1\Week4.Task.pdb
+C:\Users\shaba\Source\Repos\PragmatechCsharpProject\Week4.Task\Week4.Task\obj\Debug\netcoreapp3.1\Week4.Task.genruntimeconfig.cache
