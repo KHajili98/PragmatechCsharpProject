@@ -191,8 +191,37 @@ namespace Week5.Task
              */
 
 
+
             ATM.LogIn();
 
+            do
+            {
+                Console.Clear();
+                ATM.Menu();
+                byte  operation = byte.Parse(Console.ReadLine());
+
+                switch (operation)
+                {
+                    case 1: ATM.BalansinYoxlanilmasi();
+                        break;
+                    case 2:
+                        ATM.Mexaric();
+                        break;
+                    case 3:
+                        ATM.BalansinCixariwi();
+                        break;
+                    default:
+                        Console.Write("!!!Emeliyyat yanliwdir. Entere basdiqdan sonra yeni emeliyyat nomresini daxil edin!!!");
+                        continue;
+                }
+
+
+                Console.Write("MENYUYA GERI DONMEK ISTEYIRSINIZ? b/x (beli/xeyr):\t");
+
+            } while (Console.ReadLine()?.ToUpper() != "X"); // mellim dersdekinden goturmuwem halal eliyin :)
+
+
+         
 
 
 

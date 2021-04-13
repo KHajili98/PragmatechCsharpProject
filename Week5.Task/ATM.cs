@@ -20,7 +20,6 @@ namespace Week5.Task
                if(inputPassword == Password.ToString() && Int32.TryParse(inputPassword, out result) && inputPassword.Length == 4)
                 {
                     Console.Clear();
-                    Console.WriteLine("---------------------Menu-------------------");
                     break;
                 }
                 else
@@ -36,6 +35,30 @@ namespace Week5.Task
         }
 
 
-       
+        public static void Menu()
+        {
+            Console.WriteLine("---------------------Menu-------------------");
+            Console.WriteLine("1.BALANSIN YOXLANILMASI");
+            Console.WriteLine("2.MEXARIC");
+            Console.WriteLine("3.BALANSIN CIXARIWI\n");
+
+            Console.Write("\nEmeliiyat nomresini daxil edin:\t");
+        }
+
+        public static void BalansinYoxlanilmasi()
+        {
+            Console.WriteLine("Balans " + Balance);
+        }
+
+        public static void Mexaric()
+        {
+            Console.WriteLine("pulunuzu cekin ");
+        }
+
+        public static void BalansinCixariwi()
+        {
+            Console.WriteLine("cixariw ");
+        }
+
     }
 }
