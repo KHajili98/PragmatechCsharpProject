@@ -216,7 +216,7 @@ namespace Week5.Task
                 }
 
 
-                Console.Write("MENYUYA GERI DONMEK ISTEYIRSINIZ? b/x (beli/xeyr):\t");
+                Console.Write("\nMENYUYA GERI DONMEK ISTEYIRSINIZ? b/x (beli/xeyr):\t");
 
             } while (Console.ReadLine()?.ToUpper() != "X"); // mellim dersdekinden goturmuwem halal eliyin :)
 

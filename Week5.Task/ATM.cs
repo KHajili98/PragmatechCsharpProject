@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Threading;
 
 namespace Week5.Task
@@ -7,6 +8,7 @@ namespace Week5.Task
     {
         private static int Password = 1234;
         private static int Balance = 1000;
+        private static Hashtable Tarixce = new Hashtable();
 
 
         public static void LogIn ()
@@ -47,17 +49,98 @@ namespace Week5.Task
 
         public static void BalansinYoxlanilmasi()
         {
-            Console.WriteLine("Balans " + Balance);
+            Console.Clear();
+            Console.WriteLine("Balansinizdaki mebleg : " + Balance +" AZN");
         }
 
         public static void Mexaric()
         {
-            Console.WriteLine("pulunuzu cekin ");
+            
+            int result;
+
+                
+                while (true)
+                {
+                    Console.Clear();
+                    Console.WriteLine("-----------------Istediyiniz meblegi daxil edin (emeliyyatdan cixmaq ucun \"x\" duymesine basa bilersiniz) :");
+                    var inputCash = Console.ReadLine();
+                    if (inputCash.ToUpper() == "X") break;
+                    
+                    if (Int32.TryParse(inputCash, out result) && (Int32.Parse(inputCash) > 0 && Int32.Parse(inputCash) <= 1000))
+                    {
+                        DateTime withdrawTime = DateTime.Now;
+
+                        if (Balance > Int32.Parse(inputCash))
+                        {
+
+                            Balance -= Int32.Parse(inputCash);
+                            Console.WriteLine("Pulunuzu goturun : ");
+                            OutPutCash(inputCash, withdrawTime);
+                            Tarixce.Add(withdrawTime, Int32.Parse(inputCash));
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("-------------------balansinizda kifayet qeder mebleg yoxdur. Balans :\t" + Balance + " AZN");
+                            Thread.Sleep(3000);
+                            Console.Clear();
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("!!!!!!!!!!        Daxil edilen mebleg yanliwdir       !!!!!!!!!!");
+                        Console.WriteLine("********** 1-1000 daxil olan meblegi reqem olaraq qeyd edin  **********");
+                        Thread.Sleep(3000);
+                        continue;
+                    }
+                }
+               
+         
+
         }
+
+
+
+        public static void OutPutCash( string inputCash , DateTime operationTime)
+        {
+            while (true)
+            {
+                var bankNotes = new int[] { 200, 100, 50, 20, 10, 5, 1 };
+                int inputMoney = Convert.ToInt32(inputCash);
+                if (string.IsNullOrEmpty(Convert.ToString(inputMoney)) || string.IsNullOrWhiteSpace(Convert.ToString(inputMoney))) break;
+                for (int i = 0; i < bankNotes.Length; i++)
+                {
+                    if (inputMoney >= bankNotes[i])
+                    {
+                        int bankNotesCount = inputMoney / bankNotes[i];
+                        inputMoney -= bankNotesCount * bankNotes[i];
+                        Console.WriteLine(bankNotesCount + " eded - " + bankNotes[i] + " AZN");
+                    }
+                }
+                break;
+            }
+        }
+
+
 
         public static void BalansinCixariwi()
         {
-            Console.WriteLine("cixariw ");
+            Console.Clear();
+            if (Tarixce.Count == 0)
+            {
+                Console.WriteLine("... Hesabda hec bir emeliyyat edilmeyib ....");
+            }
+            else
+            {
+                Console.WriteLine("Mexaricler :\n");
+
+                foreach (DictionaryEntry item in Tarixce)
+                {
+                    Console.WriteLine(item.Value + " AZN"+ "\tTARIX-->>  " +item.Key );
+                }
+            }
+            
         }
 
     }
