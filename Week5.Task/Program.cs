@@ -27,6 +27,32 @@ namespace Week5.Task
              */
 
             // birinci methodsuz edib sonra ise methodla edecem aradaki ferqi gormek ucun
+            // ------------------------------------------------------------------------------------------- Solution with methods :
+
+           
+            
+        /*
+
+            var shexs = Student.AdVeSoyad();
+            while (true)
+            {
+                Console.Clear();
+
+
+                Console.Write(shexs + " Zehmet olmasa 1-ci imtahan neticesini elave edin :");
+                var netice1 = Console.ReadLine();
+                if (!Student.ImtahanBali(netice1, "Birinci imtahan")) continue;
+                Console.Write(shexs + "Zehmet olmasa 2-ci imtahan neticesini elave edin :");
+                var netice2 = Console.ReadLine();
+                if (!Student.ImtahanBali(netice2, "Ikinci imtahan")) continue;
+                Console.Write(shexs + "Zehmet olmasa 3-cu imtahan neticesini elave edin :");
+                var netice3 = Console.ReadLine();
+                if (!Student.ImtahanBali(netice3, "Ucuncu imtahan")) continue;
+                Student.Netice(netice1, netice2, netice3, shexs);
+                break;
+            }
+            */
+
             // ------------------------------------------------------------------------------------------- Solution without methods :
             /*
             Console.Write("Zehmet olmasa adinizi daxil edin: ");
@@ -35,8 +61,6 @@ namespace Week5.Task
             var soyad = Console.ReadLine();
             var shexs = ad + " " + soyad;
             double ortalama;
-
-
             while (true)
             {
                
@@ -44,7 +68,6 @@ namespace Week5.Task
                 Console.Write(shexs+" Zehmet olmasa 1-ci imtahan neticesini elave edin :");
                 var netice1 = Console.ReadLine();
                 int result =51;
-
                 if (! Int32.TryParse(netice1, out result )    )
                 {
                     Console.WriteLine("Birinci imtahan neticesini duzgun daxil edilmeyib!!!\nReqemlerden istifade edin!!!");
@@ -52,7 +75,6 @@ namespace Week5.Task
                     continue;
                     
                 }
-
                 if (!(Convert.ToInt32(netice1) >= 0 && Convert.ToInt32(netice1) <= 100))
                 {
                     Console.WriteLine("Birinci imtahan neticesini duzgun daxil edilmeyib!!!.\nnetice 0-100 arasi bir bal olmalidir !!! ");
@@ -61,22 +83,18 @@ namespace Week5.Task
                 }
                 Console.Write(shexs + "Zehmet olmasa 2-ci imtahan neticesini elave edin :");
                 var netice2 = Console.ReadLine();
-
                 if (!Int32.TryParse(netice2, out result))
                 {
                     Console.WriteLine("Ikinci imtahan neticesini duzgun daxil edilmeyib!!!\nReqemlerden istifade edin !!!");
                     Thread.Sleep(3000);
                     continue;
-
                 }
-
                 if (!(Convert.ToInt32(netice2) >= 0 && Convert.ToInt32(netice2) <= 100))
                 {
                     Console.WriteLine("Ikinci imtahan neticesini duzgun daxil edilmeyib!!!.\nnetice 0-100 arasi bir bal olmalidir !!! ");
                     Thread.Sleep(3000);
                     continue;
                 }
-
                 Console.Write(shexs + "Zehmet olmasa 3-cu imtahan neticesini elave edin :");
                 var netice3 = Console.ReadLine();
                 if (!Int32.TryParse(netice3, out result))
@@ -84,18 +102,14 @@ namespace Week5.Task
                     Console.WriteLine("Ucuncu imtahan neticesini duzgun daxil edilmeyib!!!\nReqemlerden istifade edin!!");
                     Thread.Sleep(3000);
                     continue;
-
                 }
-
                 if (!(Convert.ToInt32(netice3) >= 0 && Convert.ToInt32(netice3) <= 100))
                 {
                     Console.WriteLine("Ucuncu imtahan neticesini duzgun daxil edilmeyib!!!. \n netice 0-100 arasi bir bal olmalidir !!! ");
                     Thread.Sleep(3000);
                     continue;
                 }
-
                  ortalama = (Convert.ToInt32(netice1) + Convert.ToInt32(netice3) + Convert.ToInt32(netice3)) / 3;
-
                 var diplomIwi = ortalama >= 81 ? " KECMISINIZ " : "KECMEMISINZ";
                 Console.WriteLine("\nAd ve Soyad : " + shexs);
                 Console.WriteLine("\n1-ci Netice : " + netice1);
@@ -104,10 +118,10 @@ namespace Week5.Task
                 Console.WriteLine("\nOrtalama : " + ortalama);
                 Console.WriteLine("\nDiplom iwine " + diplomIwi);
                 break;
-
             } */
 
-            
+
+
 
 
 

@@ -1,50 +1,58 @@
 ﻿using System;
+using System.Threading;
 
 namespace Week5.Task
 {
     public static class Student
     {
-        public static void AdVeSoyad()
+        public static string AdVeSoyad()
         {
             Console.Write("Zehmet olmasa adinizi daxil edin: ");
             var ad = Console.ReadLine();
             Console.Write("Zehmet olmasa soyadinizi daxil edin: ");
             var soyad = Console.ReadLine();
-            var shexs = ad + " " + soyad;
+            return ad + " " + soyad;
         }
 
-        public static void ImtahanlarinDaxilEdilmesi()
+
+        public static bool ImtahanBali(string netice, string imtahanNomresi)
         {
-            while (true)
+            int result;
+           
+
+            if (!Int32.TryParse(netice, out result))
             {
-                Console.Clear();
-                Console.Write("\nZehmet olmasa 1-ci imtahan neticesini elave edin :");
-                var netice1 = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Zehmet olmasa 2-ci imtahan neticesini elave edin :");
-                var netice2 = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Zehmet olmasa 3-cu imtahan neticesini elave edin :");
-                var netice3 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine(imtahanNomresi +" neticesini duzgun daxil edilmeyib!!!\nReqemlerden istifade edin!!!");
+                Thread.Sleep(3000);
+                return false;
 
-                if(netice1.GetType() != typeof(int) || !(netice1>= 0 && netice1 <=100))
-                {
-                    Console.WriteLine("Birinci imtahan neticesini duzgun daxil edin (0-100 arasi bir bal olmalidir ) : ");
-                    continue;
-                }else if(netice2.GetType() == typeof(int) && (netice2 >= 0 && netice2 <= 100))
-                {
-                    Console.WriteLine("IKinci imtahan neticesini duzgun daxil edin (0-100 arasi bir bal olmalidir ) :  ");
-                    continue;
-
-
-                }
-                else if (netice3.GetType() == typeof(int) && (netice3 >= 0 && netice3 <= 100))
-                {
-                    Console.WriteLine("Ucuncu imtahan neticesini duzgun daxil edin (0-100 arasi bir bal olmalidir ) :  "); continue;
-
-
-                }
             }
 
+            if (!(Convert.ToInt32(netice) >= 0 && Convert.ToInt32(netice) <= 100))
+            {
+                Console.WriteLine(imtahanNomresi +" neticesini duzgun daxil edilmeyib!!!.\nnetice 0-100 arasi bir bal olmalidir !!! ");
+                Thread.Sleep(3000);
+                return false;
+
+            }
+            return true;
+
 
         }
+
+        public static  void Netice(string netice1, string netice2, string netice3, string shexs)
+        {
+          var  ortalama = (Convert.ToInt32(netice1) + Convert.ToInt32(netice3) + Convert.ToInt32(netice3)) / 3;
+
+            var diplomIwi = ortalama >= 81 ? " KECMISINIZ " : "KECMEMISINZ";
+            Console.WriteLine("\nAd ve Soyad : " + shexs);
+            Console.WriteLine("\n1-ci Netice : " + netice1);
+            Console.WriteLine("2-ci Netice : " + netice2);
+            Console.WriteLine("3-cu Netice : " + netice3);
+            Console.WriteLine("\nOrtalama : " + ortalama);
+            Console.WriteLine("\nDiplom iwine " + diplomIwi);
+        }
+
+     
     }
 }
