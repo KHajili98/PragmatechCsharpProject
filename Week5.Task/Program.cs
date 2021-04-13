@@ -3,7 +3,6 @@ using System.Threading;
 
 namespace Week5.Task
 {
-
     class Program
     {
         static void Main(string[] args)
@@ -190,6 +189,14 @@ namespace Week5.Task
              * mumkun derece methodlarla isleyin
              *   
              */
+
+
+            ATM.LogIn();
+
+
+
+
+
             #endregion
 
 
