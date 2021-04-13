@@ -42,10 +42,12 @@ namespace Week5.Task
 
         public static  void Netice(string netice1, string netice2, string netice3, string shexs)
         {
-          var  ortalama = (Convert.ToInt32(netice1) + Convert.ToInt32(netice3) + Convert.ToInt32(netice3)) / 3;
+
+            Console.Clear();
+            var  ortalama = (Convert.ToInt32(netice1) + Convert.ToInt32(netice3) + Convert.ToInt32(netice3)) / 3;
 
             var diplomIwi = ortalama >= 81 ? " KECMISINIZ " : "KECMEMISINZ";
-            Console.WriteLine("\nAd ve Soyad : " + shexs);
+            Console.WriteLine("Ad ve Soyad : " + shexs);
             Console.WriteLine("\n1-ci Netice : " + netice1);
             Console.WriteLine("2-ci Netice : " + netice2);
             Console.WriteLine("3-cu Netice : " + netice3);

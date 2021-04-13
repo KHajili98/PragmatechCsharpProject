@@ -27,31 +27,60 @@ namespace Week5.Task
              */
 
             // birinci methodsuz edib sonra ise methodla edecem aradaki ferqi gormek ucun
-            // ------------------------------------------------------------------------------------------- Solution with methods :
 
-           
-            
-        /*
+            #region Solution with methods last version
+            // ------------------------------------------------------------------------------------------- Solution with methods last version:
 
+            /*
             var shexs = Student.AdVeSoyad();
+            string netice,netice1="",netice2 = "", netice3 = "", imtahanNomresi;
             while (true)
             {
                 Console.Clear();
+                for (int i = 1; i <= 3; i++)
+                {
+                    imtahanNomresi = i.ToString();
+                    Console.Write(shexs + " Zehmet olmasa "+ imtahanNomresi + "ci imtahan neticesini elave edin :");
+                    netice = i switch
+                    {
+                        1 => netice1 = Console.ReadLine(),
+                        2 => netice2 = Console.ReadLine(),
+                        3 => netice3 = Console.ReadLine(),
+                    };
 
-
-                Console.Write(shexs + " Zehmet olmasa 1-ci imtahan neticesini elave edin :");
-                var netice1 = Console.ReadLine();
-                if (!Student.ImtahanBali(netice1, "Birinci imtahan")) continue;
-                Console.Write(shexs + "Zehmet olmasa 2-ci imtahan neticesini elave edin :");
-                var netice2 = Console.ReadLine();
-                if (!Student.ImtahanBali(netice2, "Ikinci imtahan")) continue;
-                Console.Write(shexs + "Zehmet olmasa 3-cu imtahan neticesini elave edin :");
-                var netice3 = Console.ReadLine();
-                if (!Student.ImtahanBali(netice3, "Ucuncu imtahan")) continue;
+                    if (!Student.ImtahanBali(netice, $"{i}-ci imtahan")) continue;
+                }
                 Student.Netice(netice1, netice2, netice3, shexs);
                 break;
             }
             */
+            #endregion
+
+            #region Solution with methods
+
+            // ------------------------------------------------------------------------------------------- Solution with methods:
+            /*
+                var shexs = Student.AdVeSoyad();
+                while (true)
+                {
+                    Console.Clear();
+                    Console.Write(shexs + " Zehmet olmasa 1-ci imtahan neticesini elave edin :");
+                    var netice1 = Console.ReadLine();
+                    if (!Student.ImtahanBali(netice1, "Birinci imtahan")) continue;
+                    Console.Write(shexs + "Zehmet olmasa 2-ci imtahan neticesini elave edin :");
+                    var netice2 = Console.ReadLine();
+                    if (!Student.ImtahanBali(netice2, "Ikinci imtahan")) continue;
+                    Console.Write(shexs + "Zehmet olmasa 3-cu imtahan neticesini elave edin :");
+                    var netice3 = Console.ReadLine();
+                    if (!Student.ImtahanBali(netice3, "Ucuncu imtahan")) continue;
+                    Student.Netice(netice1, netice2, netice3, shexs);
+                    break;
+                }
+                */
+
+            #endregion
+
+            #region Solution without methods
 
             // ------------------------------------------------------------------------------------------- Solution without methods :
             /*
@@ -120,7 +149,7 @@ namespace Week5.Task
                 break;
             } */
 
-
+            #endregion
 
 
 
