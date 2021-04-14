@@ -1,6 +1,8 @@
 # PragmatechCsharpProject Tasks:
 
 
+
+
 # Week3.Tasks :
     1.Bal Ortalamasinin Hesablanmasi
     2.Bal Ortalamasinin Hesablanmasi (harder than firs problem)
@@ -13,4 +15,20 @@
     9. menfi musbet
     10. vurma cedveli
     11. exam questions
+    
+    
+ 
+# Week4.Tasks : 
+    1. arrayin elementlerini artan sira ile ekrana cap edin
+    2. arrayin elementlerini azalan sira ile ekrana cap edin
+    3. geriden geriden
+    4. para pul el cirki
+    5. tek ededlerin kublari cemi
+    6. yas hesablanmasi
+    7. iki musbet ededin hasilini toplama emeliyyati ile ekrana cap edin
+
+
+# Week5.Tasks : 
+    1. Havada bulut dimplom isini unut
+    2. para pul el cerki 2 yakinda sinemalarda
     
