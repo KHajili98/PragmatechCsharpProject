@@ -8,7 +8,7 @@ namespace Week5.Task
     {
         private static int Password = 1234;
         private static int Balance = 1000;
-        private static Hashtable Tarixce = new Hashtable();
+        private static SortedList Tarixce = new SortedList();
 
 
         public static void LogIn ()
@@ -45,7 +45,31 @@ namespace Week5.Task
             Console.WriteLine("3.BALANSIN CIXARIWI\n");
 
             Console.Write("\nEmeliiyat nomresini daxil edin:\t");
+            
         }
+
+        public static byte OperationChoosen (){ 
+         byte operation;
+                while (true)
+                {
+                
+                    var input = Console.ReadLine();
+                    byte inputForTryParse;
+                    if (Byte.TryParse(input, out  inputForTryParse))
+                    {
+                        operation = byte.Parse(input);
+                        return operation;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Emeliyyat nomresini daxil ederken REQEMLERDEN ISTIFADE EDIN !!! { 1 - 3 }");
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        ATM.Menu();
+                        continue;
+                    }
+                }}
 
         public static void BalansinYoxlanilmasi()
         {
@@ -131,12 +155,15 @@ namespace Week5.Task
             }
             else
             {
-                Console.WriteLine("Mexaricler :\n");
+                Console.WriteLine("Mexaricler birinci emeliyyatdan sonuncu emeliyyata dogru siralanmiwdir  :\n");
+                int i=1;
 
                 foreach (DictionaryEntry item in Tarixce)
                 {
-                    Console.WriteLine(item.Value + " AZN"+ "\tTARIX-->>  " +item.Key );
+                    Console.WriteLine($"{i++}). " + item.Value + " AZN" + "\t TARIX-->>  " + item.Key);
                 }
+
+
             }
             
         }

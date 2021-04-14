@@ -30,7 +30,7 @@ namespace Week5.Task
             #region Solution with methods last version
             // ------------------------------------------------------------------------------------------- Solution with methods last version:
 
-            
+            /*
             var shexs = Student.AdVeSoyad();
             string netice,netice1="",netice2 = "", netice3 = "", imtahanNomresi;
             while (true)
@@ -59,7 +59,7 @@ namespace Week5.Task
                 Student.Netice(netice1, netice2, netice3, shexs);
                 break;
             }
-            
+            */
             #endregion
 
             #region Solution with methods
@@ -198,6 +198,7 @@ namespace Week5.Task
              */
 
             // --------------------------------solution : 
+            
             /*
             ATM.LogIn();
 
@@ -205,7 +206,7 @@ namespace Week5.Task
             {
                 Console.Clear();
                 ATM.Menu();
-                byte  operation = byte.Parse(Console.ReadLine());
+                byte operation = ATM.OperationChoosen();
 
                 switch (operation)
                 {
@@ -219,6 +220,7 @@ namespace Week5.Task
                         break;
                     default:
                         Console.Write("!!!Emeliyyat yanliwdir. Entere basdiqdan sonra yeni emeliyyat nomresini daxil edin!!!");
+                       
                         continue;
                 }
 
@@ -226,7 +228,7 @@ namespace Week5.Task
                 Console.Write("\nMENYUYA GERI DONMEK ISTEYIRSINIZ? b/x (beli/xeyr):\t");
 
             } while (Console.ReadLine()?.ToUpper() != "X"); // mellim dersdekinden goturmuwem halal eliyin :)
-            */
+           */
 
          
 
