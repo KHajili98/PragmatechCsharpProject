@@ -3,6 +3,7 @@ using System.Threading;
 
 namespace Week4.Task
 {
+
     partial class Program
     {
         static void Main(string[] args)
@@ -295,6 +296,18 @@ namespace Week4.Task
 
            Console.WriteLine("Daxil edilen vuruqlarin hasili : " +sum);
            */
+
+            //----------------------------------------------------- Solution with methods:
+
+
+           /*
+            int birinciVuruq =MultiplicationOperation.VurugunQebulEdilmesi( "Birinci vuruq");
+            int ikinciVuruq =MultiplicationOperation.VurugunQebulEdilmesi( "Ikinci vuruq");
+            int hasil = MultiplicationOperation.VurmaEmeliyyati(birinciVuruq, ikinciVuruq);
+            MultiplicationOperation.Netice(hasil, birinciVuruq, ikinciVuruq);
+            */
+
+
 
 
 
