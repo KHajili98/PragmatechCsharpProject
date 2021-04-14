@@ -240,9 +240,14 @@ namespace Week4.Task
             */
 
 
+            //----------------------------------------------------- Solution with methods :
 
+            /*
+            Console.WriteLine("dogum tarixini daxil edin (gun,ay,il) : ");
 
-
+            string birthDay = Console.ReadLine();
+            AgeCalculator.CalculateYourAge(birthDay);
+            */
 
             #endregion
 
