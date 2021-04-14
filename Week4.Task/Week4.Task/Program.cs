@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Threading;
 
 namespace Week4.Task
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
@@ -18,33 +19,33 @@ namespace Week4.Task
 
             // ------------------------------------------- Solution :
 
-          /*
-                        int[] intArray = { 2, 9, 4, 3, 5, 1, 7 };
-                        int temp = 0;
+            /*
+                          int[] intArray = { 2, 9, 4, 3, 5, 1, 7 };
+                          int temp = 0;
 
 
 
-                        for (int i = 0; i < intArray.Length; i++)
-                        {
-                            for (int j = i+1; j < intArray.Length; j++)
-                            {
-                                if (intArray[i] >intArray[j])
-                                {
-                                    temp = intArray[i];
+                          for (int i = 0; i < intArray.Length; i++)
+                          {
+                              for (int j = i+1; j < intArray.Length; j++)
+                              {
+                                  if (intArray[i] >intArray[j])
+                                  {
+                                      temp = intArray[i];
 
-                                    intArray[i] = intArray[j];
-                                    intArray[j] = temp;
-                                }
-                            }
-                        }
+                                      intArray[i] = intArray[j];
+                                      intArray[j] = temp;
+                                  }
+                              }
+                          }
 
-                        Console.WriteLine("Elementlerin artan sira ile manual wekilde sort edilmesi : \n");
+                          Console.WriteLine("Elementlerin artan sira ile manual wekilde sort edilmesi : \n");
 
-                        foreach (var item in intArray)
-                        {
-                            Console.WriteLine(item);
-                        }
-            */
+                          foreach (var item in intArray)
+                          {
+                              Console.WriteLine(item);
+                          }
+              */
             #endregion
 
             #region 2.
@@ -143,27 +144,54 @@ namespace Week4.Task
              *
              */
 
-            //----------------------------------------------------- Solution :
+            //----------------------------------------------------- Solution with methods :
+            /*
+
+            do
+            {
+                Console.Clear();
+                var bankNotes = new int[] { 200, 100, 50, 20, 10, 5, 1 };
+                Console.Write("bankomatdan cixarmaq istediyi meblegi daxil edin : ");
+                var inputMoney = Console.ReadLine();
+                bool validation = Bankomat.Validation(inputMoney);
+
+                if (validation)
+                {
+                    Console.WriteLine("Meblegi duzgun daxil edin");
+                    Console.WriteLine("Yeniden mebleg daxil etmek isteyirsniz? B/X (Beli / Xeyr)");
+                    Thread.Sleep(2000);
+                }
+                else
+                {
+                    Bankomat.Output(bankNotes, Convert.ToInt32(inputMoney));
+                    Console.WriteLine("Yeniden pul cixarmaq isteyirsiniz? B/X (Beli / Xeyr)");
+                }
+                
+            } while (Console.ReadLine().ToUpper() != "X");
+            */
+
+
+            //-----------------------------------------------------------   PREVIOUS SOLUTION :
 
             /*  
-           while (true)
-           {
-               var bankNotes = new int[] { 200, 100, 50, 20, 10, 5, 1 };
-               Console.Write("bankomatdan cixarmaq istediyi meblegi daxil edin : ");
-               int inputMoney = Convert.ToInt32(Console.ReadLine());
-               if (string.IsNullOrEmpty(Convert.ToString(inputMoney)) || string.IsNullOrWhiteSpace(Convert.ToString(inputMoney))) break;
+          while (true)
+          {
+              var bankNotes = new int[] { 200, 100, 50, 20, 10, 5, 1 };
+              Console.Write("bankomatdan cixarmaq istediyi meblegi daxil edin : ");
+              int inputMoney = Convert.ToInt32(Console.ReadLine());
+              if (string.IsNullOrEmpty(Convert.ToString(inputMoney)) || string.IsNullOrWhiteSpace(Convert.ToString(inputMoney))) break;
+              for (int i = 0; i < bankNotes.Length; i++)
+              {
+                  if (inputMoney >= bankNotes[i])
+                  {
+                      int bankNotesCount = inputMoney / bankNotes[i];
+                      inputMoney -= bankNotesCount * bankNotes[i];
+                      Console.WriteLine(bankNotesCount + " eded - " + bankNotes[i] + " AZN");
+                  }
+              }
+          }
+             */
 
-               for (int i = 0; i < bankNotes.Length; i++)
-               {
-                   if (inputMoney >= bankNotes[i])
-                   {
-                       int bankNotesCount = inputMoney / bankNotes[i];
-                       inputMoney -= bankNotesCount * bankNotes[i];
-                       Console.WriteLine(bankNotesCount + " eded - " + bankNotes[i] + " AZN");
-                   }
-               }
-           }
-              */
 
             #endregion
 
