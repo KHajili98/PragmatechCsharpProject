@@ -30,7 +30,7 @@ namespace Week5.Task
             #region Solution with methods last version
             // ------------------------------------------------------------------------------------------- Solution with methods last version:
 
-            /*
+            
             var shexs = Student.AdVeSoyad();
             string netice,netice1="",netice2 = "", netice3 = "", imtahanNomresi;
             while (true)
@@ -38,21 +38,28 @@ namespace Week5.Task
                 Console.Clear();
                 for (int i = 1; i <= 3; i++)
                 {
-                    imtahanNomresi = i.ToString();
-                    Console.Write(shexs + " Zehmet olmasa "+ imtahanNomresi + "ci imtahan neticesini elave edin :");
-                    netice = i switch
+                    while (true)
                     {
-                        1 => netice1 = Console.ReadLine(),
-                        2 => netice2 = Console.ReadLine(),
-                        3 => netice3 = Console.ReadLine(),
-                    };
+                        Console.Clear();
+                        imtahanNomresi = i.ToString();
+                        Console.Write(shexs + " Zehmet olmasa " + imtahanNomresi + "ci imtahan neticesini elave edin :");
+                        netice = i switch
+                        {
+                            1 => netice1 = Console.ReadLine(),
+                            2 => netice2 = Console.ReadLine(),
+                            3 => netice3 = Console.ReadLine(),
+                            _ => ""
+                        };
 
-                    if (!Student.ImtahanBali(netice, $"{i}-ci imtahan")) continue;
+                        if (!Student.ImtahanBali(netice, $"{i}-ci imtahan")) continue;
+
+                        break;
+                    }
                 }
                 Student.Netice(netice1, netice2, netice3, shexs);
                 break;
             }
-            */
+            
             #endregion
 
             #region Solution with methods
@@ -190,8 +197,8 @@ namespace Week5.Task
              *   
              */
 
-
-
+            // --------------------------------solution : 
+            /*
             ATM.LogIn();
 
             do
@@ -219,12 +226,9 @@ namespace Week5.Task
                 Console.Write("\nMENYUYA GERI DONMEK ISTEYIRSINIZ? b/x (beli/xeyr):\t");
 
             } while (Console.ReadLine()?.ToUpper() != "X"); // mellim dersdekinden goturmuwem halal eliyin :)
-
+            */
 
          
-
-
-
 
             #endregion
 

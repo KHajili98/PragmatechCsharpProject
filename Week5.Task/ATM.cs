@@ -58,43 +58,41 @@ namespace Week5.Task
             
             int result;
 
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("-----------------Istediyiniz meblegi daxil edin (emeliyyatdan cixmaq ucun \"x\" duymesine basa bilersiniz) :");
+                var inputCash = Console.ReadLine();
+                if (inputCash.ToUpper() == "X") break;
                 
-                while (true)
+                if (Int32.TryParse(inputCash, out result) && (Int32.Parse(inputCash) > 0 && Int32.Parse(inputCash) <= 1000)) // mexaric meblegi check edir herf ve 1-1000 arasi oldugunu
                 {
-                    Console.Clear();
-                    Console.WriteLine("-----------------Istediyiniz meblegi daxil edin (emeliyyatdan cixmaq ucun \"x\" duymesine basa bilersiniz) :");
-                    var inputCash = Console.ReadLine();
-                    if (inputCash.ToUpper() == "X") break;
-                    
-                    if (Int32.TryParse(inputCash, out result) && (Int32.Parse(inputCash) > 0 && Int32.Parse(inputCash) <= 1000))
+                    DateTime withdrawTime = DateTime.Now;
+
+                    if (Balance > Int32.Parse(inputCash)) // balansdaki pulla muqayise edir
                     {
-                        DateTime withdrawTime = DateTime.Now;
-
-                        if (Balance > Int32.Parse(inputCash))
-                        {
-
-                            Balance -= Int32.Parse(inputCash);
-                            Console.WriteLine("Pulunuzu goturun : ");
-                            OutPutCash(inputCash, withdrawTime);
-                            Tarixce.Add(withdrawTime, Int32.Parse(inputCash));
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("-------------------balansinizda kifayet qeder mebleg yoxdur. Balans :\t" + Balance + " AZN");
-                            Thread.Sleep(3000);
-                            Console.Clear();
-                            continue;
-                        }
+                        Balance -= Int32.Parse(inputCash);
+                        Console.WriteLine("Pulunuzu goturun : ");
+                        OutPutCash(inputCash, withdrawTime);
+                        Tarixce.Add(withdrawTime, Int32.Parse(inputCash)); // cixariw ucun emeliyyatlari elave edir
+                        break;
                     }
                     else
                     {
-                        Console.WriteLine("!!!!!!!!!!        Daxil edilen mebleg yanliwdir       !!!!!!!!!!");
-                        Console.WriteLine("********** 1-1000 daxil olan meblegi reqem olaraq qeyd edin  **********");
+                        Console.WriteLine("-------------------balansinizda kifayet qeder mebleg yoxdur. Balans :\t" + Balance + " AZN");
                         Thread.Sleep(3000);
+                        Console.Clear();
                         continue;
                     }
                 }
+                else
+                {
+                    Console.WriteLine("!!!!!!!!!!        Daxil edilen mebleg yanliwdir       !!!!!!!!!!");
+                    Console.WriteLine("********** 1-1000 daxil olan meblegi reqem olaraq qeyd edin  **********");
+                    Thread.Sleep(3000);
+                    continue;
+                }
+            }
                
          
 

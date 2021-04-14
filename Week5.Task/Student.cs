@@ -18,11 +18,9 @@ namespace Week5.Task
         public static bool ImtahanBali(string netice, string imtahanNomresi)
         {
             int result;
-           
-
             if (!Int32.TryParse(netice, out result))
             {
-                Console.WriteLine(imtahanNomresi +" neticesini duzgun daxil edilmeyib!!!\nReqemlerden istifade edin!!!");
+                Console.WriteLine(imtahanNomresi + " neticesini duzgun daxil edilmeyib!!!\nReqemlerden istifade edin!!!");
                 Thread.Sleep(3000);
                 return false;
 
@@ -30,14 +28,12 @@ namespace Week5.Task
 
             if (!(Convert.ToInt32(netice) >= 0 && Convert.ToInt32(netice) <= 100))
             {
-                Console.WriteLine(imtahanNomresi +" neticesini duzgun daxil edilmeyib!!!.\nnetice 0-100 arasi bir bal olmalidir !!! ");
+                Console.WriteLine(imtahanNomresi + " neticesini duzgun daxil edilmeyib!!!.\nnetice 0-100 arasi bir bal olmalidir !!! ");
                 Thread.Sleep(3000);
                 return false;
 
             }
             return true;
-
-
         }
 
         public static  void Netice(string netice1, string netice2, string netice3, string shexs)
@@ -55,6 +51,5 @@ namespace Week5.Task
             Console.WriteLine("\nDiplom iwine " + diplomIwi);
         }
 
-     
     }
 }
