@@ -11,7 +11,7 @@ namespace Week5.Task
             #region Week 5 Tasks
 
 
-
+  
             #region 1. Havada bulut dimplom isini unut
             /*
              * Telebinin adini soyadini 3 imtahan neticesini
@@ -30,7 +30,7 @@ namespace Week5.Task
             #region Solution with methods last version
             // ------------------------------------------------------------------------------------------- Solution with methods last version:
 
-            /*
+            
             var shexs = Student.AdVeSoyad();
             string netice,netice1="",netice2 = "", netice3 = "", imtahanNomresi;
             while (true)
@@ -56,10 +56,13 @@ namespace Week5.Task
                         break;
                     }
                 }
+
+                Student.CheckedDefaultExamMark(ref netice1, ref netice2, ref netice3);
+
                 Student.Netice(netice1, netice2, netice3, shexs);
                 break;
             }
-            */
+
             #endregion
 
             #region Solution with methods
@@ -198,8 +201,8 @@ namespace Week5.Task
              */
 
             // --------------------------------solution : 
-            
-            /*
+
+           
             ATM.LogIn();
 
             do
@@ -228,9 +231,9 @@ namespace Week5.Task
                 Console.Write("\nMENYUYA GERI DONMEK ISTEYIRSINIZ? b/x (beli/xeyr):\t");
 
             } while (Console.ReadLine()?.ToUpper() != "X"); // mellim dersdekinden goturmuwem halal eliyin :)
-           */
+            
 
-         
+
 
             #endregion
 
@@ -238,5 +241,7 @@ namespace Week5.Task
             #endregion
 
         }
+
+        
     }
 }

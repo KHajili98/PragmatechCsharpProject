@@ -130,7 +130,7 @@ namespace Week5.Task
             {
                 var bankNotes = new int[] { 200, 100, 50, 20, 10, 5, 1 };
                 int inputMoney = Convert.ToInt32(inputCash);
-                if (string.IsNullOrEmpty(Convert.ToString(inputMoney)) || string.IsNullOrWhiteSpace(Convert.ToString(inputMoney))) break;
+                if (IsValidForOutPutCash(inputMoney)) break;
                 for (int i = 0; i < bankNotes.Length; i++)
                 {
                     if (inputMoney >= bankNotes[i])
@@ -141,7 +141,14 @@ namespace Week5.Task
                     }
                 }
                 break;
+
             }
+
+
+        }
+        static bool IsValidForOutPutCash(int inputMoney)
+        {
+            return inputMoney == 0 && string.IsNullOrEmpty(Convert.ToString(inputMoney)) || string.IsNullOrWhiteSpace(Convert.ToString(inputMoney));
         }
 
 
