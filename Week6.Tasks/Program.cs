@@ -16,6 +16,9 @@ namespace Week6.Tasks
              * Qeyd: daxil edilnlerden her hansisa birinin menfi olub olmamasini yoxlayin.
              * menfidirse deyeri 0 beraber edin.
              */
+            
+
+            //-------------------------------------------solution :
 
             Rectangle yeni = new Rectangle();
             yeni.Uzunluq = Rectangle.SetTeref("Uzunluq");

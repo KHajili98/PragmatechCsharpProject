@@ -5,8 +5,11 @@ namespace Week6.Tasks
 {
     public class Rectangle
     {
+        
         private double _uzunluq;
-
+        /// <summary>
+        /// duzbucaqlinin uzunlugu.
+        /// </summary>
         public double Uzunluq
         {
             get { return _uzunluq; }
@@ -23,7 +26,9 @@ namespace Week6.Tasks
         }
 
         private double _en;
-
+        /// <summary>
+        /// duzbucaqlinin eni.
+        /// </summary>
         public double En
         {
             get { return _en; }
@@ -40,7 +45,9 @@ namespace Week6.Tasks
         }
 
 
-
+        /// <summary>
+        /// consoledan duzbucaqlinin tereflerini daxil etmek ucun funksiya.
+        /// </summary>
         public static double SetTeref(string teref)
         {
             double _teref;
@@ -66,6 +73,11 @@ namespace Week6.Tasks
             }
             return _teref;
         }
+
+
+        /// <summary>
+        /// duzbucaqlinin sahesinin hesablanmasi.
+        /// </summary>
         public double CalculateArea()
         {
             return Uzunluq * En;
