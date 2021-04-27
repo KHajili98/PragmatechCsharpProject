@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Week6.Tasks
 {
@@ -15,6 +16,30 @@ namespace Week6.Tasks
              * Qeyd: daxil edilnlerden her hansisa birinin menfi olub olmamasini yoxlayin.
              * menfidirse deyeri 0 beraber edin.
              */
+
+            //ToString("0.##")
+            Rectangle yeni = new Rectangle();
+
+            yeni.Uzunluq = Rectangle.SetTeref("Uzunluq");
+            yeni.En = Rectangle.SetTeref("En");
+
+         
+
+            Console.WriteLine("uzunluq : "+yeni.Uzunluq);
+            Console.WriteLine("en : "+ yeni.En);
+
+            if(yeni.En < 0   || yeni.Uzunluq < 0)
+            {
+                Console.WriteLine("\nDaxil edilen terefler menfi deyer oldugundan, avtomatik olaraq 0 kimi nezere alindi");
+                Console.WriteLine("sahe : " + yeni.CalculateArea().ToString("0.##"));
+
+            }
+            else
+            {
+                Console.WriteLine("sahe : " + yeni.CalculateArea().ToString("0.##"));
+            }
+
+
             #endregion
 
             #region teacher class
