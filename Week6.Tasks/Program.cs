@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace Week6.Tasks
@@ -16,10 +17,11 @@ namespace Week6.Tasks
              * Qeyd: daxil edilnlerden her hansisa birinin menfi olub olmamasini yoxlayin.
              * menfidirse deyeri 0 beraber edin.
              */
-            
+
 
             //-------------------------------------------solution :
 
+            /*
             Rectangle yeni = new Rectangle();
             yeni.Uzunluq = Rectangle.SetTeref("Uzunluq");
             yeni.En = Rectangle.SetTeref("En");
@@ -29,7 +31,7 @@ namespace Week6.Tasks
             Console.WriteLine("uzunluq : "+yeni.Uzunluq);
             Console.WriteLine("en : "+ yeni.En);
             Console.WriteLine("sahe : " + yeni.CalculateArea().ToString("0.##"));
-            
+            */
 
 
             #endregion
@@ -42,6 +44,68 @@ namespace Week6.Tasks
              *  Vezife: daxil edilmeyibse nulldursa Teacher deye set edilsin.
              *  Ise Baslama tarixi : Muellimin eger 23 yasi varsa muellim olaraq fealiyyet gostere biler.
              */
+
+
+            //-------------------------------------------solution :
+
+
+            /*
+            List<Muellim> muellimler = new List<Muellim>();
+            Random randomDogumIl = new Random();
+
+            muellimler.Add(
+            new Muellim() {
+            Ad = "eli",
+            Soyad = "Hajili",
+            IslediyiYer = "adnsu",
+            Vezife = "Mech",
+            DogumTarixi = DateTime.Now.AddYears(-randomDogumIl.Next(15,50)),
+            IslemeTarixi = DateTime.Now
+            });
+
+            muellimler.Add(
+            new Muellim()
+            {
+                Ad = "veli",
+                Soyad = "Hajili",
+                IslediyiYer = "adpu",
+                Vezife = "AZ",
+                DogumTarixi = DateTime.Now.AddYears(-randomDogumIl.Next(15, 50)),
+                IslemeTarixi = DateTime.Now
+            });
+
+            muellimler.Add(
+            new Muellim()
+            {
+                Ad = "Kamran",
+                Soyad = "Hajili",
+                IslediyiYer = "atu",
+                DogumTarixi = DateTime.Now.AddYears(-randomDogumIl.Next(15, 50)),
+                IslemeTarixi = DateTime.Now
+            });
+
+
+            foreach (var item in muellimler)
+            {
+                Console.WriteLine("***************************");
+                Console.WriteLine("Dogum Tarixi : "+item.DogumTarixi.ToString("MM/dd/yyyy"));
+                Console.WriteLine("Isleme Statusu : \t" + item.Status());
+                if(item.Status() == "!!! Tebrikler !!! Isleye bilersiz") {
+                    Console.WriteLine("Isleme Tarixi : " + item.IslemeTarixi.ToString("MM/dd/yyyy"));
+                }
+                Console.WriteLine("Ad : " + item.Ad);
+                Console.WriteLine("Soyad : " + item.Soyad);
+                Console.WriteLine("Vezife : " + item.Vezife);
+                Console.WriteLine("Islediyi Yer : " + item.IslediyiYer );
+                Console.WriteLine("***************************\n");
+
+
+            }
+            */
+
+
+
+
             #endregion
 
             #region gelende eve corey al
