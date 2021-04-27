@@ -10,7 +10,16 @@ namespace Week6.Tasks
         public double Uzunluq
         {
             get { return _uzunluq; }
-            set { _uzunluq = value; }
+            set {
+                if(value < 0)
+                {
+                    _uzunluq = 0;
+                }
+                else
+                {
+                    _uzunluq = value;
+                }
+            }
         }
 
         private double _en;
@@ -18,7 +27,16 @@ namespace Week6.Tasks
         public double En
         {
             get { return _en; }
-            set { _en = value; }
+            set { 
+                if (value < 0)
+                {
+                    _en = 0;
+                }
+                else
+                {
+                    _en = value;
+                }
+            }
         }
 
 
@@ -30,7 +48,7 @@ namespace Week6.Tasks
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("Zehmet olmasa " + teref + " daxil edin : ");
+                Console.WriteLine("Zehmet olmasa " + teref + " daxil edin. Menfi deyer daxil edilerse avtomatik 0 kimi qeyd olunacaqdir : ");
                 var inputUzunluq = Console.ReadLine();
 
                 if (string.IsNullOrEmpty(inputUzunluq) || string.IsNullOrWhiteSpace(inputUzunluq) || !Double.TryParse(inputUzunluq, out _teref))
@@ -50,8 +68,6 @@ namespace Week6.Tasks
         }
         public double CalculateArea()
         {
-            if (Uzunluq < 0) Uzunluq = 0;
-            if (En < 0) En = 0;
             return Uzunluq * En;
         }
 

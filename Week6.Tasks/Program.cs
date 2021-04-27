@@ -17,9 +17,7 @@ namespace Week6.Tasks
              * menfidirse deyeri 0 beraber edin.
              */
 
-            //ToString("0.##")
             Rectangle yeni = new Rectangle();
-
             yeni.Uzunluq = Rectangle.SetTeref("Uzunluq");
             yeni.En = Rectangle.SetTeref("En");
 
@@ -27,17 +25,8 @@ namespace Week6.Tasks
 
             Console.WriteLine("uzunluq : "+yeni.Uzunluq);
             Console.WriteLine("en : "+ yeni.En);
-
-            if(yeni.En < 0   || yeni.Uzunluq < 0)
-            {
-                Console.WriteLine("\nDaxil edilen terefler menfi deyer oldugundan, avtomatik olaraq 0 kimi nezere alindi");
-                Console.WriteLine("sahe : " + yeni.CalculateArea().ToString("0.##"));
-
-            }
-            else
-            {
-                Console.WriteLine("sahe : " + yeni.CalculateArea().ToString("0.##"));
-            }
+            Console.WriteLine("sahe : " + yeni.CalculateArea().ToString("0.##"));
+            
 
 
             #endregion
