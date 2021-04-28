@@ -150,11 +150,10 @@ namespace Week6.Tasks
              */
 
             #endregion
-
+            CheckOut checkOut = new CheckOut();
             Product product = new Product();
             Customer kamran = new Customer();
             Menu.Show();
-            Console.WriteLine("\n\nCari Balansiniz : \t {0} AZN\n\n\n", kamran.Balance);
             do
             {
                 Console.WriteLine("Zehmet olmasa istediyiniz mehsulun nomresini muvafiq olaraq daxil edin : ");
@@ -174,9 +173,44 @@ namespace Week6.Tasks
 
             Console.WriteLine("Odeniwi nece yekunlawdirmaq isteyirsiniz? ** KARTLA ** / ** NEGD ** (k / n) ");
             var CheckOutOptionInput = Console.ReadLine().ToUpper();
+
+
             kamran.Balance = GetBalanceAfterPayment(CheckOutOptionInput);
 
-            Console.WriteLine(kamran.Balance);
+
+
+            //cek class ucun edilecekler--------------------------
+
+            checkOut.Time = DateTime.Now;
+
+
+            double allDiscount = 0;
+            foreach (var discount in kamran.CustomerOrders.AllDiscounts)
+            {
+                allDiscount += discount;
+            }
+            checkOut.TotalDiscount = allDiscount;
+
+
+            if (CheckOutOptionInput.Equals("K"))
+            {
+                checkOut.PaymentMethod = "Kartla odenilib";
+
+            }
+            else if (CheckOutOptionInput.Equals("N"))
+            {
+                checkOut.PaymentMethod = "Negd odenilib";
+            }
+            checkOut.ReceiptId++;
+
+            //------------------------------------------------
+
+
+
+
+
+
+
 
 
 
@@ -267,24 +301,25 @@ namespace Week6.Tasks
                                 }
                             }
 
-                           /* if (product1.EDV != 0)//edv yoxlama
-                            {
-                                edv= product1.Price * product1.EDV / 100;
-                                kamran.CustomerOrders.AllEDV.Add(edv);
-                                totalEDV += edv;
-                                
-                            }*/
+                           
                            
                             break;
                         }
                     }
 
                 }
+                checkOut.TotalEDV = totalEDV; //cekde gosterilecek total edv
 
-               
+
                 totalMebleg += totalEDV;
-                Console.WriteLine(totalEDV + "toplamedv");
-                Console.WriteLine(totalMebleg + "totalMebleg");
+
+                if (totalMebleg < 15)// catdirilma pulu
+                {
+                    totalMebleg += 4.5;
+                }
+
+                checkOut.TotalPayment = totalMebleg; // checkde gosterilecek toplam
+               
                 return totalMebleg;
             }
 
