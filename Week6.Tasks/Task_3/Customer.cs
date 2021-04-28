@@ -2,7 +2,8 @@
 {
     public class Customer
     {
-        public double Balance { get; set; }
-        public bool BravoBonusCard { get; set; }    
+        public  double Balance { get; } = 450;
+        public bool HasBravoBonusCard { get; set; }
+        public Order CustomerOrders { get; set; } = new Order();
     }
 }

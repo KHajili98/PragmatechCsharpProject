@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace Week6.Tasks
 {
     class Program
     {
+
+        
         static void Main(string[] args)
         {
             #region tasks
@@ -148,12 +151,95 @@ namespace Week6.Tasks
 
             #endregion
 
+            Product product = new Product();
+            Customer kamran = new Customer();
             Menu.Show();
+            Console.WriteLine("\n\nCari Balansiniz : \t {0} AZN\n\n\n", kamran.Balance);
+            do
+            {
+                Console.WriteLine("Zehmet olmasa istediyiniz mehsulun nomresini muvafiq olaraq daxil edin : ");
+                int orderNumber = Convert.ToInt32(Console.ReadLine()); // heleki yoxlamiram reqem olub olmadigini 
+                kamran.CustomerOrders.ProductId.Add(orderNumber);
+                
+                Console.WriteLine("Yeniden mehsul almaq isteyirsiniz? **istediyiniz duymeni basin ** / ** X ** (Beli / Xeyr)");
+            } while (Console.ReadLine().ToUpper() != "X");
 
+
+            Console.WriteLine("Bonus kartiniz var ? **istediyiniz duymeni basin ** / ** X ** (Beli / Xeyr) ");
+            var BonusKartInput = Console.ReadLine().ToUpper();
+            if (!BonusKartInput.Equals("X"))
+            {
+                kamran.HasBravoBonusCard = true;
+            }
+
+            Console.WriteLine("Odeniwi nece yekunlawdirmaq isteyirsiniz? ** KARTLA ** / ** NEGD ** (k / n) ");
+            var CheckOutOptionInput = Console.ReadLine().ToUpper();
+
+            switch (CheckOutOptionInput)
+            {
+                case "K":
+                    Console.WriteLine(PayWithCard().ToString("0.###"));
+                    //kartla odeme temasi edv nezere alinaraq ve hemcinin bonus karti nezere alincaq
+                    //hemcinin 15 azden az olub olmamasi yoxlansin 
+                    break;
+                case "N":
+                    //negd odeme temasi edv nezere alinaraq
+                    //ve hemcinin bonus karti nezere alincaq
+                    //hemcinin 15 azden az olub olmamasi yoxlansin 
+                    break;
+                default:
+                    break;
+            }
+
+
+
+             double PayWithCard()
+            {
+                double totalEDV = 0;
+                double totalMebleg = 0;
+                double price = 0;
+                foreach (var id in kamran.CustomerOrders.ProductId)// toplam mebleg 
+                {
+                    foreach (Product product1 in Product.GetAllProducts())
+                    {
+                        if(id== product1.Id)// discount yoxlama
+                        {
+                            if (product1.Discount!=0)
+                            {
+                                var discount = (product1.Price * product1.Discount) / 100;
+                                kamran.CustomerOrders.AllDiscounts.Add(discount);
+                                price = (double)(product1.Price - discount);
+                                totalMebleg += price;
+                            }
+                            else
+                            {
+                                price = product1.Price;
+                                totalMebleg += price;
+                            }
+
+                            if (product1.EDV != 0)//edv yoxlama
+                            {
+                                totalEDV += product1.Price * product1.EDV / 100;
+                                kamran.CustomerOrders.AllEDV.Add(totalEDV);
+                            }
+                           
+                            break;
+                        }
+                    }
+
+                }
+
+
+                totalMebleg += totalEDV;
+                return totalMebleg;
+            }
 
             #endregion
 
             #endregion
         }
+
+        
+
     }
 }

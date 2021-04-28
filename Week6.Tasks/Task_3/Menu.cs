@@ -33,7 +33,7 @@ namespace Week6.Tasks
                     price = (double)(productList[i].Price - (productList[i].Price * productList[i].Discount/100));
 
                 Console.WriteLine(
-                    $" | No = {i + 1}  " +
+                    $" | Id = {productList[i].Id}  " +
                     $"| Mehsulun adi : {productList[i].Name}    " +
                     $"| Olcu Vahidi : {productList[i].MeasuresType}  " +
                     $"|Endirim : {productList[i].Discount}%  " +

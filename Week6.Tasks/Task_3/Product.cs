@@ -3,19 +3,21 @@
 namespace Week6.Tasks
 {
     public class Product{
+        public int Id { get; set; }
         public string Name { get; set; }
         public string MeasuresType { get; set; }
-        public double Price { get; set; }
-        public int? EDV { get; set; } = 0;
-        public int? Discount { get; set; } = 0;
+        public  double Price { get; set; }
+        public double EDV { get; set; } = 0;
+        public int Discount { get; set; } = 0;
 
 
-
+       
         public static List<Product> GetAllProducts()
         {
             List<Product> _allProducts = new List<Product>();
             _allProducts.Add(
                 new Product {
+                    Id =1,
                     Name = "un",
                     MeasuresType = "kq",
                     Price = 1.5,
@@ -27,6 +29,7 @@ namespace Week6.Tasks
             _allProducts.Add(
                new Product
                {
+                   Id=2,
                    Name = "yumurta",
                    MeasuresType = "eded",
                    Price = 0.15,
@@ -36,6 +39,7 @@ namespace Week6.Tasks
             _allProducts.Add(
                new Product
                {
+                   Id=3,
                    Name = "Vodka",
                    MeasuresType = "eded",
                    Price = 70.0,
@@ -46,11 +50,12 @@ namespace Week6.Tasks
             _allProducts.Add(
              new Product
              {
+                 Id = 4,
                  Name = "Cay",
                  MeasuresType = "eded",
                  Price = 5.0,
              }
-             );
+             ); ;
 
 
             return _allProducts;
