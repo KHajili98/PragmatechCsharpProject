@@ -51,7 +51,7 @@ namespace Week6.Tasks
             #endregion
 
             //-------------------------------------------solution :
-
+            /*
             var muellimler = Muellim.MuellimlerUcunList();
 
             foreach (var item in muellimler)
@@ -70,7 +70,7 @@ namespace Week6.Tasks
 
             }
             
-
+            */
 
 
 
@@ -147,7 +147,6 @@ namespace Week6.Tasks
              */
 
             #endregion
-
 
 
 
