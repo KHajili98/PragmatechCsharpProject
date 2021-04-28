@@ -10,14 +10,16 @@ namespace Week6.Tasks
         {
             #region tasks
 
-            #region rectangle
+            #region rectangle -------------------------------------------------------------------------------------------------------------------
+
+            #region tapwirigin werti
             /*
              * Console-dan daxil edilen en ve uzunluga gore duzbucaqlinin sahesinin hesablanmasi.
              * class memeber-ler ve encapsulation movuzlarina uygun isleyin.
              * Qeyd: daxil edilnlerden her hansisa birinin menfi olub olmamasini yoxlayin.
              * menfidirse deyeri 0 beraber edin.
              */
-
+            #endregion
 
             //-------------------------------------------solution :
 
@@ -26,17 +28,19 @@ namespace Week6.Tasks
             yeni.Uzunluq = Rectangle.SetTeref("Uzunluq");
             yeni.En = Rectangle.SetTeref("En");
 
-         
 
-            Console.WriteLine("uzunluq : "+yeni.Uzunluq);
-            Console.WriteLine("en : "+ yeni.En);
+
+            Console.WriteLine("uzunluq : " + yeni.Uzunluq);
+            Console.WriteLine("en : " + yeni.En);
             Console.WriteLine("sahe : " + yeni.CalculateArea().ToString("0.##"));
             */
 
 
             #endregion
 
-            #region teacher class
+            #region teacher class --------------------------------------------------------------------------------------------------------------
+
+            #region tapwirigin werti
             /*
              *  Muellim modeli yaradin, id, adi,soyadi,vezifesi,dogum tarixi, ise baslama tarixi, islediyi yer
              *  datalarini saxlasin.
@@ -44,46 +48,11 @@ namespace Week6.Tasks
              *  Vezife: daxil edilmeyibse nulldursa Teacher deye set edilsin.
              *  Ise Baslama tarixi : Muellimin eger 23 yasi varsa muellim olaraq fealiyyet gostere biler.
              */
-
+            #endregion
 
             //-------------------------------------------solution :
 
-
-            /*
-            List<Muellim> muellimler = new List<Muellim>();
-            Random randomDogumIl = new Random();
-
-            muellimler.Add(
-            new Muellim() {
-            Ad = "eli",
-            Soyad = "Hajili",
-            IslediyiYer = "adnsu",
-            Vezife = "Mech",
-            DogumTarixi = DateTime.Now.AddYears(-randomDogumIl.Next(15,50)),
-            IslemeTarixi = DateTime.Now
-            });
-
-            muellimler.Add(
-            new Muellim()
-            {
-                Ad = "veli",
-                Soyad = "Hajili",
-                IslediyiYer = "adpu",
-                Vezife = "AZ",
-                DogumTarixi = DateTime.Now.AddYears(-randomDogumIl.Next(15, 50)),
-                IslemeTarixi = DateTime.Now
-            });
-
-            muellimler.Add(
-            new Muellim()
-            {
-                Ad = "Kamran",
-                Soyad = "Hajili",
-                IslediyiYer = "atu",
-                DogumTarixi = DateTime.Now.AddYears(-randomDogumIl.Next(15, 50)),
-                IslemeTarixi = DateTime.Now
-            });
-
+            var muellimler = Muellim.MuellimlerUcunList();
 
             foreach (var item in muellimler)
             {
@@ -99,16 +68,17 @@ namespace Week6.Tasks
                 Console.WriteLine("Islediyi Yer : " + item.IslediyiYer );
                 Console.WriteLine("***************************\n");
 
-
             }
-            */
+            
 
 
 
 
             #endregion
 
-            #region gelende eve corey al
+            #region gelende eve corey al -------------------------------------------------------------------------------------------------
+
+            #region tapwirigin werti
             /*
              *  Online alis veris :
              *  * Console ekaraninda musterini ilk once  menu qarsilamalidir,
@@ -175,6 +145,11 @@ namespace Week6.Tasks
              *
              *  alis veris 15 azn den azdirsa catdirilma ucun 4,50 azn teleb olunacaq.
              */
+
+            #endregion
+
+
+
 
 
             #endregion
