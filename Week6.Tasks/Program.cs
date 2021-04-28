@@ -174,30 +174,66 @@ namespace Week6.Tasks
 
             Console.WriteLine("Odeniwi nece yekunlawdirmaq isteyirsiniz? ** KARTLA ** / ** NEGD ** (k / n) ");
             var CheckOutOptionInput = Console.ReadLine().ToUpper();
+            kamran.Balance = GetBalanceAfterPayment(CheckOutOptionInput);
 
-            switch (CheckOutOptionInput)
+            Console.WriteLine(kamran.Balance);
+
+
+
+            double GetBalanceAfterPayment(string inputForPayment)
             {
-                case "K":
-                    Console.WriteLine(PayWithCard().ToString("0.###"));
-                    //kartla odeme temasi edv nezere alinaraq ve hemcinin bonus karti nezere alincaq
-                    //hemcinin 15 azden az olub olmamasi yoxlansin 
-                    break;
-                case "N":
-                    //negd odeme temasi edv nezere alinaraq
-                    //ve hemcinin bonus karti nezere alincaq
-                    //hemcinin 15 azden az olub olmamasi yoxlansin 
-                    break;
-                default:
-                    break;
+                if (inputForPayment.Equals("K"))
+                {
+                    double totatlEdvCashBack = 0;
+                    double edvCashBack = 0;
+
+                    kamran.Balance -= GetTotalCashOfReceipt();
+                    foreach (var edv in kamran.CustomerOrders.AllEDV)
+                    {
+                        edvCashBack = edv * 0.1;
+                        totatlEdvCashBack += edvCashBack;
+                    }
+                    kamran.Balance += totatlEdvCashBack;
+
+                    if (kamran.HasBravoBonusCard)
+                    {
+                        kamran.Balance += 0.02 * GetTotalCashOfReceipt();
+                    }
+
+                    return kamran.Balance;
+
+                }
+                else if (inputForPayment.Equals("N"))
+                {
+                    double totatlEdvCashBack = 0;
+                    double edvCashBack = 0;
+
+                    kamran.Balance -= GetTotalCashOfReceipt();
+                    foreach (var edv in kamran.CustomerOrders.AllEDV)
+                    {
+                        edvCashBack = edv * 0.15;
+                        totatlEdvCashBack += edvCashBack;
+                    }
+                    kamran.Balance += totatlEdvCashBack;
+
+                    if (kamran.HasBravoBonusCard)
+                    {
+                        kamran.Balance += 0.02 * GetTotalCashOfReceipt();
+                    }
+                    return kamran.Balance;
+
+                }
+
+                return kamran.Balance;
             }
 
 
-
-             double PayWithCard()
+            double GetTotalCashOfReceipt()
             {
                 double totalEDV = 0;
                 double totalMebleg = 0;
                 double price = 0;
+                double edv = 0;
                 foreach (var id in kamran.CustomerOrders.ProductId)// toplam mebleg 
                 {
                     foreach (Product product1 in Product.GetAllProducts())
@@ -210,18 +246,34 @@ namespace Week6.Tasks
                                 kamran.CustomerOrders.AllDiscounts.Add(discount);
                                 price = (double)(product1.Price - discount);
                                 totalMebleg += price;
+                                if (product1.EDV != 0)//edv yoxlama
+                                {
+                                    edv = price * product1.EDV / 100;
+                                    kamran.CustomerOrders.AllEDV.Add(edv);
+                                    totalEDV += edv;
+
+                                }
                             }
                             else
                             {
                                 price = product1.Price;
                                 totalMebleg += price;
+                                if (product1.EDV != 0)//edv yoxlama
+                                {
+                                    edv = product1.Price * product1.EDV / 100;
+                                    kamran.CustomerOrders.AllEDV.Add(edv);
+                                    totalEDV += edv;
+
+                                }
                             }
 
-                            if (product1.EDV != 0)//edv yoxlama
+                           /* if (product1.EDV != 0)//edv yoxlama
                             {
-                                totalEDV += product1.Price * product1.EDV / 100;
-                                kamran.CustomerOrders.AllEDV.Add(totalEDV);
-                            }
+                                edv= product1.Price * product1.EDV / 100;
+                                kamran.CustomerOrders.AllEDV.Add(edv);
+                                totalEDV += edv;
+                                
+                            }*/
                            
                             break;
                         }
@@ -229,8 +281,10 @@ namespace Week6.Tasks
 
                 }
 
-
+               
                 totalMebleg += totalEDV;
+                Console.WriteLine(totalEDV + "toplamedv");
+                Console.WriteLine(totalMebleg + "totalMebleg");
                 return totalMebleg;
             }
 
