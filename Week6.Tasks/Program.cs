@@ -148,7 +148,7 @@ namespace Week6.Tasks
 
             #endregion
 
-
+            Menu.Show();
 
 
             #endregion
