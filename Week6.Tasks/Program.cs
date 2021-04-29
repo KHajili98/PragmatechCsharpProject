@@ -157,144 +157,32 @@ namespace Week6.Tasks
             CheckOut checkOut = new CheckOut();
             Product product = new Product();
             Customer kamran = new Customer();
-            Menu.Show();
+
+
+
             do
             {
-                Console.WriteLine("Zehmet olmasa istediyiniz mehsulun nomresini muvafiq olaraq daxil edin : ");
-                int orderId = Convert.ToInt32(Console.ReadLine()); // heleki yoxlamiram reqem olub olmadigini 
-                Console.WriteLine($"Zehmet olmasa istediyiniz mehsulun '{orderId}' ne qeder istediyinizi muvafiq olaraq daxil edin : ");
-                int orderCount = Convert.ToInt32(Console.ReadLine()); // heleki yoxlamiram reqem olub olmadigini 
-                kamran.CustomerOrders.ProductIdAndCount.Add(orderId, orderCount);
-
-                Console.WriteLine("Yeniden mehsul almaq isteyirsiniz? **istediyiniz duymeni basin ** / ** X ** (Beli / Xeyr)");
+                Console.Clear();
+                Console.WriteLine("\nCari Balansiniz =====================================  " + kamran.Balance + "AZN");
+                Console.WriteLine("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+                Menu.Show(); // Menyunu ekrana cap edir
+                Console.WriteLine("\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+                Customer.TakeOrder(kamran); // muwteiden sifariw goturur
+                Customer.AskAndCheckBonusCard(kamran); // muwteriden bonus kartin olub olmadigini soruwur
+                var checkOutOptionInput = Customer.AskPaymentMethod(); // muwteriden hansi usulla odemek istediyini soruwur
+                kamran.Balance = operation.GetBalanceAfterPayment(checkOutOptionInput, kamran, checkOut); // odeniwden sonra muwterinin balansini hesablayir
+                CheckOut.CalculateTotalDiscount(kamran, checkOut); // toplam endirimi hesablayir
+                CheckOut.PaymentMethodAndTimeAdding(checkOutOptionInput, checkOut); // kassaya odeniw usulu ve vaxtin elave olunmasi 
+                CheckOut.PrepareReceipt(product, kamran, checkOut); // cekin hazirlanmasi
+                Console.WriteLine("\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+                Console.WriteLine("Yeniden bazarliq etmek isteyirsiniz ? **istediyiniz duymeni basin ** / ** X ** (Beli / Xeyr)");
             } while (Console.ReadLine().ToUpper() != "X");
 
+           
 
-            Console.WriteLine("Bonus kartiniz var ? **istediyiniz duymeni basin ** / ** X ** (Beli / Xeyr) ");
-            var BonusKartInput = Console.ReadLine().ToUpper();
-            if (!BonusKartInput.Equals("X"))
-            {
-                kamran.HasBravoBonusCard = true;
-            }
+            #endregion
 
-            Console.WriteLine("Odeniwi nece yekunlawdirmaq isteyirsiniz? ** KARTLA ** / ** NEGD ** (k / n) ");
-            var CheckOutOptionInput = Console.ReadLine().ToUpper();
-
-
-            //kamran.Balance = GetBalanceAfterPayment(CheckOutOptionInput);
-            kamran.Balance = operation.GetBalanceAfterPayment(CheckOutOptionInput, kamran, checkOut);
-
-
-
-            //cek class ucun edilecekler--------------------------
-
-            checkOut.Time = DateTime.Now;
-
-
-            double allDiscount = 0;
-
-            foreach (var discount in kamran.CustomerOrders.AllDiscounts)
-            {
-                allDiscount += discount;
-            }
-            checkOut.TotalDiscount = allDiscount;
-
-
-            if (CheckOutOptionInput.Equals("K"))
-            {
-                checkOut.PaymentMethod = "Kartla odenilib";
-
-            }
-            else if (CheckOutOptionInput.Equals("N"))
-            {
-                checkOut.PaymentMethod = "Negd odenilib";
-            }
-            checkOut.ReceiptId++;
-
-            //------------------------------------------------
-
-
-            //Console.WriteLine(kamran.Balance + " Balans\n");
-
-            //Console.WriteLine(checkOut.Time + "time\n");
-            //Console.WriteLine(checkOut.PaymentMethod + "\tne ile odedi\n");
-            //Console.WriteLine(checkOut.TotalDiscount + "\t total discount \n");
-            //Console.WriteLine(checkOut.TotalEDV + "\t total edv");
-            //Console.WriteLine(checkOut.TotalPayment + "\t total payment");
-
-            //---------------------------------------------------------------------
-
-
-            // cekin sonda ekrana cixmasi atim
-            foreach (DictionaryEntry order in kamran.CustomerOrders.ProductIdAndCount)// toplam mebleg 
-            {
-                foreach (Product product1 in Product.GetAllProducts())
-                {
-
-                    if ((int)order.Key == product1.Id)// discount yoxlama
-                    {
-                        double priceOfProductAfterDiscount;
-
-                        if (product1.Discount == 0)
-                            priceOfProductAfterDiscount = product1.Price;
-                        else
-                            priceOfProductAfterDiscount = (double)(product1.Price - (product1.Price * product1.Discount / 100));
-
-                        Console.WriteLine(
-                  $"| Mehsulun adi : {product1.Name}    " +
-                  $"| Miqdar  : {order.Value}    " +
-                  $"| Qiymet : {priceOfProductAfterDiscount} AZN |" +
-                  $"| EDV : {product1.EDV} % |" +
-                  $"| Toplam : {priceOfProductAfterDiscount * (int)order.Value} Azn |"
-                  );
-
-
-                        if (product1.Discount == 0)
-                        {
-                            Console.WriteLine($"Sizin Qazanciniz ===================================== 0 AZN\n");
-
-                        }
-                        else
-                        {
-                            {
-                                Console.WriteLine($"Sizin Qazanciniz ===================================== {(priceOfProductAfterDiscount - product.Price) * (int)order.Value} AZN\n");
-
-                            }
-
-
-                        }
-
-
-                    }
-
-
-
-
-
-
-
-                }
-
-
-
-
-
-                #endregion
-
-                #endregion
-            }
-
-            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
-            Console.WriteLine($"ENDIRIM ======================= {checkOut.TotalDiscount}");
-            Console.WriteLine($"VERGI EDV  ======================= {checkOut.TotalEDV}");
-            Console.WriteLine($"YEKUN MEBLEG ======================= {checkOut.TotalPayment}");
-            Console.WriteLine(checkOut.PaymentMethod);
-            Console.WriteLine("Tarix ==================================== "+checkOut.Time);
-            Console.WriteLine($"Qebz nomresi ======================== {checkOut.ReceiptId}\n");
-            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
-
-            Console.WriteLine("************************************************************************************************");
-            Console.WriteLine("Cari Balansiniz =====================================  "+kamran.Balance);
+            #endregion
         }
     }
 }

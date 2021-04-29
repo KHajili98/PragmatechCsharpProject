@@ -7,6 +7,7 @@ namespace Week6.Tasks.Task_3
 {
     public class  Operation
     {
+        // balansin odeniwden sonraki halini hesablamaq ucun 
         public  double GetBalanceAfterPayment(string inputForPayment,Customer customer, CheckOut checkOut)
         {
             double getTotalCashForPaymentFromReceipt = GetTotalCashOfReceipt(customer, checkOut);
@@ -55,7 +56,7 @@ namespace Week6.Tasks.Task_3
             return customer.Balance;
         }
 
-
+        //aliwveriwden sonra balansda cixacaq meblegin hesablanmasi ve diger hesabat emeliyyatlari ucun 
         public  double GetTotalCashOfReceipt(Customer customer,CheckOut checkOut)
         {
             double totalEDV = 0;
@@ -160,16 +161,13 @@ namespace Week6.Tasks.Task_3
             if (totalMebleg < 15)// catdirilma pulu
             {
                 totalMebleg += 4.5;
+                checkOut.AddDeliveringPayment = true;
             }
 
             checkOut.TotalPayment = totalMebleg; // checkde gosterilecek toplam
-            checkOut.ReceiptId++;
 
             return totalMebleg;
         }
-
-
-
 
     }
 }
