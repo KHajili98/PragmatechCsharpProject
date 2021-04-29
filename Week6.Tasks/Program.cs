@@ -224,6 +224,8 @@ namespace Week6.Tasks
 
             //---------------------------------------------------------------------
 
+
+            // cekin sonda ekrana cixmasi atim
             foreach (DictionaryEntry order in kamran.CustomerOrders.ProductIdAndCount)// toplam mebleg 
             {
                 foreach (Product product1 in Product.GetAllProducts())
@@ -249,20 +251,15 @@ namespace Week6.Tasks
 
                         if (product1.Discount == 0)
                         {
-                            Console.WriteLine($"Sizin Qazanciniz ===================================== 0");
+                            Console.WriteLine($"Sizin Qazanciniz ===================================== 0 AZN\n");
 
                         }
                         else
                         {
                             {
-                                Console.WriteLine($"Sizin Qazanciniz ===================================== {(priceOfProductAfterDiscount - product.Price) * (int)order.Value} AZN");
+                                Console.WriteLine($"Sizin Qazanciniz ===================================== {(priceOfProductAfterDiscount - product.Price) * (int)order.Value} AZN\n");
 
                             }
-
-
-
-
-
 
 
                         }
@@ -287,8 +284,17 @@ namespace Week6.Tasks
                 #endregion
             }
 
+            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+            Console.WriteLine($"ENDIRIM ======================= {checkOut.TotalDiscount}");
+            Console.WriteLine($"VERGI EDV  ======================= {checkOut.TotalEDV}");
+            Console.WriteLine($"YEKUN MEBLEG ======================= {checkOut.TotalPayment}");
+            Console.WriteLine(checkOut.PaymentMethod);
+            Console.WriteLine("Tarix ==================================== "+checkOut.Time);
+            Console.WriteLine($"Qebz nomresi ======================== {checkOut.ReceiptId}\n");
+            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
 
-
+            Console.WriteLine("************************************************************************************************");
+            Console.WriteLine("Cari Balansiniz =====================================  "+kamran.Balance);
         }
     }
 }
