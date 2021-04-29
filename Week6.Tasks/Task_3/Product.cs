@@ -55,7 +55,18 @@ namespace Week6.Tasks
                  MeasuresType = "eded",
                  Price = 5.0,
              }
-             ); ;
+             ); 
+            _allProducts.Add(
+            new Product
+            {
+                Id = 5,
+                Name = "Qab",
+                MeasuresType = "eded",
+                Price = 50.0,
+                Discount = 10,
+                EDV = 18
+            }
+            ); ;
 
 
             return _allProducts;

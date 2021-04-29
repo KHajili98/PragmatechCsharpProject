@@ -6,7 +6,7 @@ namespace Week6.Tasks
     public class Menu
     {
         public string DeliveringDescription { get; } = "\nSifariwiniz 15 aznden az olarsa, catdirilma ucun YEKUN MEBLEGE  /*** 4.5 AZN ***\\ ELAVE OLUNACAQ";
-        public string BravoBonusCardDescription { get; } = "EGer Bravo Bonus kartiniz varsa, YEKUN MEBLEGIN  /*** 2% ***\\ balansiniza geri qayidacaqdir";
+        public string BravoBonusCardDescription { get; } = "EGer Bravo Bonus kartiniz varsa, YEKUN MEBLEGIN  /*** 2% ***\\ balansiniza geri qayidacaqdir\n";
         public string PaymentWith_Cash { get; } = "NEGD ---> odeniw zamani toplam EDV /*** 15% ***\\ balansiniza geri qaytarilacaqdir";
         public string PaymentWith_Card { get;  }= "KARTLA ---> odeniw zamani toplam EDV /*** 10% ***\\ balansiniza geri qaytarilacaqdir";
         public List<Product> AllProducts { get;  } = Product.GetAllProducts();

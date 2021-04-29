@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using Week6.Tasks.Task_3;
 
 namespace Week6.Tasks
 {
@@ -150,6 +151,8 @@ namespace Week6.Tasks
              */
 
             #endregion
+
+            Operation operation = new Operation();
             CheckOut checkOut = new CheckOut();
             Product product = new Product();
             Customer kamran = new Customer();
@@ -175,7 +178,8 @@ namespace Week6.Tasks
             var CheckOutOptionInput = Console.ReadLine().ToUpper();
 
 
-            kamran.Balance = GetBalanceAfterPayment(CheckOutOptionInput);
+            //kamran.Balance = GetBalanceAfterPayment(CheckOutOptionInput);
+            kamran.Balance = operation.GetBalanceAfterPayment(CheckOutOptionInput,kamran,checkOut);
 
 
 
@@ -205,123 +209,17 @@ namespace Week6.Tasks
 
             //------------------------------------------------
 
+/*
+            Console.WriteLine(kamran.Balance + " Balans\n");
+
+            Console.WriteLine(checkOut.Time + "time\n");
+            Console.WriteLine(checkOut.PaymentMethod + "\tne ile odedi\n");
+            Console.WriteLine(checkOut.TotalDiscount + "\t total discount \n");
+            Console.WriteLine(checkOut.TotalEDV + "\t total edv");
+            Console.WriteLine(checkOut.TotalPayment + "\t total payment");*/
 
 
 
-
-
-
-
-
-
-            double GetBalanceAfterPayment(string inputForPayment)
-            {
-                if (inputForPayment.Equals("K"))
-                {
-                    double totatlEdvCashBack = 0;
-                    double edvCashBack = 0;
-
-                    kamran.Balance -= GetTotalCashOfReceipt();
-                    foreach (var edv in kamran.CustomerOrders.AllEDV)
-                    {
-                        edvCashBack = edv * 0.1;
-                        totatlEdvCashBack += edvCashBack;
-                    }
-                    kamran.Balance += totatlEdvCashBack;
-
-                    if (kamran.HasBravoBonusCard)
-                    {
-                        kamran.Balance += 0.02 * GetTotalCashOfReceipt();
-                    }
-
-                    return kamran.Balance;
-
-                }
-                else if (inputForPayment.Equals("N"))
-                {
-                    double totatlEdvCashBack = 0;
-                    double edvCashBack = 0;
-
-                    kamran.Balance -= GetTotalCashOfReceipt();
-                    foreach (var edv in kamran.CustomerOrders.AllEDV)
-                    {
-                        edvCashBack = edv * 0.15;
-                        totatlEdvCashBack += edvCashBack;
-                    }
-                    kamran.Balance += totatlEdvCashBack;
-
-                    if (kamran.HasBravoBonusCard)
-                    {
-                        kamran.Balance += 0.02 * GetTotalCashOfReceipt();
-                    }
-                    return kamran.Balance;
-
-                }
-
-                return kamran.Balance;
-            }
-
-
-            double GetTotalCashOfReceipt()
-            {
-                double totalEDV = 0;
-                double totalMebleg = 0;
-                double price = 0;
-                double edv = 0;
-                foreach (var id in kamran.CustomerOrders.ProductId)// toplam mebleg 
-                {
-                    foreach (Product product1 in Product.GetAllProducts())
-                    {
-                        if(id== product1.Id)// discount yoxlama
-                        {
-                            if (product1.Discount!=0)
-                            {
-                                var discount = (product1.Price * product1.Discount) / 100;
-                                kamran.CustomerOrders.AllDiscounts.Add(discount);
-                                price = (double)(product1.Price - discount);
-                                totalMebleg += price;
-                                if (product1.EDV != 0)//edv yoxlama
-                                {
-                                    edv = price * product1.EDV / 100;
-                                    kamran.CustomerOrders.AllEDV.Add(edv);
-                                    totalEDV += edv;
-
-                                }
-                            }
-                            else
-                            {
-                                price = product1.Price;
-                                totalMebleg += price;
-                                if (product1.EDV != 0)//edv yoxlama
-                                {
-                                    edv = product1.Price * product1.EDV / 100;
-                                    kamran.CustomerOrders.AllEDV.Add(edv);
-                                    totalEDV += edv;
-
-                                }
-                            }
-
-                           
-                           
-                            break;
-                        }
-                    }
-
-                }
-                checkOut.TotalEDV = totalEDV; //cekde gosterilecek total edv
-
-
-                totalMebleg += totalEDV;
-
-                if (totalMebleg < 15)// catdirilma pulu
-                {
-                    totalMebleg += 4.5;
-                }
-
-                checkOut.TotalPayment = totalMebleg; // checkde gosterilecek toplam
-               
-                return totalMebleg;
-            }
 
             #endregion
 
