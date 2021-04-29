@@ -74,7 +74,7 @@ namespace Week6.Tasks.Task_3
                         if (product1.Discount != 0)
                         {
                             var discount = (product1.Price * product1.Discount) / 100;
-                            if ((int)order.Value == 1)
+                            if ((int)order.Value == 1) //nece eded almasina esasen hesablamanin aparilmasi 
                             {
                                 customer.CustomerOrders.AllDiscounts.Add(discount);
                             }
@@ -167,6 +167,12 @@ namespace Week6.Tasks.Task_3
             checkOut.TotalPayment = totalMebleg; // checkde gosterilecek toplam
 
             return totalMebleg;
+        }
+
+        public static string ExitMessageForLoop(string message)
+        {
+            string output = "Yeniden "+ message +" isteyirsiniz? **istediyiniz duymeni veya ENTERI basin ** / ** X duymesini basin ** (Beli / Xeyr)";
+            return output;
         }
 
     }

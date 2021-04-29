@@ -19,8 +19,8 @@ namespace Week6.Tasks
             double price;
             Menu _menu =new  Menu();
             var productList = _menu.AllProducts;
-            Console.WriteLine("\t \t \t**********************   BRAVO ONLINE MAGAZA   **********************\n");
-            Console.WriteLine(_menu.PaymentWith_Cash);
+            Console.WriteLine(@"\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\  BRAVO ONLINE MAGAZA   /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\/\/\/\ ");
+            Console.WriteLine("\n\n"+_menu.PaymentWith_Cash);
             Console.WriteLine(_menu.PaymentWith_Card +"\n \n");
             Console.WriteLine("\t \t \t**********************   MENU   **********************\n");
 
@@ -46,6 +46,7 @@ namespace Week6.Tasks
 
             Console.WriteLine(_menu.DeliveringDescription);
             Console.WriteLine(_menu.BravoBonusCardDescription);
+            Console.WriteLine("\n\n!!! Bir mehsulu alarken sayini istediyiniz qeder daxil edin eks halda yeniden eyni mehsuldan ala bilmeyeceksiniz !!!");
 
 
 

@@ -158,13 +158,11 @@ namespace Week6.Tasks
             Product product = new Product();
             Customer kamran = new Customer();
 
-
-
             do
             {
                 Console.Clear();
-                Console.WriteLine("\nCari Balansiniz =====================================  " + kamran.Balance + "AZN");
-                Console.WriteLine("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+                kamran.CustomerOrders.ProductIdAndCount.Clear();
+                Console.WriteLine("\nCari Balansiniz =====================================  " + kamran.Balance + "AZN\n\n");
                 Menu.Show(); // Menyunu ekrana cap edir
                 Console.WriteLine("\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
                 Customer.TakeOrder(kamran); // muwteiden sifariw goturur
@@ -175,7 +173,7 @@ namespace Week6.Tasks
                 CheckOut.PaymentMethodAndTimeAdding(checkOutOptionInput, checkOut); // kassaya odeniw usulu ve vaxtin elave olunmasi 
                 CheckOut.PrepareReceipt(product, kamran, checkOut); // cekin hazirlanmasi
                 Console.WriteLine("\n\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
-                Console.WriteLine("Yeniden bazarliq etmek isteyirsiniz ? **istediyiniz duymeni basin ** / ** X ** (Beli / Xeyr)");
+                Console.WriteLine(Operation.ExitMessageForLoop("Bazarliq Etmek"));
             } while (Console.ReadLine().ToUpper() != "X");
 
            
