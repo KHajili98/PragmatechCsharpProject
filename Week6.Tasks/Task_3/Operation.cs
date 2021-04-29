@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -61,37 +62,87 @@ namespace Week6.Tasks.Task_3
             double totalMebleg = 0;
             double price = 0;
             double edv = 0;
-            foreach (var id in customer.CustomerOrders.ProductId)// toplam mebleg 
+            foreach (DictionaryEntry order in customer.CustomerOrders.ProductIdAndCount)// toplam mebleg 
             {
+
                 foreach (Product product1 in Product.GetAllProducts())
                 {
-                    if (id == product1.Id)// discount yoxlama
+                    if ((int)order.Key == product1.Id)// discount yoxlama
                     {
+
                         if (product1.Discount != 0)
                         {
                             var discount = (product1.Price * product1.Discount) / 100;
-                            customer.CustomerOrders.AllDiscounts.Add(discount);
+                            if ((int)order.Value == 1)
+                            {
+                                customer.CustomerOrders.AllDiscounts.Add(discount);
+                            }
+                            else
+                            {
+                                customer.CustomerOrders.AllDiscounts.Add(discount* (int)order.Value);
+
+                            }
+
+
                             price = (double)(product1.Price - discount);
-                            totalMebleg += price;
+
+                            if ((int)order.Value == 1)
+                            {
+                                totalMebleg += price;
+                            }
+                            else
+                            {
+                                totalMebleg += price * (int)order.Value;
+                            }
+
                             if (product1.EDV != 0)//edv yoxlama
                             {
-                                edv = price * product1.EDV / 100;
-                                customer.CustomerOrders.AllEDV.Add(edv);
-                                totalEDV += edv;
+                                if ((int)order.Value == 1)
+                                {
+                                    edv = price * product1.EDV / 100;
+                                    customer.CustomerOrders.AllEDV.Add(edv);
+                                    totalEDV += edv;
+                                }
+                                else
+                                {
+                                    edv = (int)order.Value * price * product1.EDV / 100;
+                                    customer.CustomerOrders.AllEDV.Add(edv);
+                                    totalEDV += edv;
+                                }
+                                
 
                             }
                         }
-                        else
+                        else //discountun else
                         {
                             price = product1.Price;
-                            totalMebleg += price;
+                            if ((int)order.Value == 1)
+                            {
+                                totalMebleg += price;
+                            }
+                            else
+                            {
+                                totalMebleg += price * (int)order.Value;
+                            }
                             if (product1.EDV != 0)//edv yoxlama
                             {
-                                edv = product1.Price * product1.EDV / 100;
-                                customer.CustomerOrders.AllEDV.Add(edv);
-                                totalEDV += edv;
+
+                                if ((int)order.Value == 1)
+                                {
+                                    edv =  product1.Price * product1.EDV / 100;
+                                    customer.CustomerOrders.AllEDV.Add(edv);
+                                    totalEDV += edv;
+                                }
+                                else
+                                {
+                                    edv = (int)order.Value* product1.Price * product1.EDV / 100;
+                                    customer.CustomerOrders.AllEDV.Add(edv);
+                                    totalEDV += edv;
+                                }
+                                
 
                             }
+                            
                         }
 
 

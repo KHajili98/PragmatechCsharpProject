@@ -11,5 +11,19 @@ namespace Week6.Tasks
         public DateTime Time { get; set; }
         public int ReceiptId { get; set; }
 
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
     }
 }

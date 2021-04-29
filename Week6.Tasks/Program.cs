@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -9,7 +10,7 @@ namespace Week6.Tasks
     class Program
     {
 
-        
+
         static void Main(string[] args)
         {
             #region tasks
@@ -160,9 +161,11 @@ namespace Week6.Tasks
             do
             {
                 Console.WriteLine("Zehmet olmasa istediyiniz mehsulun nomresini muvafiq olaraq daxil edin : ");
-                int orderNumber = Convert.ToInt32(Console.ReadLine()); // heleki yoxlamiram reqem olub olmadigini 
-                kamran.CustomerOrders.ProductId.Add(orderNumber);
-                
+                int orderId = Convert.ToInt32(Console.ReadLine()); // heleki yoxlamiram reqem olub olmadigini 
+                Console.WriteLine($"Zehmet olmasa istediyiniz mehsulun '{orderId}' ne qeder istediyinizi muvafiq olaraq daxil edin : ");
+                int orderCount = Convert.ToInt32(Console.ReadLine()); // heleki yoxlamiram reqem olub olmadigini 
+                kamran.CustomerOrders.ProductIdAndCount.Add(orderId, orderCount);
+
                 Console.WriteLine("Yeniden mehsul almaq isteyirsiniz? **istediyiniz duymeni basin ** / ** X ** (Beli / Xeyr)");
             } while (Console.ReadLine().ToUpper() != "X");
 
@@ -179,7 +182,7 @@ namespace Week6.Tasks
 
 
             //kamran.Balance = GetBalanceAfterPayment(CheckOutOptionInput);
-            kamran.Balance = operation.GetBalanceAfterPayment(CheckOutOptionInput,kamran,checkOut);
+            kamran.Balance = operation.GetBalanceAfterPayment(CheckOutOptionInput, kamran, checkOut);
 
 
 
@@ -189,6 +192,7 @@ namespace Week6.Tasks
 
 
             double allDiscount = 0;
+
             foreach (var discount in kamran.CustomerOrders.AllDiscounts)
             {
                 allDiscount += discount;
@@ -209,24 +213,82 @@ namespace Week6.Tasks
 
             //------------------------------------------------
 
-/*
-            Console.WriteLine(kamran.Balance + " Balans\n");
 
-            Console.WriteLine(checkOut.Time + "time\n");
-            Console.WriteLine(checkOut.PaymentMethod + "\tne ile odedi\n");
-            Console.WriteLine(checkOut.TotalDiscount + "\t total discount \n");
-            Console.WriteLine(checkOut.TotalEDV + "\t total edv");
-            Console.WriteLine(checkOut.TotalPayment + "\t total payment");*/
+            //Console.WriteLine(kamran.Balance + " Balans\n");
+
+            //Console.WriteLine(checkOut.Time + "time\n");
+            //Console.WriteLine(checkOut.PaymentMethod + "\tne ile odedi\n");
+            //Console.WriteLine(checkOut.TotalDiscount + "\t total discount \n");
+            //Console.WriteLine(checkOut.TotalEDV + "\t total edv");
+            //Console.WriteLine(checkOut.TotalPayment + "\t total payment");
+
+            //---------------------------------------------------------------------
+
+            foreach (DictionaryEntry order in kamran.CustomerOrders.ProductIdAndCount)// toplam mebleg 
+            {
+                foreach (Product product1 in Product.GetAllProducts())
+                {
+
+                    if ((int)order.Key == product1.Id)// discount yoxlama
+                    {
+                        double priceOfProductAfterDiscount;
+
+                        if (product1.Discount == 0)
+                            priceOfProductAfterDiscount = product1.Price;
+                        else
+                            priceOfProductAfterDiscount = (double)(product1.Price - (product1.Price * product1.Discount / 100));
+
+                        Console.WriteLine(
+                  $"| Mehsulun adi : {product1.Name}    " +
+                  $"| Miqdar  : {order.Value}    " +
+                  $"| Qiymet : {priceOfProductAfterDiscount} AZN |" +
+                  $"| EDV : {product1.EDV} % |" +
+                  $"| Toplam : {priceOfProductAfterDiscount * (int)order.Value} Azn |"
+                  );
+
+
+                        if (product1.Discount == 0)
+                        {
+                            Console.WriteLine($"Sizin Qazanciniz ===================================== 0");
+
+                        }
+                        else
+                        {
+                            {
+                                Console.WriteLine($"Sizin Qazanciniz ===================================== {(priceOfProductAfterDiscount - product.Price) * (int)order.Value} AZN");
+
+                            }
 
 
 
 
-            #endregion
 
-            #endregion
+
+
+                        }
+
+
+                    }
+
+
+
+
+
+
+
+                }
+
+
+
+
+
+                #endregion
+
+                #endregion
+            }
+
+
+
         }
-
-        
-
     }
 }
