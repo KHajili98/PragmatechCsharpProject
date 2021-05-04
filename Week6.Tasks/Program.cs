@@ -150,7 +150,7 @@ namespace Week6.Tasks
              *
              *  alis veris 15 azn den azdirsa catdirilma ucun 4,50 azn teleb olunacaq.
              */
-
+            
             #endregion
 
             Operation operation = new Operation();

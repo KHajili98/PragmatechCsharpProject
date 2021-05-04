@@ -13,7 +13,7 @@ namespace Week6.Tasks
 
        
         public static List<Product> GetAllProducts()
-        {
+        { 
             List<Product> _allProducts = new List<Product>();
             _allProducts.Add(
                 new Product {
