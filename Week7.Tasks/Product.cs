@@ -60,8 +60,9 @@ namespace Week7.Tasks
             {
                 if (! item.IsDeleted)
                 {
-                    Console.WriteLine(item.Model + "------Model");
+                    Console.WriteLine(item.Id + "------id");
                     Console.WriteLine(item.Brand + "------Brand");
+                    Console.WriteLine(item.Model + "------Model");
                     Console.WriteLine(item.DiscountPrice+"------Endirimli Qiymet");
                     Console.WriteLine(item.SalePrice + "------Satiw Qiymet");
                     Console.WriteLine(item.PurchasePrice + "------Aliw Qiymet");
@@ -108,8 +109,8 @@ namespace Week7.Tasks
             {
                 if (id == item.Id)
                 {
-                    item.Brand = "deyiwilmiw brand";
-                    item.Model = "deyiwilmiw model";
+                    item.Brand = "UPDATED brand";
+                    item.Model = "UPDATED model";
                     item.DiscountPrice = 1;
                     item.SalePrice = 1;
                     item.PurchasePrice = 1;

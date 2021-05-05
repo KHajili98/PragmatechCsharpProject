@@ -57,12 +57,12 @@ namespace Week7.Tasks
             DataBase databaza = new();
             TV yeniTv = new() 
             {
-                Brand = "asd",
-                Model = "erwrewrwer",
+                Brand = "LG",
+                Model = "girdirme",
                 DiscountPrice = 60,
                 PurchasePrice = 30,
                 SalePrice = 80,
-                BarCode = 123456789,
+                BarCode = 285349823,
                 CreatedTime = DateTime.Now.AddDays(-10),
                 Inch = 18,
                 SmartTv = true,
@@ -71,24 +71,24 @@ namespace Week7.Tasks
             };
             TV yeniTv1 = new()
             {
-                Brand = "asd",
-                Model = "erwrewrwer",
+                Brand = "SAMSUNG",
+                Model = "teze",
                 DiscountPrice = 60,
                 PurchasePrice = 30,
                 SalePrice = 80,
-                BarCode = 123456789,
+                BarCode = 987435435,
                 CreatedTime = DateTime.Now.AddDays(-10),
                 Inch = 18,
                 SmartTv = true,
                 HDMI = true,
-                Id = 3
+                Id = 2
             };
 
 
             Laptop laptop = new()
             {
-                Brand = "bggbgb",
-                Model = "qwe",
+                Brand = "MSI",
+                Model = "GL627rex",
                 DiscountPrice = 60,
                 PurchasePrice = 30,
                 SalePrice = 80,
@@ -97,17 +97,33 @@ namespace Week7.Tasks
                 CpuGhz=2.2,
                 RamGB = 32,
                 VideoCardGB =4,
-                Id = 2
+                Id = 3
+            };
+            Laptop laptop1 = new()
+            {
+                Brand = "ACER",
+                Model = "asdasd",
+                DiscountPrice = 60,
+                PurchasePrice = 30,
+                SalePrice = 80,
+                BarCode = 123456789,
+                CreatedTime = DateTime.Now.AddDays(-10),
+                CpuGhz = 2.2,
+                RamGB = 32,
+                VideoCardGB = 4,
+                Id = 4
             };
 
             databaza.AddPrdouct(yeniTv);
             databaza.AddPrdouct(laptop);
+            databaza.AddPrdouct(yeniTv1);
+            databaza.AddPrdouct(laptop1);
             databaza.GetAllPrdouct();
+            Console.WriteLine("\nid-1 olani sileceyik\n");
             Console.WriteLine("================================Removedan sonra============================================");
             databaza.RemovePrdouct( 1);
             databaza.GetAllPrdouct();
-            databaza.AddPrdouct(yeniTv1);
-
+            Console.WriteLine("\nid-2,,, id-3  olani update edeceyik\n");
             databaza.UpdatePrdouct(2);
             databaza.UpdatePrdouct(3);
             Console.WriteLine("================================Updateden sonra============================================");
