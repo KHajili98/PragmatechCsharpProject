@@ -1,0 +1,16 @@
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\bin\Debug\net5.0\Week7.Tasks.exe
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\bin\Debug\net5.0\Week7.Tasks.deps.json
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\bin\Debug\net5.0\Week7.Tasks.runtimeconfig.json
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\bin\Debug\net5.0\Week7.Tasks.runtimeconfig.dev.json
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\bin\Debug\net5.0\Week7.Tasks.dll
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\bin\Debug\net5.0\ref\Week7.Tasks.dll
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\bin\Debug\net5.0\Week7.Tasks.pdb
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\obj\Debug\net5.0\Week7.Tasks.csprojAssemblyReference.cache
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\obj\Debug\net5.0\Week7.Tasks.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\obj\Debug\net5.0\Week7.Tasks.AssemblyInfoInputs.cache
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\obj\Debug\net5.0\Week7.Tasks.AssemblyInfo.cs
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\obj\Debug\net5.0\Week7.Tasks.csproj.CoreCompileInputs.cache
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\obj\Debug\net5.0\Week7.Tasks.dll
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\obj\Debug\net5.0\ref\Week7.Tasks.dll
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\obj\Debug\net5.0\Week7.Tasks.pdb
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week7.Tasks\obj\Debug\net5.0\Week7.Tasks.genruntimeconfig.cache

@@ -1,4 +1,7 @@
-﻿namespace Week7.Tasks
+﻿using System;
+using System.Collections;
+
+namespace Week7.Tasks
 {
 
     class Program
@@ -51,8 +54,62 @@
 
             #region Week 7 task Solution
 
+            ArrayList db = new();
+          
+            TV yeniTv = new() 
+            {
+                Brand = "asd",
+                Model = "erwrewrwer",
+                DiscountPrice = 60,
+                PurchasePrice = 30,
+                SalePrice = 80,
+                BarCode = 123456789,
+                CreatedTime = DateTime.Now.AddDays(-10),
+                Inch = 18,
+                SmartTv = true,
+                HDMI = true,
+                Id = 1
+            };
 
+            Laptop laptop = new()
+            {
+                Brand = "bggbgb",
+                Model = "qwe",
+                DiscountPrice = 60,
+                PurchasePrice = 30,
+                SalePrice = 80,
+                BarCode = 123456789,
+                CreatedTime = DateTime.Now.AddDays(-10),
+                CpuGhz=2.2,
+                RamGB = 32,
+                VideoCardGB =4,
+                Id = 2
+            };
 
+            db.Add(yeniTv);
+            db.Add(laptop);
+
+            Console.WriteLine(db.Count);
+
+            foreach (object item in db)
+            {
+
+                if (item is TV )
+                {
+                    TV temp = (TV)item;
+                    Console.WriteLine(temp.HDMI);
+
+                }else if(item is Laptop)
+                {
+
+                    Laptop templ = (Laptop)item;
+                    Console.WriteLine(templ.RamGB);
+                }
+
+            }
+            
+
+           
 
 
 

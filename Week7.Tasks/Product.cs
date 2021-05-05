@@ -16,21 +16,19 @@ namespace Week7.Tasks
         public bool IsDeleted { get; set; }
         public DateTime DeletedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
-
     }
 
 
     public interface ICRUD
     {
-        public void AddPrdouct();
-        public void GetAllPrdouct();
-        public void UpdatePrdouct();
-        public void RemovePrdouct();
+        public void AddPrdouct(ArrayList arrayList,object obj );
+        public ArrayList GetAllPrdouct(ArrayList arrayList);
+        public void UpdatePrdouct(object obj, int barcode);
+        public void RemovePrdouct(object obj, int barcode);
     }
 
     public class Laptop : Product
     {
-
         public double CpuGhz { get; set; } = 2.2;
         public int RamGB { get; set; } = 8;
         public double VideoCardGB { get; set; } = 4;
@@ -44,9 +42,28 @@ namespace Week7.Tasks
         public bool  HDMI { get; set; } 
     }
 
-    public class DataBase
+    public class DataBase : ICRUD
     {
-        public ArrayList ProductDB { get; set; }
+        public ArrayList Db { get; set; }
+        public void AddPrdouct(ArrayList arrayList,object obj)
+        {
+            arrayList.Add(obj);
+        }
+
+        public ArrayList GetAllPrdouct(ArrayList arrayList)
+        {
+            return Db;
+        }
+
+        public void RemovePrdouct(object obj, int barcode)
+        {
+        }
+
+        public void UpdatePrdouct(object obj, int barcode)
+        {
+        }
     }
+
+
 
 }
