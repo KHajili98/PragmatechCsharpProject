@@ -67,7 +67,7 @@ namespace Week7.Tasks
                 Inch = 18,
                 SmartTv = true,
                 HDMI = true,
-                Id = 1
+                Id =1
             };
             TV yeniTv1 = new()
             {
@@ -81,10 +81,7 @@ namespace Week7.Tasks
                 Inch = 18,
                 SmartTv = true,
                 HDMI = true,
-                Id = 2
             };
-
-
             Laptop laptop = new()
             {
                 Brand = "MSI",
@@ -97,7 +94,6 @@ namespace Week7.Tasks
                 CpuGhz=2.2,
                 RamGB = 32,
                 VideoCardGB =4,
-                Id = 3
             };
             Laptop laptop1 = new()
             {
@@ -111,8 +107,13 @@ namespace Week7.Tasks
                 CpuGhz = 2.2,
                 RamGB = 32,
                 VideoCardGB = 4,
-                Id = 4
             };
+
+
+
+
+
+
             Console.WriteLine("\nid-1 artiq databazada var amma yeniden daxil etmeyi yoxlayacagoq Netiec:\n");
             databaza.AddPrdouct(yeniTv);
             Console.WriteLine("*****************************************************************************");

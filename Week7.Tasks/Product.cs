@@ -3,9 +3,9 @@ using System.Collections;
 
 namespace Week7.Tasks
 {
-    public abstract class Product
+    public abstract class Product 
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
         public int BarCode { get; set; }
         public double PurchasePrice { get; set; }
         public double SalePrice { get; set; }
@@ -16,6 +16,9 @@ namespace Week7.Tasks
         public bool IsDeleted { get; set; } = false;
         public DateTime DeletedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
+
+       
+        
     }
 
 
@@ -56,14 +59,12 @@ namespace Week7.Tasks
                 Inch = 18,
                 SmartTv = true,
                 HDMI = true,
-                Id = 1
+                Id =1
             }} ;
 
         public void AddPrdouct( object obj)
         {
             Product temp = (Product)obj;
-
-
             for ( int i = 0; i < DB.Count; i++)
             {
                 Product product = (Product)DB[i];
@@ -74,6 +75,8 @@ namespace Week7.Tasks
                 }
                 else
                 {
+                    Product lastProduct = (Product)DB[DB.Count - 1];
+                    temp.Id = lastProduct.Id + 1;
                     DB.Add(obj);
                     break;
                 }
