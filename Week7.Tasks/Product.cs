@@ -68,7 +68,7 @@ namespace Week7.Tasks
             for ( int i = 0; i < DB.Count; i++)
             {
                 Product product = (Product)DB[i];
-                if (temp.Id == product.Id)
+                if (temp.Id == product.Id) // dbda olub olmadigini yoxlayir
                 {
                     Console.WriteLine("Bu mehsul artiq movcuddur");
 
@@ -76,7 +76,7 @@ namespace Week7.Tasks
                 else
                 {
                     Product lastProduct = (Product)DB[DB.Count - 1];
-                    temp.Id = lastProduct.Id + 1;
+                    temp.Id = lastProduct.Id + 1; // yeniproductin id generate edir en son mehsulun id uzerine 1 gelir
                     DB.Add(obj);
                     break;
                 }
@@ -100,15 +100,16 @@ namespace Week7.Tasks
                     Console.WriteLine(item.PurchasePrice + "------Aliw Qiymet");
                     Console.WriteLine(item.BarCode+"------Barcode ");
                     Console.WriteLine(item.CreatedTime+"-------Yaradilma vaxti");
-                    if(item.UpdatedDate != default(DateTime)) Console.WriteLine(item.UpdatedDate+"------------------------Deyiwilme vaxti");
-                    if (item is TV)
+                    // update olunub olmadigini yoxlayir product yaranarken UpdateDate default deyer alir
+                    if (item.UpdatedDate != default(DateTime)) Console.WriteLine(item.UpdatedDate+"------------------------Deyiwilme vaxti"); 
+                    if (item is TV) // elave olunan productun tv oldugunu check edir
                     {
                         TV temp = (TV)item;
                         Console.WriteLine(temp.Inch + "----televizorun inchi");
                        if(temp.HDMI) Console.WriteLine("HDMI movcuddur");
                        if(temp.SmartTv) Console.WriteLine("SmartTv movcuddur");
                     }
-                    else if (item is Laptop)
+                    else if (item is Laptop)// elave olunan productun laptop oldugunu check edir
                     {
                         Laptop temp = (Laptop)item;
                         Console.WriteLine(temp.RamGB + "------------------LAPTOPun RamGB");
@@ -129,13 +130,13 @@ namespace Week7.Tasks
             {
                 if (id == item.Id)
                 {
-                    item.IsDeleted = true;
+                    item.IsDeleted = true; // remove edir producti 
                     item.DeletedDate = DateTime.Now.AddDays(deleteTimeRandom.Next(10, 20));
                 }
             }
            
         }
-        public void UpdatePrdouct( int id)
+        public void UpdatePrdouct( int id) // static wekilde yeni deyerleri menimsetmiwem update olunacaq id producta
         {
             Random updateTimeRandom = new();
 

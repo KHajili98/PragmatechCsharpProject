@@ -114,7 +114,7 @@ namespace Week7.Tasks
 
 
 
-            Console.WriteLine("\nid-1 artiq databazada var amma yeniden daxil etmeyi yoxlayacagoq Netiec:\n");
+            Console.WriteLine("\nid-1 artiq databazada var amma yeniden daxil etmeyi yoxlayacagoq Netiec:\n"); // default olaraq db yarananda id 1 olan product deye add etmeyecek
             databaza.AddPrdouct(yeniTv);
             Console.WriteLine("*****************************************************************************");
             databaza.AddPrdouct(yeniTv1);
@@ -123,23 +123,13 @@ namespace Week7.Tasks
             databaza.GetAllPrdouct();
             Console.WriteLine("\nid-1 olani sileceyik\n");
             Console.WriteLine("================================Removedan sonra============================================");
-            databaza.RemovePrdouct( 1);
+            databaza.RemovePrdouct( 1); // db-da olan id 1 olani silenden sonra yeni isdeleted true edenden sonra butun productlari cagidaracagiq
             databaza.GetAllPrdouct();
-            Console.WriteLine("\nid-2,,, id-3  olani update edeceyik\n");
+            Console.WriteLine("\nid-2,,, id-3  olani update edeceyik\n"); // update methodda static olaraq methodun icerisinde yeni deyerleri menimsetmiwem
             databaza.UpdatePrdouct(2);
             databaza.UpdatePrdouct(3);
             Console.WriteLine("================================Updateden sonra============================================");
             databaza.GetAllPrdouct();
-           
-
-
-
-
-
-
-
-
-
 
 
 
