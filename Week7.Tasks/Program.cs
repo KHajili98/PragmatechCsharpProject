@@ -87,10 +87,10 @@ namespace Week7.Tasks
 
             databaza.AddPrdouct(yeniTv);
             databaza.AddPrdouct(laptop);
-            databaza.GetAllPrdouct(databaza.DB);
-
-
-
+            databaza.GetAllPrdouct();
+            Console.WriteLine("================================Removedan sonra============================================");
+            databaza.RemovePrdouct( 1);
+            databaza.GetAllPrdouct();
 
 
 

@@ -22,9 +22,9 @@ namespace Week7.Tasks
     public interface ICRUD
     {
         public void AddPrdouct(object obj );
-        public void GetAllPrdouct(ArrayList arrayList);
+        public void GetAllPrdouct( );
         public void UpdatePrdouct(object obj, int barcode);
-        public void RemovePrdouct(object obj, int barcode);
+        public void RemovePrdouct( int id);
     }
 
     public class Laptop : Product 
@@ -52,54 +52,52 @@ namespace Week7.Tasks
             DB.Add(obj);
         }
 
-        public void GetAllPrdouct(ArrayList arrayList)
+        public void GetAllPrdouct( )
         {
-            foreach (Product item in arrayList)
+
+            Console.WriteLine("--------------------------Mehsullar ------------------------");
+            foreach (Product item in DB)
             {
                 if (! item.IsDeleted)
                 {
-                    Console.WriteLine(item.Model);
-                    Console.WriteLine(item.Brand);
-                    Console.WriteLine(item.DiscountPrice);
-                    Console.WriteLine(item.SalePrice);
-                    Console.WriteLine(item.PurchasePrice);
-                    Console.WriteLine(item.BarCode);
-                    Console.WriteLine(item.CreatedTime);
-                    Console.WriteLine(item.UpdatedDate);
+                    Console.WriteLine(item.Model + "------Model");
+                    Console.WriteLine(item.Brand + "------Brand");
+                    Console.WriteLine(item.DiscountPrice+"------Endirimli Qiymet");
+                    Console.WriteLine(item.SalePrice + "------Satiw Qiymet");
+                    Console.WriteLine(item.PurchasePrice + "------Aliw Qiymet");
+                    Console.WriteLine(item.BarCode+"------Barcode ");
+                    Console.WriteLine(item.CreatedTime+"-------Yaradilma vaxti");
+                    if(item.UpdatedDate != default(DateTime)) Console.WriteLine(item.UpdatedDate);
                     if (item is TV)
                     {
                         TV temp = (TV)item;
-                        Console.WriteLine(temp.Inch);
-                        Console.WriteLine(temp.HDMI);
-                        Console.WriteLine(temp.SmartTv);
+                        Console.WriteLine(temp.Inch + "----televizorun inchi");
+                       if(temp.HDMI) Console.WriteLine("HDMI movcuddur");
+                       if(temp.SmartTv) Console.WriteLine("SmartTv movcuddur");
                     }
                     else if (item is Laptop)
                     {
                         Laptop temp = (Laptop)item;
-                        Console.WriteLine(temp.RamGB);
-                        Console.WriteLine(temp.VideoCardGB);
-                        Console.WriteLine(temp.CpuGhz);
+                        Console.WriteLine(temp.RamGB + "------------------LAPTOPun RamGB");
+                        Console.WriteLine(temp.VideoCardGB + "------------------LAPTOPun VideoCardGB");
+                        Console.WriteLine(temp.CpuGhz + "------------------LAPTOPun CpuGhz");
 
                     }
                 }
+
+                Console.WriteLine("*************************************************");
             }
         }
 
-        public void RemovePrdouct(object obj, int id)
+        public void RemovePrdouct( int id)
         {
-            if (obj is Product)
-            {
-                Product temp = (Product)obj;
-                if (temp.Id == id)
-                {
-                    temp.IsDeleted = true;
-                    temp.DeletedDate = DateTime.Now;
-                }
-                else
-                {
-                    Console.WriteLine("bele mehsul yoxdu");
-                }
 
+            foreach (Product item in DB)
+            {
+                if (id == item.Id)
+                {
+                    item.IsDeleted = true;
+                }
             }
            
         }
