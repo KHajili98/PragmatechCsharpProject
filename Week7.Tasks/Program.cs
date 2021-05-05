@@ -1,7 +1,6 @@
-﻿using System;
-
-namespace Week7.Tasks
+﻿namespace Week7.Tasks
 {
+
     class Program
     {
         static void Main(string[] args)
@@ -51,6 +50,13 @@ namespace Week7.Tasks
             #endregion
 
             #region Week 7 task Solution
+
+
+
+
+
+
+
             #endregion
 
             #endregion
