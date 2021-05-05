@@ -54,8 +54,7 @@ namespace Week7.Tasks
 
             #region Week 7 task Solution
 
-            ArrayList db = new();
-          
+            DataBase databaza = new();
             TV yeniTv = new() 
             {
                 Brand = "asd",
@@ -86,7 +85,17 @@ namespace Week7.Tasks
                 Id = 2
             };
 
-            db.Add(yeniTv);
+            databaza.AddPrdouct(yeniTv);
+            databaza.AddPrdouct(laptop);
+            databaza.GetAllPrdouct(databaza.DB);
+
+
+
+
+
+
+
+           /* db.Add(yeniTv);
             db.Add(laptop);
 
             Console.WriteLine(db.Count);
@@ -107,6 +116,8 @@ namespace Week7.Tasks
                 }
 
             }
+
+            Console.WriteLine(yeniTv is Product);*/
             
 
            
