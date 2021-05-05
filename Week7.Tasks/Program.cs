@@ -113,10 +113,11 @@ namespace Week7.Tasks
                 VideoCardGB = 4,
                 Id = 4
             };
-
+            Console.WriteLine("\nid-1 artiq databazada var amma yeniden daxil etmeyi yoxlayacagoq Netiec:\n");
             databaza.AddPrdouct(yeniTv);
-            databaza.AddPrdouct(laptop);
+            Console.WriteLine("*****************************************************************************");
             databaza.AddPrdouct(yeniTv1);
+            databaza.AddPrdouct(laptop);
             databaza.AddPrdouct(laptop1);
             databaza.GetAllPrdouct();
             Console.WriteLine("\nid-1 olani sileceyik\n");
@@ -128,35 +129,12 @@ namespace Week7.Tasks
             databaza.UpdatePrdouct(3);
             Console.WriteLine("================================Updateden sonra============================================");
             databaza.GetAllPrdouct();
+           
 
 
 
 
 
-
-            /* db.Add(yeniTv);
-             db.Add(laptop);
-
-             Console.WriteLine(db.Count);
-
-             foreach (object item in db)
-             {
-
-                 if (item is TV )
-                 {
-                     TV temp = (TV)item;
-                     Console.WriteLine(temp.HDMI);
-
-                 }else if(item is Laptop)
-                 {
-
-                     Laptop templ = (Laptop)item;
-                     Console.WriteLine(templ.RamGB);
-                 }
-
-             }
-
-             Console.WriteLine(yeniTv is Product);*/
 
 
 

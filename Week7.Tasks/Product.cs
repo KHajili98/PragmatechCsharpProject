@@ -45,16 +45,45 @@ namespace Week7.Tasks
 
     public class DataBase : ICRUD
     {
-        public ArrayList DB { get; set; } = new ArrayList();
+        public ArrayList DB { get; set; } = new ArrayList() { new TV {  
+                Brand = "LG",
+                Model = "girdirme",
+                DiscountPrice = 60,
+                PurchasePrice = 30,
+                SalePrice = 80,
+                BarCode = 285349823,
+                CreatedTime = DateTime.Now.AddDays(-10),
+                Inch = 18,
+                SmartTv = true,
+                HDMI = true,
+                Id = 1
+            }} ;
 
         public void AddPrdouct( object obj)
         {
-            DB.Add(obj);
+            Product temp = (Product)obj;
+
+
+            for ( int i = 0; i < DB.Count; i++)
+            {
+                Product product = (Product)DB[i];
+                if (temp.Id == product.Id)
+                {
+                    Console.WriteLine("Bu mehsul artiq movcuddur");
+
+                }
+                else
+                {
+                    DB.Add(obj);
+                    break;
+                }
+            }
+               
+
         }
 
         public void GetAllPrdouct( )
         {
-
             Console.WriteLine("--------------------------Mehsullar ------------------------");
             foreach (Product item in DB)
             {
@@ -92,18 +121,20 @@ namespace Week7.Tasks
 
         public void RemovePrdouct( int id)
         {
-
+            Random deleteTimeRandom = new();
             foreach (Product item in DB)
             {
                 if (id == item.Id)
                 {
                     item.IsDeleted = true;
+                    item.DeletedDate = DateTime.Now.AddDays(deleteTimeRandom.Next(10, 20));
                 }
             }
            
         }
         public void UpdatePrdouct( int id)
         {
+            Random updateTimeRandom = new();
 
             foreach (Product item in DB)
             {
@@ -115,7 +146,7 @@ namespace Week7.Tasks
                     item.SalePrice = 1;
                     item.PurchasePrice = 1;
                     item.BarCode = 1;
-                    item.UpdatedDate = DateTime.Now;
+                    item.UpdatedDate = DateTime.Now.AddDays(updateTimeRandom.Next(5,15));
                 }
             }
 
