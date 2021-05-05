@@ -69,6 +69,21 @@ namespace Week7.Tasks
                 HDMI = true,
                 Id = 1
             };
+            TV yeniTv1 = new()
+            {
+                Brand = "asd",
+                Model = "erwrewrwer",
+                DiscountPrice = 60,
+                PurchasePrice = 30,
+                SalePrice = 80,
+                BarCode = 123456789,
+                CreatedTime = DateTime.Now.AddDays(-10),
+                Inch = 18,
+                SmartTv = true,
+                HDMI = true,
+                Id = 3
+            };
+
 
             Laptop laptop = new()
             {
@@ -91,36 +106,44 @@ namespace Week7.Tasks
             Console.WriteLine("================================Removedan sonra============================================");
             databaza.RemovePrdouct( 1);
             databaza.GetAllPrdouct();
+            databaza.AddPrdouct(yeniTv1);
+
+            databaza.UpdatePrdouct(2);
+            databaza.UpdatePrdouct(3);
+            Console.WriteLine("================================Updateden sonra============================================");
+            databaza.GetAllPrdouct();
 
 
 
 
-           /* db.Add(yeniTv);
-            db.Add(laptop);
 
-            Console.WriteLine(db.Count);
 
-            foreach (object item in db)
-            {
+            /* db.Add(yeniTv);
+             db.Add(laptop);
 
-                if (item is TV )
-                {
-                    TV temp = (TV)item;
-                    Console.WriteLine(temp.HDMI);
+             Console.WriteLine(db.Count);
 
-                }else if(item is Laptop)
-                {
+             foreach (object item in db)
+             {
 
-                    Laptop templ = (Laptop)item;
-                    Console.WriteLine(templ.RamGB);
-                }
+                 if (item is TV )
+                 {
+                     TV temp = (TV)item;
+                     Console.WriteLine(temp.HDMI);
 
-            }
+                 }else if(item is Laptop)
+                 {
 
-            Console.WriteLine(yeniTv is Product);*/
-            
+                     Laptop templ = (Laptop)item;
+                     Console.WriteLine(templ.RamGB);
+                 }
 
-           
+             }
+
+             Console.WriteLine(yeniTv is Product);*/
+
+
+
 
 
 

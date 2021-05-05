@@ -23,7 +23,7 @@ namespace Week7.Tasks
     {
         public void AddPrdouct(object obj );
         public void GetAllPrdouct( );
-        public void UpdatePrdouct(object obj, int barcode);
+        public void UpdatePrdouct( int barcode);
         public void RemovePrdouct( int id);
     }
 
@@ -67,7 +67,7 @@ namespace Week7.Tasks
                     Console.WriteLine(item.PurchasePrice + "------Aliw Qiymet");
                     Console.WriteLine(item.BarCode+"------Barcode ");
                     Console.WriteLine(item.CreatedTime+"-------Yaradilma vaxti");
-                    if(item.UpdatedDate != default(DateTime)) Console.WriteLine(item.UpdatedDate);
+                    if(item.UpdatedDate != default(DateTime)) Console.WriteLine(item.UpdatedDate+"------------------------Deyiwilme vaxti");
                     if (item is TV)
                     {
                         TV temp = (TV)item;
@@ -101,28 +101,24 @@ namespace Week7.Tasks
             }
            
         }
-        public void UpdatePrdouct(object obj, int id)
+        public void UpdatePrdouct( int id)
         {
-            if (obj is Product)
+
+            foreach (Product item in DB)
             {
-                Product temp = (Product)obj;
-                if (temp.Id == id)
+                if (id == item.Id)
                 {
-                    temp.Brand = "deyiwilmiw brand";
-                    temp.Model = "deyiwilmiw model";
-                    temp.DiscountPrice = 1;
-                    temp.SalePrice = 1;
-                    temp.PurchasePrice = 1;
-                    temp.BarCode = 0;
-                    temp.UpdatedDate = DateTime.Now;
-
+                    item.Brand = "deyiwilmiw brand";
+                    item.Model = "deyiwilmiw model";
+                    item.DiscountPrice = 1;
+                    item.SalePrice = 1;
+                    item.PurchasePrice = 1;
+                    item.BarCode = 1;
+                    item.UpdatedDate = DateTime.Now;
                 }
-                else
-                {
-                    Console.WriteLine("bele mehsul yoxdu");
-                }
-
             }
+
+
         }
     }
 
