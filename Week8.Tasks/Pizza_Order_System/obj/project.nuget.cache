@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "9YI+rTGkOUlDsyq4xD8mIdDSAKhGxm7q/kQ39nxLAgYZI2+zFREy0d+PtkDYakWUZvaJM6+cj7LDpXI+OV9IpQ==",
+  "dgSpecHash": "FxYHMz0WRTW1pa48r1OwRG3Vy3mtl1p7SRgTHU5N0tDiqR+J1bAF0gjWO405JTeQJKexJSDy+goX/6y2VNzAZg==",
   "success": true,
   "projectFilePath": "C:\\Users\\shaba\\source\\repos\\PragmatechCsharpProject\\Week8.Tasks\\Pizza_Order_System\\Pizza_Order_System.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\shaba\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\shaba\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\shaba\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
+    "C:\\Users\\shaba\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -327,9 +327,9 @@ namespace Pizza_Order_System
             // 
             this.OrderList.FormattingEnabled = true;
             this.OrderList.ItemHeight = 20;
-            this.OrderList.Location = new System.Drawing.Point(599, 367);
+            this.OrderList.Location = new System.Drawing.Point(465, 367);
             this.OrderList.Name = "OrderList";
-            this.OrderList.Size = new System.Drawing.Size(538, 204);
+            this.OrderList.Size = new System.Drawing.Size(672, 204);
             this.OrderList.TabIndex = 13;
             // 
             // OrderBtn
