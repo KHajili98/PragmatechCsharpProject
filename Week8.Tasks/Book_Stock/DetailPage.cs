@@ -12,15 +12,13 @@ namespace Book_Stock
 {
     public partial class DetailPage : Form
     {
+        private Form1 form1;
         public DetailPage(Book passingBook)
         {
             InitializeComponent();
         }
 
-        private void UpdateButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void DetailPage_Load(object sender, EventArgs e)
         {
@@ -31,6 +29,25 @@ namespace Book_Stock
             descInput.Text = Form1.SelectedItem.Description;
             pictureBox1.ImageLocation = Form1.SelectedItem.Image;
            
+
+        }
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+
+            Form1.books.Remove(Form1.SelectedItem);
+            Book updatedBook = new Book
+            {
+                Name=NameInput.Text,
+                Category = categoryInput.Text,
+                StockCount = stockCountInput.Text,
+                Author = authorInput.Text,
+                Description = descInput.Text,
+            };
+            Form1.books.Add(updatedBook);
+            var lastBooks = Form1.books;
+            form1 = new Form1(lastBooks);
+            form1.Show();
+            this.Hide();
 
         }
     }

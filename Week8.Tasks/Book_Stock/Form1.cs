@@ -14,13 +14,7 @@ namespace Book_Stock
     {
         public static Book SelectedItem =null;
         private DetailPage detailPage;
-        public Form1()
-        {
-            InitializeComponent();
-            
-        }
-
-        List<Book> books = new()
+        public static List<Book> books = new()
         {
             new Book
             {
@@ -70,6 +64,12 @@ namespace Book_Stock
 
             },
         };
+        public Form1(List<Book> books)
+        {
+            InitializeComponent();
+            
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -90,7 +90,8 @@ namespace Book_Stock
             {
                 SelectedItem = books.FirstOrDefault(b => b.Name == BooksListCombo.SelectedItem.ToString());
                 detailPage = new DetailPage(SelectedItem);
-                detailPage.ShowDialog();
+                detailPage.Show();
+                this.Hide();
             }
             else
             {
