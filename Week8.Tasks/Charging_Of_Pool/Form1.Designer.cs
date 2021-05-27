@@ -49,6 +49,8 @@ namespace Charging_Of_Pool
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBoxVolume.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericForWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericForHeight)).BeginInit();
@@ -60,6 +62,7 @@ namespace Charging_Of_Pool
             // 
             // groupBoxVolume
             // 
+            this.groupBoxVolume.Controls.Add(this.label9);
             this.groupBoxVolume.Controls.Add(this.label6);
             this.groupBoxVolume.Controls.Add(this.label5);
             this.groupBoxVolume.Controls.Add(this.VolumeLabel);
@@ -89,7 +92,7 @@ namespace Charging_Of_Pool
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(146, 239);
+            this.label5.Location = new System.Drawing.Point(121, 239);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 20);
             this.label5.TabIndex = 7;
@@ -98,7 +101,7 @@ namespace Charging_Of_Pool
             // VolumeLabel
             // 
             this.VolumeLabel.AutoSize = true;
-            this.VolumeLabel.Location = new System.Drawing.Point(226, 239);
+            this.VolumeLabel.Location = new System.Drawing.Point(201, 239);
             this.VolumeLabel.Name = "VolumeLabel";
             this.VolumeLabel.Size = new System.Drawing.Size(36, 20);
             this.VolumeLabel.TabIndex = 6;
@@ -156,6 +159,7 @@ namespace Charging_Of_Pool
             // 
             // groupBoxTime
             // 
+            this.groupBoxTime.Controls.Add(this.label10);
             this.groupBoxTime.Controls.Add(this.label8);
             this.groupBoxTime.Controls.Add(this.label7);
             this.groupBoxTime.Controls.Add(this.TimeLabel);
@@ -206,6 +210,7 @@ namespace Charging_Of_Pool
             this.calculateTime.TabIndex = 9;
             this.calculateTime.Text = "Calculate";
             this.calculateTime.UseVisualStyleBackColor = true;
+            this.calculateTime.Click += new System.EventHandler(this.calculateTime_Click);
             // 
             // numericPipe1
             // 
@@ -247,6 +252,24 @@ namespace Charging_Of_Pool
             this.label2.Size = new System.Drawing.Size(49, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Width";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(244, 238);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 20);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "m^3";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(294, 234);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 20);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "min.";
             // 
             // Form1
             // 
@@ -296,6 +319,8 @@ namespace Charging_Of_Pool
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
 
