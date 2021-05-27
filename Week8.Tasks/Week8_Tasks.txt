@@ -1,0 +1,53 @@
+1. new customer addition form:
+
+- Adi , soyadi, email ve nomresi olan musterini virtual dbya elave etmelisiz, save button-nuna klik olunanzaman
+- qarsi terefden yeni musteri elave edib etmeyeceyini sorusun , cavab yes oldugu teqdirde,
+- windowsda notification gorsedilecek Information xarakterli bu notificationda hazirda cari musteri sayi gosterilecek ,
+- ve textbox deyerleri silinmelidir ki adam yeni melumatlari daxil ede bilsin , cavab NO olarsada textbox deyerleri silinmelidir ve hemen ardindan
+- formda olan listBox-da musterinin adi soyadi gosterilir . dizayn isteyinize gore seliqeli sekilde sadece ola biler.
+
+2. Book Stock 
+
+- evvelceden db-da olan kitablarin Combobox-da adlarinin gosterilmesi , comboBox-da hansi kitab secilerse 
+- kitabin property-lerine uygun detail hissesindeki textBoxlarin deyeri deyisdirilmelidir.
+- real datalardan istifade edin !
+
+Book
+Id
+Name
+Author
+Category
+StockCount
+Description
+Image : string (proyekte kitab sekillerini yukleyin yeni sadece copy edin localdan sekilleri proyektin oldugu foldere,
+sonra copy full path)
+
+qeyd : FormLar ekranin tam merkezinde acilmalidir, sizeable olmamalidir.
+
+
+3. calculation of amount payable
+
+- istifadeci terefinden productin adi ve qiymet daxil edilir, daxil edilen bu productlar
+- listBoxda adi ve qiymeti olaraq gosterilmelidir, butun mehsullarda 18 % edv var ve bundan elave
+- Telebe ve ya pensiyaner endirimi istifadeci terefinden "secilerse" umumi meblege samil edilecek.
+- Hesabla button-a klik olunan zaman asagdaki textbox-da total cixmalidir
+- Temizle button-a klik olunan zaman ise elementlerdeki datalar temizlenecek.
+
+4. Calculation of poolL volume an filling time
+
+- istifadeci terefinden hovuzun derinliyi, uzunlugu, eni daxil edilir(numericUpDown),
+- buna uygun hovuzun hecmini hesablayib gostermelisiz,
+- ikinci groupBox icerisinde ise iki eded su kraninin deqiqede nece kub/metr doldurdugu daxil edilir(numericUpDown) ,
+- ilk once hovuzun hecmi hesablanan groupBox active olmalidir, yeni su kranlari ancaq hovuzun hecmi hesablandiqdan sonra aktiv olacaq
+- ikinci group box icerisinde hesabla-ya klik olunan zaman 2 su kranin hovuzu neqeder vaxta doldurdugunu gostermeliyik.
+
+5. Pizza order system
+
+- istifadeci terefinden sifaris verenin adi, soyadi , nomresi , adresi ,
+- pizzanin olcusu(comboBox) ve sayi, terkibi , icecek(comboBox) ve sayi   daxil edilir,
+- Sifaris Al : kilik olunan zaman asagdaki groupBox Icerisinde listBoxLarda daxil edilen melumatlar ve umumi qiymet gosterilecek.
+- Temizle: data daxil edilen elementlerdeki datalar silinir.
+- Sifarisleri sil : Asagdaki lisboxlarda gosterilen butun sifarisler silinir.
+- Pizza olcu : (Boyuk,Orta,Kicik) ola biler qiymetleri ferqli olacaq,
+- Terkibi (checkBox vasitesi ile evvelceden sistemde olan mehsullara uygun ozu secir): Example - “Mozarella” pendiri, vetçina, göbələk, italyan otları, zeytun yağı 
+- Qeyd : bir form dizayn ederken bir biri ile elaqeli elementleri bir groupbox iscerisinde yerlesdirin. 
