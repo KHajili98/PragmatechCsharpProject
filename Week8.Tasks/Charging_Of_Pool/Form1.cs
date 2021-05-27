@@ -17,5 +17,11 @@ namespace Charging_Of_Pool
             InitializeComponent();
         }
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
