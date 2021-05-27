@@ -18,7 +18,6 @@ namespace Pizza_Order_System
         - Pizza olcu : (Boyuk,Orta,Kicik) ola biler qiymetleri ferqli olacaq,
         - Terkibi (checkBox vasitesi ile evvelceden sistemde olan mehsullara uygun ozu secir): Example - “Mozarella” pendiri, vetçina, göbələk, italyan otları, zeytun yağı 
         - Qeyd : bir form dizayn ederken bir biri ile elaqeli elementleri bir groupbox iscerisinde yerlesdirin. 
-
         */
 
 
