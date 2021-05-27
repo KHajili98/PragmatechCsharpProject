@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CalculatorForAmountPayable
 {
-    public partial class Form1 : Form
+    public partial class CalculatorForAmountPayable : Form
     {
-        public Form1()
+        public CalculatorForAmountPayable()
         {
             InitializeComponent();
         }
