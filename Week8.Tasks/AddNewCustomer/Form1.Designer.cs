@@ -38,6 +38,8 @@ namespace AddNewCustomer
             this.phoneInput = new System.Windows.Forms.TextBox();
             this.emailInput = new System.Windows.Forms.TextBox();
             this.saveButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -48,7 +50,6 @@ namespace AddNewCustomer
             this.nameLabel.Size = new System.Drawing.Size(49, 20);
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "Name";
-            this.nameLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // surnameLabel
             // 
@@ -67,7 +68,6 @@ namespace AddNewCustomer
             this.phoneLabel.Size = new System.Drawing.Size(50, 20);
             this.phoneLabel.TabIndex = 2;
             this.phoneLabel.Text = "Phone";
-            this.phoneLabel.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // emailLabel
             // 
@@ -114,12 +114,34 @@ namespace AddNewCustomer
             this.saveButton.TabIndex = 8;
             this.saveButton.Text = "SAVE";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(233, 341);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 35);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Customers :";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(71, 386);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(446, 144);
+            this.listBox1.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 396);
+            this.ClientSize = new System.Drawing.Size(639, 557);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.emailInput);
             this.Controls.Add(this.phoneInput);
@@ -132,8 +154,7 @@ namespace AddNewCustomer
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "Add New Customer";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +171,8 @@ namespace AddNewCustomer
         private System.Windows.Forms.TextBox phoneInput;
         private System.Windows.Forms.TextBox emailInput;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
