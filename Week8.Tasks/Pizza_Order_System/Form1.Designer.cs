@@ -30,45 +30,46 @@ namespace Pizza_Order_System
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NameInput = new System.Windows.Forms.TextBox();
+            this.SurnameInput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.AddressInput = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.PhoneInput = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.SizePizzaCombo = new System.Windows.Forms.ComboBox();
+            this.PizzaNameCombo = new System.Windows.Forms.ComboBox();
+            this.groupBoxSifariwci = new System.Windows.Forms.GroupBox();
+            this.groupBoxPizza = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericPiiza = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.checkBoxPomidor = new System.Windows.Forms.CheckBox();
+            this.checkBoxGobelek = new System.Windows.Forms.CheckBox();
+            this.checkBoxZeytun = new System.Windows.Forms.CheckBox();
+            this.checkBoxSous = new System.Windows.Forms.CheckBox();
+            this.DrinkCombo = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.groupBoxSoftDrinks = new System.Windows.Forms.GroupBox();
+            this.OrderList = new System.Windows.Forms.ListBox();
+            this.OrderBtn = new System.Windows.Forms.Button();
+            this.ClearBtn = new System.Windows.Forms.Button();
+            this.DeleteOrdersBtn = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.AddPizza = new System.Windows.Forms.Button();
+            this.AddDrink = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.ReceiptCash = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.BeginBtn = new System.Windows.Forms.Button();
+            this.groupBoxSifariwci.SuspendLayout();
+            this.groupBoxPizza.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPiiza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            this.groupBox3.SuspendLayout();
+            this.groupBoxSoftDrinks.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -80,19 +81,19 @@ namespace Pizza_Order_System
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // textBox1
+            // NameInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 27);
-            this.textBox1.TabIndex = 1;
+            this.NameInput.Location = new System.Drawing.Point(133, 37);
+            this.NameInput.Name = "NameInput";
+            this.NameInput.Size = new System.Drawing.Size(214, 27);
+            this.NameInput.TabIndex = 1;
             // 
-            // textBox2
+            // SurnameInput
             // 
-            this.textBox2.Location = new System.Drawing.Point(133, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(214, 27);
-            this.textBox2.TabIndex = 3;
+            this.SurnameInput.Location = new System.Drawing.Point(133, 85);
+            this.SurnameInput.Name = "SurnameInput";
+            this.SurnameInput.Size = new System.Drawing.Size(214, 27);
+            this.SurnameInput.TabIndex = 3;
             // 
             // label2
             // 
@@ -103,12 +104,12 @@ namespace Pizza_Order_System
             this.label2.TabIndex = 2;
             this.label2.Text = "Surname";
             // 
-            // textBox3
+            // AddressInput
             // 
-            this.textBox3.Location = new System.Drawing.Point(133, 135);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(214, 27);
-            this.textBox3.TabIndex = 5;
+            this.AddressInput.Location = new System.Drawing.Point(133, 135);
+            this.AddressInput.Name = "AddressInput";
+            this.AddressInput.Size = new System.Drawing.Size(214, 27);
+            this.AddressInput.TabIndex = 5;
             // 
             // label3
             // 
@@ -119,12 +120,12 @@ namespace Pizza_Order_System
             this.label3.TabIndex = 4;
             this.label3.Text = "Adress";
             // 
-            // textBox4
+            // PhoneInput
             // 
-            this.textBox4.Location = new System.Drawing.Point(133, 190);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(214, 27);
-            this.textBox4.TabIndex = 7;
+            this.PhoneInput.Location = new System.Drawing.Point(133, 190);
+            this.PhoneInput.Name = "PhoneInput";
+            this.PhoneInput.Size = new System.Drawing.Size(214, 27);
+            this.PhoneInput.TabIndex = 7;
             // 
             // label4
             // 
@@ -136,66 +137,67 @@ namespace Pizza_Order_System
             this.label4.Text = "Phone";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // comboBox1
+            // SizePizzaCombo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.SizePizzaCombo.FormattingEnabled = true;
+            this.SizePizzaCombo.Items.AddRange(new object[] {
             "Small",
             "Medium",
             "Big"});
-            this.comboBox1.Location = new System.Drawing.Point(108, 88);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 8;
+            this.SizePizzaCombo.Location = new System.Drawing.Point(108, 88);
+            this.SizePizzaCombo.Name = "SizePizzaCombo";
+            this.SizePizzaCombo.Size = new System.Drawing.Size(151, 28);
+            this.SizePizzaCombo.TabIndex = 8;
             // 
-            // comboBox2
+            // PizzaNameCombo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.PizzaNameCombo.FormattingEnabled = true;
+            this.PizzaNameCombo.Items.AddRange(new object[] {
             "Mozorella",
             "Toyuqlu",
             "Qariwiq"});
-            this.comboBox2.Location = new System.Drawing.Point(108, 36);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 28);
-            this.comboBox2.TabIndex = 9;
+            this.PizzaNameCombo.Location = new System.Drawing.Point(108, 36);
+            this.PizzaNameCombo.Name = "PizzaNameCombo";
+            this.PizzaNameCombo.Size = new System.Drawing.Size(151, 28);
+            this.PizzaNameCombo.TabIndex = 9;
             // 
-            // groupBox1
+            // groupBoxSifariwci
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 22);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(391, 284);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ordered By";
+            this.groupBoxSifariwci.Controls.Add(this.BeginBtn);
+            this.groupBoxSifariwci.Controls.Add(this.NameInput);
+            this.groupBoxSifariwci.Controls.Add(this.label1);
+            this.groupBoxSifariwci.Controls.Add(this.label2);
+            this.groupBoxSifariwci.Controls.Add(this.PhoneInput);
+            this.groupBoxSifariwci.Controls.Add(this.SurnameInput);
+            this.groupBoxSifariwci.Controls.Add(this.label4);
+            this.groupBoxSifariwci.Controls.Add(this.label3);
+            this.groupBoxSifariwci.Controls.Add(this.AddressInput);
+            this.groupBoxSifariwci.Location = new System.Drawing.Point(12, 22);
+            this.groupBoxSifariwci.Name = "groupBoxSifariwci";
+            this.groupBoxSifariwci.Size = new System.Drawing.Size(391, 284);
+            this.groupBoxSifariwci.TabIndex = 10;
+            this.groupBoxSifariwci.TabStop = false;
+            this.groupBoxSifariwci.Text = "Ordered By";
             // 
-            // groupBox2
+            // groupBoxPizza
             // 
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Location = new System.Drawing.Point(465, 32);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(538, 183);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Pizza";
+            this.groupBoxPizza.Controls.Add(this.label11);
+            this.groupBoxPizza.Controls.Add(this.checkBoxSous);
+            this.groupBoxPizza.Controls.Add(this.checkBoxZeytun);
+            this.groupBoxPizza.Controls.Add(this.checkBoxGobelek);
+            this.groupBoxPizza.Controls.Add(this.checkBoxPomidor);
+            this.groupBoxPizza.Controls.Add(this.label7);
+            this.groupBoxPizza.Controls.Add(this.numericPiiza);
+            this.groupBoxPizza.Controls.Add(this.label6);
+            this.groupBoxPizza.Controls.Add(this.label5);
+            this.groupBoxPizza.Controls.Add(this.PizzaNameCombo);
+            this.groupBoxPizza.Controls.Add(this.SizePizzaCombo);
+            this.groupBoxPizza.Location = new System.Drawing.Point(465, 32);
+            this.groupBoxPizza.Name = "groupBoxPizza";
+            this.groupBoxPizza.Size = new System.Drawing.Size(538, 183);
+            this.groupBoxPizza.TabIndex = 11;
+            this.groupBoxPizza.TabStop = false;
+            this.groupBoxPizza.Text = "Pizza";
             // 
             // label5
             // 
@@ -215,12 +217,12 @@ namespace Pizza_Order_System
             this.label6.TabIndex = 13;
             this.label6.Text = "Size";
             // 
-            // numericUpDown1
+            // numericPiiza
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(109, 138);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(150, 27);
-            this.numericUpDown1.TabIndex = 14;
+            this.numericPiiza.Location = new System.Drawing.Point(109, 138);
+            this.numericPiiza.Name = "numericPiiza";
+            this.numericPiiza.Size = new System.Drawing.Size(150, 27);
+            this.numericPiiza.TabIndex = 14;
             // 
             // label7
             // 
@@ -231,57 +233,57 @@ namespace Pizza_Order_System
             this.label7.TabIndex = 15;
             this.label7.Text = "Count";
             // 
-            // checkBox1
+            // checkBoxPomidor
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(329, 44);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(87, 24);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Pomidor";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxPomidor.AutoSize = true;
+            this.checkBoxPomidor.Location = new System.Drawing.Point(329, 44);
+            this.checkBoxPomidor.Name = "checkBoxPomidor";
+            this.checkBoxPomidor.Size = new System.Drawing.Size(87, 24);
+            this.checkBoxPomidor.TabIndex = 16;
+            this.checkBoxPomidor.Text = "Pomidor";
+            this.checkBoxPomidor.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxGobelek
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(329, 74);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(86, 24);
-            this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "Gobelek";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxGobelek.AutoSize = true;
+            this.checkBoxGobelek.Location = new System.Drawing.Point(329, 74);
+            this.checkBoxGobelek.Name = "checkBoxGobelek";
+            this.checkBoxGobelek.Size = new System.Drawing.Size(86, 24);
+            this.checkBoxGobelek.TabIndex = 17;
+            this.checkBoxGobelek.Text = "Gobelek";
+            this.checkBoxGobelek.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBoxZeytun
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(329, 104);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(76, 24);
-            this.checkBox3.TabIndex = 18;
-            this.checkBox3.Text = "Zeytun";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxZeytun.AutoSize = true;
+            this.checkBoxZeytun.Location = new System.Drawing.Point(329, 104);
+            this.checkBoxZeytun.Name = "checkBoxZeytun";
+            this.checkBoxZeytun.Size = new System.Drawing.Size(76, 24);
+            this.checkBoxZeytun.TabIndex = 18;
+            this.checkBoxZeytun.Text = "Zeytun";
+            this.checkBoxZeytun.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkBoxSous
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(329, 134);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(62, 24);
-            this.checkBox4.TabIndex = 19;
-            this.checkBox4.Text = "Sous";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBoxSous.AutoSize = true;
+            this.checkBoxSous.Location = new System.Drawing.Point(329, 134);
+            this.checkBoxSous.Name = "checkBoxSous";
+            this.checkBoxSous.Size = new System.Drawing.Size(62, 24);
+            this.checkBoxSous.TabIndex = 19;
+            this.checkBoxSous.Text = "Sous";
+            this.checkBoxSous.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // DrinkCombo
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.DrinkCombo.FormattingEnabled = true;
+            this.DrinkCombo.Items.AddRange(new object[] {
             "Mozorella",
             "Toyuqlu",
             "Qariwiq"});
-            this.comboBox3.Location = new System.Drawing.Point(108, 36);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(151, 28);
-            this.comboBox3.TabIndex = 9;
+            this.DrinkCombo.Location = new System.Drawing.Point(108, 36);
+            this.DrinkCombo.Name = "DrinkCombo";
+            this.DrinkCombo.Size = new System.Drawing.Size(151, 28);
+            this.DrinkCombo.TabIndex = 9;
             // 
             // label10
             // 
@@ -308,57 +310,57 @@ namespace Pizza_Order_System
             this.label8.TabIndex = 15;
             this.label8.Text = "Count";
             // 
-            // groupBox3
+            // groupBoxSoftDrinks
             // 
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.numericUpDown2);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.comboBox3);
-            this.groupBox3.Location = new System.Drawing.Point(465, 221);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(538, 85);
-            this.groupBox3.TabIndex = 12;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Soft Drink";
+            this.groupBoxSoftDrinks.Controls.Add(this.label8);
+            this.groupBoxSoftDrinks.Controls.Add(this.numericUpDown2);
+            this.groupBoxSoftDrinks.Controls.Add(this.label10);
+            this.groupBoxSoftDrinks.Controls.Add(this.DrinkCombo);
+            this.groupBoxSoftDrinks.Location = new System.Drawing.Point(465, 221);
+            this.groupBoxSoftDrinks.Name = "groupBoxSoftDrinks";
+            this.groupBoxSoftDrinks.Size = new System.Drawing.Size(538, 85);
+            this.groupBoxSoftDrinks.TabIndex = 12;
+            this.groupBoxSoftDrinks.TabStop = false;
+            this.groupBoxSoftDrinks.Text = "Soft Drink";
             // 
-            // listBox1
+            // OrderList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(599, 367);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(538, 204);
-            this.listBox1.TabIndex = 13;
+            this.OrderList.FormattingEnabled = true;
+            this.OrderList.ItemHeight = 20;
+            this.OrderList.Location = new System.Drawing.Point(599, 367);
+            this.OrderList.Name = "OrderList";
+            this.OrderList.Size = new System.Drawing.Size(538, 204);
+            this.OrderList.TabIndex = 13;
             // 
-            // button1
+            // OrderBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(12, 367);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(391, 83);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Order";
-            this.button1.UseVisualStyleBackColor = true;
+            this.OrderBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OrderBtn.Location = new System.Drawing.Point(12, 367);
+            this.OrderBtn.Name = "OrderBtn";
+            this.OrderBtn.Size = new System.Drawing.Size(391, 83);
+            this.OrderBtn.TabIndex = 14;
+            this.OrderBtn.Text = "Order";
+            this.OrderBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // ClearBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(12, 467);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(391, 83);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ClearBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ClearBtn.Location = new System.Drawing.Point(12, 467);
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(391, 83);
+            this.ClearBtn.TabIndex = 15;
+            this.ClearBtn.Text = "Clear";
+            this.ClearBtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // DeleteOrdersBtn
             // 
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(12, 572);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(391, 83);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Delete Orders";
-            this.button3.UseVisualStyleBackColor = true;
+            this.DeleteOrdersBtn.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DeleteOrdersBtn.Location = new System.Drawing.Point(12, 572);
+            this.DeleteOrdersBtn.Name = "DeleteOrdersBtn";
+            this.DeleteOrdersBtn.Size = new System.Drawing.Size(391, 83);
+            this.DeleteOrdersBtn.TabIndex = 16;
+            this.DeleteOrdersBtn.Text = "Delete Orders";
+            this.DeleteOrdersBtn.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -370,23 +372,23 @@ namespace Pizza_Order_System
             this.label9.TabIndex = 8;
             this.label9.Text = "Amount :";
             // 
-            // button4
+            // AddPizza
             // 
-            this.button4.Location = new System.Drawing.Point(1009, 44);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 29);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "Add to chart";
-            this.button4.UseVisualStyleBackColor = true;
+            this.AddPizza.Location = new System.Drawing.Point(1009, 44);
+            this.AddPizza.Name = "AddPizza";
+            this.AddPizza.Size = new System.Drawing.Size(128, 29);
+            this.AddPizza.TabIndex = 17;
+            this.AddPizza.Text = "Add to chart";
+            this.AddPizza.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // AddDrink
             // 
-            this.button5.Location = new System.Drawing.Point(1009, 277);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(128, 29);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "Add to chart";
-            this.button5.UseVisualStyleBackColor = true;
+            this.AddDrink.Location = new System.Drawing.Point(1009, 277);
+            this.AddDrink.Name = "AddDrink";
+            this.AddDrink.Size = new System.Drawing.Size(128, 29);
+            this.AddDrink.TabIndex = 18;
+            this.AddDrink.Text = "Add to chart";
+            this.AddDrink.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -397,15 +399,15 @@ namespace Pizza_Order_System
             this.label11.TabIndex = 20;
             this.label11.Text = "( Per / +1 AZN )";
             // 
-            // label12
+            // ReceiptCash
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(794, 609);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 46);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "0";
+            this.ReceiptCash.AutoSize = true;
+            this.ReceiptCash.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ReceiptCash.Location = new System.Drawing.Point(794, 609);
+            this.ReceiptCash.Name = "ReceiptCash";
+            this.ReceiptCash.Size = new System.Drawing.Size(38, 46);
+            this.ReceiptCash.TabIndex = 19;
+            this.ReceiptCash.Text = "0";
             // 
             // label13
             // 
@@ -417,35 +419,44 @@ namespace Pizza_Order_System
             this.label13.TabIndex = 20;
             this.label13.Text = "AZN";
             // 
+            // BeginBtn
+            // 
+            this.BeginBtn.Location = new System.Drawing.Point(133, 233);
+            this.BeginBtn.Name = "BeginBtn";
+            this.BeginBtn.Size = new System.Drawing.Size(214, 33);
+            this.BeginBtn.TabIndex = 8;
+            this.BeginBtn.Text = "Begin to Order";
+            this.BeginBtn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1210, 720);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.ReceiptCash);
+            this.Controls.Add(this.AddDrink);
+            this.Controls.Add(this.AddPizza);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.DeleteOrdersBtn);
+            this.Controls.Add(this.ClearBtn);
+            this.Controls.Add(this.OrderBtn);
+            this.Controls.Add(this.OrderList);
+            this.Controls.Add(this.groupBoxSoftDrinks);
+            this.Controls.Add(this.groupBoxPizza);
+            this.Controls.Add(this.groupBoxSifariwci);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PizzaOrderSystem";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.groupBoxSifariwci.ResumeLayout(false);
+            this.groupBoxSifariwci.PerformLayout();
+            this.groupBoxPizza.ResumeLayout(false);
+            this.groupBoxPizza.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPiiza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBoxSoftDrinks.ResumeLayout(false);
+            this.groupBoxSoftDrinks.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,40 +465,41 @@ namespace Pizza_Order_System
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox NameInput;
+        private System.Windows.Forms.TextBox SurnameInput;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox AddressInput;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox PhoneInput;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox SizePizzaCombo;
+        private System.Windows.Forms.ComboBox PizzaNameCombo;
+        private System.Windows.Forms.GroupBox groupBoxSifariwci;
+        private System.Windows.Forms.GroupBox groupBoxPizza;
+        private System.Windows.Forms.CheckBox checkBoxSous;
+        private System.Windows.Forms.CheckBox checkBoxZeytun;
+        private System.Windows.Forms.CheckBox checkBoxGobelek;
+        private System.Windows.Forms.CheckBox checkBoxPomidor;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericPiiza;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox DrinkCombo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox groupBoxSoftDrinks;
+        private System.Windows.Forms.ListBox OrderList;
+        private System.Windows.Forms.Button OrderBtn;
+        private System.Windows.Forms.Button ClearBtn;
+        private System.Windows.Forms.Button DeleteOrdersBtn;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button AddPizza;
+        private System.Windows.Forms.Button AddDrink;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label ReceiptCash;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button BeginBtn;
     }
 }
 
