@@ -35,10 +35,10 @@ namespace CalculatorForAmountPayable
             this.PriceInput = new System.Windows.Forms.TextBox();
             this.studentCard = new System.Windows.Forms.CheckBox();
             this.pensionable = new System.Windows.Forms.CheckBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.productListBox = new System.Windows.Forms.ListBox();
             this.addProductBtn = new System.Windows.Forms.Button();
             this.CalculateButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ClearList = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.CashLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -95,14 +95,14 @@ namespace CalculatorForAmountPayable
             this.pensionable.Text = "Pensionable";
             this.pensionable.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // productListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(338, 34);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(284, 284);
-            this.listBox1.TabIndex = 6;
+            this.productListBox.FormattingEnabled = true;
+            this.productListBox.ItemHeight = 20;
+            this.productListBox.Location = new System.Drawing.Point(338, 34);
+            this.productListBox.Name = "productListBox";
+            this.productListBox.Size = new System.Drawing.Size(284, 284);
+            this.productListBox.TabIndex = 6;
             // 
             // addProductBtn
             // 
@@ -114,6 +114,7 @@ namespace CalculatorForAmountPayable
             this.addProductBtn.TabIndex = 7;
             this.addProductBtn.Text = "ADD PRODUCT";
             this.addProductBtn.UseVisualStyleBackColor = false;
+            this.addProductBtn.Click += new System.EventHandler(this.addProductBtn_Click);
             // 
             // CalculateButton
             // 
@@ -125,16 +126,17 @@ namespace CalculatorForAmountPayable
             this.CalculateButton.Text = "Calculate Receipt";
             this.CalculateButton.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // ClearList
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(42, 371);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 29);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Clear List";
-            this.button1.UseVisualStyleBackColor = false;
+            this.ClearList.BackColor = System.Drawing.Color.Red;
+            this.ClearList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClearList.Location = new System.Drawing.Point(42, 371);
+            this.ClearList.Name = "ClearList";
+            this.ClearList.Size = new System.Drawing.Size(194, 29);
+            this.ClearList.TabIndex = 9;
+            this.ClearList.Text = "Clear List";
+            this.ClearList.UseVisualStyleBackColor = false;
+            this.ClearList.Click += new System.EventHandler(this.ClearList_Click);
             // 
             // label1
             // 
@@ -161,10 +163,10 @@ namespace CalculatorForAmountPayable
             this.ClientSize = new System.Drawing.Size(634, 456);
             this.Controls.Add(this.CashLabel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ClearList);
             this.Controls.Add(this.CalculateButton);
             this.Controls.Add(this.addProductBtn);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.productListBox);
             this.Controls.Add(this.pensionable);
             this.Controls.Add(this.studentCard);
             this.Controls.Add(this.PriceInput);
@@ -188,10 +190,10 @@ namespace CalculatorForAmountPayable
         private System.Windows.Forms.TextBox PriceInput;
         private System.Windows.Forms.CheckBox studentCard;
         private System.Windows.Forms.CheckBox pensionable;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox productListBox;
         private System.Windows.Forms.Button addProductBtn;
         private System.Windows.Forms.Button CalculateButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ClearList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label CashLabel;
     }
