@@ -125,6 +125,7 @@ namespace CalculatorForAmountPayable
             this.CalculateButton.TabIndex = 8;
             this.CalculateButton.Text = "Calculate Receipt";
             this.CalculateButton.UseVisualStyleBackColor = false;
+            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
             // ClearList
             // 
