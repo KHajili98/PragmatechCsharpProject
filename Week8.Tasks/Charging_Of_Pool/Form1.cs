@@ -17,11 +17,27 @@ namespace Charging_Of_Pool
             InitializeComponent();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void groupBoxVolume_Enter(object sender, EventArgs e)
         {
+            groupBoxTime.Enabled = false;
+
 
         }
 
-       
+        private void btnCalculateVolume_Click(object sender, EventArgs e)
+        {
+
+            var height = numericForHeight.Value;
+            var width = numericForWidth.Value;
+            var length = numericForLength.Value;
+
+
+            var volume =PoolProperties.GetVolume(height, length, width);
+            VolumeLabel.Text = volume.ToString();
+            groupBoxTime.Enabled = true;
+            groupBoxVolume.Enabled = false;
+
+
+        }
     }
 }

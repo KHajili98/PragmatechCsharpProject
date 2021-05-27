@@ -44,8 +44,8 @@ namespace Charging_Of_Pool
             this.label7 = new System.Windows.Forms.Label();
             this.TimeLabel = new System.Windows.Forms.Label();
             this.calculateTime = new System.Windows.Forms.Button();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericPipe1 = new System.Windows.Forms.NumericUpDown();
+            this.numericPipe2 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,8 +54,8 @@ namespace Charging_Of_Pool
             ((System.ComponentModel.ISupportInitialize)(this.numericForHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericForLength)).BeginInit();
             this.groupBoxTime.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPipe1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPipe2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxVolume
@@ -75,6 +75,7 @@ namespace Charging_Of_Pool
             this.groupBoxVolume.TabIndex = 0;
             this.groupBoxVolume.TabStop = false;
             this.groupBoxVolume.Text = "Volume of Pool";
+            this.groupBoxVolume.Enter += new System.EventHandler(this.groupBoxVolume_Enter);
             // 
             // label6
             // 
@@ -111,6 +112,7 @@ namespace Charging_Of_Pool
             this.btnCalculateVolume.TabIndex = 5;
             this.btnCalculateVolume.Text = "Calculate";
             this.btnCalculateVolume.UseVisualStyleBackColor = true;
+            this.btnCalculateVolume.Click += new System.EventHandler(this.btnCalculateVolume_Click);
             // 
             // numericForWidth
             // 
@@ -132,6 +134,7 @@ namespace Charging_Of_Pool
             this.numericForLength.Name = "numericForLength";
             this.numericForLength.Size = new System.Drawing.Size(150, 27);
             this.numericForLength.TabIndex = 2;
+            this.numericForLength.ValueChanged += new System.EventHandler(this.groupBoxVolume_Enter);
             // 
             // label1
             // 
@@ -157,8 +160,8 @@ namespace Charging_Of_Pool
             this.groupBoxTime.Controls.Add(this.label7);
             this.groupBoxTime.Controls.Add(this.TimeLabel);
             this.groupBoxTime.Controls.Add(this.calculateTime);
-            this.groupBoxTime.Controls.Add(this.numericUpDown3);
-            this.groupBoxTime.Controls.Add(this.numericUpDown2);
+            this.groupBoxTime.Controls.Add(this.numericPipe1);
+            this.groupBoxTime.Controls.Add(this.numericPipe2);
             this.groupBoxTime.Controls.Add(this.label4);
             this.groupBoxTime.Controls.Add(this.label3);
             this.groupBoxTime.Location = new System.Drawing.Point(384, 34);
@@ -167,7 +170,6 @@ namespace Charging_Of_Pool
             this.groupBoxTime.TabIndex = 1;
             this.groupBoxTime.TabStop = false;
             this.groupBoxTime.Text = "Charging Time";
-            this.groupBoxTime.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label8
             // 
@@ -205,19 +207,19 @@ namespace Charging_Of_Pool
             this.calculateTime.Text = "Calculate";
             this.calculateTime.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown3
+            // numericPipe1
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(177, 44);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(150, 27);
-            this.numericUpDown3.TabIndex = 7;
+            this.numericPipe1.Location = new System.Drawing.Point(177, 44);
+            this.numericPipe1.Name = "numericPipe1";
+            this.numericPipe1.Size = new System.Drawing.Size(150, 27);
+            this.numericPipe1.TabIndex = 7;
             // 
-            // numericUpDown2
+            // numericPipe2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(177, 90);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(150, 27);
-            this.numericUpDown2.TabIndex = 8;
+            this.numericPipe2.Location = new System.Drawing.Point(177, 90);
+            this.numericPipe2.Name = "numericPipe2";
+            this.numericPipe2.Size = new System.Drawing.Size(150, 27);
+            this.numericPipe2.TabIndex = 8;
             // 
             // label4
             // 
@@ -265,8 +267,8 @@ namespace Charging_Of_Pool
             ((System.ComponentModel.ISupportInitialize)(this.numericForLength)).EndInit();
             this.groupBoxTime.ResumeLayout(false);
             this.groupBoxTime.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPipe1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericPipe2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,8 +286,8 @@ namespace Charging_Of_Pool
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Length;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericPipe1;
+        private System.Windows.Forms.NumericUpDown numericPipe2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label TimeLabel;
