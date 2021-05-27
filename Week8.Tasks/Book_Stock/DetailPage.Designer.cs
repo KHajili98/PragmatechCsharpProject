@@ -36,11 +36,11 @@ namespace Book_Stock
             this.label3 = new System.Windows.Forms.Label();
             this.categoryInput = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.descInput = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.stockCountInput = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,13 +101,13 @@ namespace Book_Stock
             this.label4.TabIndex = 6;
             this.label4.Text = "Description";
             // 
-            // textBox1
+            // descInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 217);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(376, 164);
-            this.textBox1.TabIndex = 7;
+            this.descInput.Location = new System.Drawing.Point(122, 217);
+            this.descInput.Multiline = true;
+            this.descInput.Name = "descInput";
+            this.descInput.Size = new System.Drawing.Size(376, 164);
+            this.descInput.TabIndex = 7;
             // 
             // label5
             // 
@@ -131,29 +131,30 @@ namespace Book_Stock
             this.pictureBox1.Location = new System.Drawing.Point(300, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(198, 160);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // UpdateButton
             // 
-            this.button1.Location = new System.Drawing.Point(186, 400);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 60);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.UpdateButton.Location = new System.Drawing.Point(186, 400);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(198, 60);
+            this.UpdateButton.TabIndex = 11;
+            this.UpdateButton.Text = "Update";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // DetailPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 492);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.stockCountInput);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.descInput);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.categoryInput);
@@ -165,6 +166,7 @@ namespace Book_Stock
             this.Name = "DetailPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DetailPage";
+            this.Load += new System.EventHandler(this.DetailPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,10 +182,10 @@ namespace Book_Stock
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox categoryInput;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox descInput;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox stockCountInput;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button UpdateButton;
     }
 }

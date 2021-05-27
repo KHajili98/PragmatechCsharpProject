@@ -12,8 +12,8 @@ namespace Book_Stock
         public string Name { get; set; }
         public string Author { get; set; }
         public string Category { get; set; }
-        public int StockCount { get; set; }
+        public string StockCount { get; set; }
         public string Description { get; set; }
-        public string Img { get; set; }
+        public string Image { get; set; }
     }
 }

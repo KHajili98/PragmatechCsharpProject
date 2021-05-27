@@ -31,6 +31,7 @@ namespace Book_Stock
         {
             this.BooksListCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.showButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BooksListCombo
@@ -52,11 +53,22 @@ namespace Book_Stock
             this.label1.TabIndex = 1;
             this.label1.Text = "Book-List";
             // 
+            // showButton
+            // 
+            this.showButton.Location = new System.Drawing.Point(140, 140);
+            this.showButton.Name = "showButton";
+            this.showButton.Size = new System.Drawing.Size(143, 54);
+            this.showButton.TabIndex = 2;
+            this.showButton.Text = "SHOW";
+            this.showButton.UseVisualStyleBackColor = true;
+            this.showButton.Click += new System.EventHandler(this.showButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 35F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 151);
+            this.ClientSize = new System.Drawing.Size(435, 218);
+            this.Controls.Add(this.showButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BooksListCombo);
             this.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -74,6 +86,7 @@ namespace Book_Stock
 
         private System.Windows.Forms.ComboBox BooksListCombo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button showButton;
     }
 }
 

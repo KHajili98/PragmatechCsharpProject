@@ -16,3 +16,4 @@ C:\Users\shaba\source\repos\PragmatechCsharpProject\Week8.Tasks\Book_Stock\obj\D
 C:\Users\shaba\source\repos\PragmatechCsharpProject\Week8.Tasks\Book_Stock\obj\Debug\net5.0-windows\ref\Book_Stock.dll
 C:\Users\shaba\source\repos\PragmatechCsharpProject\Week8.Tasks\Book_Stock\obj\Debug\net5.0-windows\Book_Stock.pdb
 C:\Users\shaba\source\repos\PragmatechCsharpProject\Week8.Tasks\Book_Stock\obj\Debug\net5.0-windows\Book_Stock.genruntimeconfig.cache
+C:\Users\shaba\source\repos\PragmatechCsharpProject\Week8.Tasks\Book_Stock\obj\Debug\net5.0-windows\Book_Stock.DetailPage.resources
