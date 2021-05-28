@@ -137,7 +137,7 @@ namespace Book_Stock
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(186, 400);
+            this.UpdateButton.Location = new System.Drawing.Point(152, 404);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(198, 60);
             this.UpdateButton.TabIndex = 11;

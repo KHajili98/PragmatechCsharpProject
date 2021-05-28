@@ -34,7 +34,7 @@ namespace Book_Stock
         private void UpdateButton_Click(object sender, EventArgs e)
         {
 
-            Form1.books.Remove(Form1.SelectedItem);
+            Book.books.Remove(Form1.SelectedItem);
             Book updatedBook = new Book
             {
                 Name=NameInput.Text,
@@ -42,9 +42,10 @@ namespace Book_Stock
                 StockCount = stockCountInput.Text,
                 Author = authorInput.Text,
                 Description = descInput.Text,
+                Image = Form1.SelectedItem.Image
             };
-            Form1.books.Add(updatedBook);
-            var lastBooks = Form1.books;
+            Book.books.Add(updatedBook);
+            var lastBooks = Book.books;
             form1 = new Form1(lastBooks);
             form1.Show();
             this.Hide();
