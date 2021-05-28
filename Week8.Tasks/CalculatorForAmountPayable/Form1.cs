@@ -23,12 +23,26 @@ namespace CalculatorForAmountPayable
         private void addProductBtn_Click(object sender, EventArgs e)
         {
             productListBox.Items.Clear();
-
-            products.Add(new Product
+            double result;
+            string _name;
+            if (!Double.TryParse(PriceInput.Text,  out result) || string.IsNullOrEmpty(NameInput.Text))
             {
-                Name = NameInput.Text,
-                Price = Convert.ToDouble(PriceInput.Text)
-            });
+                MessageBox.Show($"Price or Name is not valid !", "Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                result = Convert.ToDouble(PriceInput.Text);
+                _name = NameInput.Text;
+                products.Add(new Product
+                {
+                    Name = _name,
+                    Price = result
+                });
+            }
+
+          
+
+          
 
             foreach (var item in products)
             {

@@ -41,6 +41,8 @@ namespace CalculatorForAmountPayable
             this.ClearList = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.CashLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // NameLabel
@@ -157,11 +159,31 @@ namespace CalculatorForAmountPayable
             this.CashLabel.TabIndex = 11;
             this.CashLabel.Text = "0.0";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(167, 270);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "( 20% endirim )";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(167, 297);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "( 30% endirim )";
+            // 
             // CalculatorForAmountPayable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 456);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.CashLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ClearList);
@@ -197,6 +219,8 @@ namespace CalculatorForAmountPayable
         private System.Windows.Forms.Button ClearList;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label CashLabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
