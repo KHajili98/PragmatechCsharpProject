@@ -13,6 +13,8 @@ namespace Pizza_Order_System
 {
     public partial class Form1 : Form
     {
+        public decimal cash;
+        public string pizzaOrderForList;
         public OrderedBy orderedBy = new OrderedBy();
         public List<Pizza> pizzas = new List<Pizza>()
         {
@@ -74,6 +76,84 @@ namespace Pizza_Order_System
             }
         }
 
-        
+        private void AddPizza_Click(object sender, EventArgs e)
+        {
+
+            if (PizzaNameCombo.SelectedItem != null && SizePizzaCombo.SelectedItem!=null)
+            {
+                decimal onePrice=0;
+                decimal count;
+                string icindekiler = "";
+
+                Pizza pizza = new Pizza
+                {
+                    Name = PizzaNameCombo.SelectedItem.ToString(),
+
+                };
+
+               
+
+
+               
+
+                for (int i = 0; i < pizzas.Count; i++)
+                {
+                    Pizza temp = pizzas[i];
+                    if (pizza.Name == temp.Name)
+                    {
+                        switch (SizePizzaCombo.SelectedItem.ToString())
+                        {
+                            case "Small":
+                                onePrice = temp.Small;
+                                break;
+                            case "Medium":
+                                onePrice = temp.Medium;
+                                break;
+                            case "Large":
+                                onePrice = temp.Large;
+                                break;
+                        }
+                        break;
+                    }
+                }
+
+                count = numericPiiza.Value; // ne qeder secdiyi
+                cash = count * onePrice; // bir pizza sifariw verende toplam qiymet
+
+
+                if (checkBoxPomidor.Checked)
+                    additions.Add(checkBoxPomidor.Text);
+                if (checkBoxGobelek.Checked)
+                    additions.Add(checkBoxGobelek.Text);
+                if (checkBoxSous.Checked)
+                    additions.Add(checkBoxSous.Text);
+                if (checkBoxZeytun.Checked)
+                    additions.Add(checkBoxZeytun.Text);
+
+                cash += additions.Count; // elavelerin qiymete daxili 
+
+                foreach (var item in additions)
+                {
+                    icindekiler += $"{item},";
+                }
+
+                if (icindekiler =="")
+                {
+                    icindekiler = "elave hec ne yoxdur.";
+                }
+               
+                pizzaOrderForList = $"Pizza-{pizza.Name}, {count}-eded, {SizePizzaCombo.SelectedItem.ToString()}-olcude, elaveler - {icindekiler}, Qiymet:\t {cash.ToString()} ";
+
+                OrderList.Items.Add(pizzaOrderForList);
+                additions.Clear();
+                cash = 0;
+            }
+            else
+            {
+                MessageBox.Show($"Please select Pizza and Size !", "Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+        }
     }
 }

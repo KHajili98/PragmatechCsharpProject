@@ -387,6 +387,7 @@ namespace Pizza_Order_System
             this.AddPizza.TabIndex = 17;
             this.AddPizza.Text = "Add to chart";
             this.AddPizza.UseVisualStyleBackColor = true;
+            this.AddPizza.Click += new System.EventHandler(this.AddPizza_Click);
             // 
             // AddDrink
             // 
