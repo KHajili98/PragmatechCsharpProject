@@ -348,6 +348,7 @@ namespace Pizza_Order_System
             this.OrderBtn.TabIndex = 14;
             this.OrderBtn.Text = "Order";
             this.OrderBtn.UseVisualStyleBackColor = true;
+            this.OrderBtn.Click += new System.EventHandler(this.OrderBtn_Click);
             // 
             // ClearBtn
             // 
@@ -397,6 +398,7 @@ namespace Pizza_Order_System
             this.AddDrink.TabIndex = 18;
             this.AddDrink.Text = "Add to chart";
             this.AddDrink.UseVisualStyleBackColor = true;
+            this.AddDrink.Click += new System.EventHandler(this.AddDrink_Click);
             // 
             // ReceiptCash
             // 

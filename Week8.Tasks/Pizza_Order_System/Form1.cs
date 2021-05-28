@@ -13,7 +13,7 @@ namespace Pizza_Order_System
 {
     public partial class Form1 : Form
     {
-        public decimal cash;
+        public decimal cashForPizza;
         public string pizzaOrderForList;
         public OrderedBy orderedBy = new OrderedBy();
         public List<Pizza> pizzas = new List<Pizza>()
@@ -23,7 +23,21 @@ namespace Pizza_Order_System
             new Pizza{Name="Mixed",Small=15,Medium=20, Large=25},
         };
         public List<string> additions = new List<string>();
-     
+
+
+
+        public List<SoftDrink> drinks = new List<SoftDrink>()
+        {
+            new SoftDrink{Name = "Fanta", Price=1},
+            new SoftDrink{Name = "Cola", Price=2},
+            new SoftDrink{Name = "Redbull", Price=5},
+            new SoftDrink{Name = "Vitamin", Price=3},
+        };
+        public string drinkOrderForList;
+        public decimal cashForDrink;
+
+        public decimal totalAmount;
+        
 
         public Form1()
         {
@@ -60,6 +74,8 @@ namespace Pizza_Order_System
             AddDrink.Enabled = true;
             AddPizza.Enabled = true;
 
+            #region pizza combo duzeliwi
+
             PizzaNameCombo.SelectedItem = null;
             PizzaNameCombo.SelectedText = "-----Select Pizza-----";
 
@@ -74,32 +90,43 @@ namespace Pizza_Order_System
             {
                 SizePizzaCombo.Items.Add(item);
             }
+
+            #endregion
+
+
+
+            #region drink ucun combo duzeliwi
+
+            DrinkCombo.SelectedItem = null;
+            DrinkCombo.SelectedText = "-----Select Drink-----";
+
+            foreach (var drink in drinks)
+            {
+                DrinkCombo.Items.Add(drink.Name);
+            }
+
+            #endregion
         }
 
         private void AddPizza_Click(object sender, EventArgs e)
         {
 
-            if (PizzaNameCombo.SelectedItem != null && SizePizzaCombo.SelectedItem!=null)
+            if (PizzaNameCombo.SelectedItem != null && SizePizzaCombo.SelectedItem!=null && numericPiiza.Value!=0)
             {
                 decimal onePrice=0;
                 decimal count;
                 string icindekiler = "";
 
-                Pizza pizza = new Pizza
+                Pizza selectedPizza = new Pizza
                 {
                     Name = PizzaNameCombo.SelectedItem.ToString(),
 
                 };
 
-               
-
-
-               
-
-                for (int i = 0; i < pizzas.Count; i++)
+                for (int i = 0; i < pizzas.Count; i++) // loop secdiyimiz pizzaya uygun birinin qiymetini teyin etmek ucundur...
                 {
                     Pizza temp = pizzas[i];
-                    if (pizza.Name == temp.Name)
+                    if (selectedPizza.Name == temp.Name)
                     {
                         switch (SizePizzaCombo.SelectedItem.ToString())
                         {
@@ -117,8 +144,8 @@ namespace Pizza_Order_System
                     }
                 }
 
-                count = numericPiiza.Value; // ne qeder secdiyi
-                cash = count * onePrice; // bir pizza sifariw verende toplam qiymet
+                count = numericPiiza.Value; // ne qeder secdiyi...
+                cashForPizza = count * onePrice; // bir pizza sifariw verende toplam qiymet...
 
 
                 if (checkBoxPomidor.Checked)
@@ -130,7 +157,7 @@ namespace Pizza_Order_System
                 if (checkBoxZeytun.Checked)
                     additions.Add(checkBoxZeytun.Text);
 
-                cash += additions.Count; // elavelerin qiymete daxili 
+                cashForPizza += additions.Count; // elavelerin qiymete daxili 
 
                 foreach (var item in additions)
                 {
@@ -142,18 +169,76 @@ namespace Pizza_Order_System
                     icindekiler = "elave hec ne yoxdur.";
                 }
                
-                pizzaOrderForList = $"Pizza-{pizza.Name}, {count}-eded, {SizePizzaCombo.SelectedItem.ToString()}-olcude, elaveler - {icindekiler}, Qiymet:\t {cash.ToString()} ";
+                pizzaOrderForList = $"Pizza-{selectedPizza.Name}, {count}-eded, {SizePizzaCombo.SelectedItem.ToString()}-olcude, elaveler - {icindekiler}, Qiymet:\t {cashForPizza.ToString()} AZN ";
 
+                totalAmount += cashForPizza;
                 OrderList.Items.Add(pizzaOrderForList);
                 additions.Clear();
-                cash = 0;
+                cashForPizza = 0;
             }
             else
             {
-                MessageBox.Show($"Please select Pizza and Size !", "Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Please select Pizza and Size, also count of your order !", "Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
 
+        }
+
+        private void AddDrink_Click(object sender, EventArgs e)
+        {
+            if (DrinkCombo.SelectedItem != null &&  numericUpDown2.Value != 0)
+            {
+
+                decimal countForDrink = numericUpDown2.Value;
+                decimal onePriceForDrink = 0;
+
+                SoftDrink selectedDrink = new SoftDrink
+                {
+                    Name = DrinkCombo.SelectedItem.ToString(),
+
+                };
+
+                for (int i = 0; i < drinks.Count; i++) // loop secdiyimiz drinke uygun birinin qiymetini teyin etmek ucundur...
+                {
+                    SoftDrink temp = drinks[i];
+                    if (selectedDrink.Name == temp.Name)
+                    {
+                        switch (DrinkCombo.SelectedItem.ToString())
+                        {
+                            case "Fanta":
+                                onePriceForDrink = temp.Price;
+                                break;
+                            case "Cola":
+                                onePriceForDrink = temp.Price;
+                                break;
+                            case "Redbull":
+                                onePriceForDrink = temp.Price;
+                                break;
+                            case "Vitamin":
+                                onePriceForDrink = temp.Price;
+                                break;
+                        }
+                        break;
+                    }
+                }
+
+                cashForDrink = countForDrink * onePriceForDrink;
+                drinkOrderForList = $"Drink - {selectedDrink.Name}, {countForDrink} eded, Qiymet:\t {cashForDrink} AZN";
+
+                totalAmount += cashForDrink;
+                OrderList.Items.Add(drinkOrderForList);
+                cashForDrink = 0;
+            }
+            else
+            {
+                MessageBox.Show($"Please select drink and count !", "Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+        }
+
+        private void OrderBtn_Click(object sender, EventArgs e)
+        {
+            ReceiptCash.Text = totalAmount.ToString();
         }
     }
 }
