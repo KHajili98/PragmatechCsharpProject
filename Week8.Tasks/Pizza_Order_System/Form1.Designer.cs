@@ -40,15 +40,17 @@ namespace Pizza_Order_System
             this.SizePizzaCombo = new System.Windows.Forms.ComboBox();
             this.PizzaNameCombo = new System.Windows.Forms.ComboBox();
             this.groupBoxSifariwci = new System.Windows.Forms.GroupBox();
+            this.BeginBtn = new System.Windows.Forms.Button();
             this.groupBoxPizza = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericPiiza = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.checkBoxPomidor = new System.Windows.Forms.CheckBox();
-            this.checkBoxGobelek = new System.Windows.Forms.CheckBox();
-            this.checkBoxZeytun = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.checkBoxSous = new System.Windows.Forms.CheckBox();
+            this.checkBoxZeytun = new System.Windows.Forms.CheckBox();
+            this.checkBoxGobelek = new System.Windows.Forms.CheckBox();
+            this.checkBoxPomidor = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numericPiiza = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.DrinkCombo = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
@@ -61,10 +63,8 @@ namespace Pizza_Order_System
             this.label9 = new System.Windows.Forms.Label();
             this.AddPizza = new System.Windows.Forms.Button();
             this.AddDrink = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.ReceiptCash = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.BeginBtn = new System.Windows.Forms.Button();
             this.groupBoxSifariwci.SuspendLayout();
             this.groupBoxPizza.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericPiiza)).BeginInit();
@@ -135,15 +135,10 @@ namespace Pizza_Order_System
             this.label4.Size = new System.Drawing.Size(50, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Phone";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // SizePizzaCombo
             // 
             this.SizePizzaCombo.FormattingEnabled = true;
-            this.SizePizzaCombo.Items.AddRange(new object[] {
-            "Small",
-            "Medium",
-            "Big"});
             this.SizePizzaCombo.Location = new System.Drawing.Point(108, 88);
             this.SizePizzaCombo.Name = "SizePizzaCombo";
             this.SizePizzaCombo.Size = new System.Drawing.Size(151, 28);
@@ -152,10 +147,6 @@ namespace Pizza_Order_System
             // PizzaNameCombo
             // 
             this.PizzaNameCombo.FormattingEnabled = true;
-            this.PizzaNameCombo.Items.AddRange(new object[] {
-            "Mozorella",
-            "Toyuqlu",
-            "Qariwiq"});
             this.PizzaNameCombo.Location = new System.Drawing.Point(108, 36);
             this.PizzaNameCombo.Name = "PizzaNameCombo";
             this.PizzaNameCombo.Size = new System.Drawing.Size(151, 28);
@@ -178,6 +169,17 @@ namespace Pizza_Order_System
             this.groupBoxSifariwci.TabIndex = 10;
             this.groupBoxSifariwci.TabStop = false;
             this.groupBoxSifariwci.Text = "Ordered By";
+            this.groupBoxSifariwci.Enter += new System.EventHandler(this.groupBoxSifariwci_Enter);
+            // 
+            // BeginBtn
+            // 
+            this.BeginBtn.Location = new System.Drawing.Point(133, 233);
+            this.BeginBtn.Name = "BeginBtn";
+            this.BeginBtn.Size = new System.Drawing.Size(214, 33);
+            this.BeginBtn.TabIndex = 8;
+            this.BeginBtn.Text = "Begin to Order";
+            this.BeginBtn.UseVisualStyleBackColor = true;
+            this.BeginBtn.Click += new System.EventHandler(this.BeginBtn_Click);
             // 
             // groupBoxPizza
             // 
@@ -199,69 +201,14 @@ namespace Pizza_Order_System
             this.groupBoxPizza.TabStop = false;
             this.groupBoxPizza.Text = "Pizza";
             // 
-            // label5
+            // label11
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 92);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Size";
-            // 
-            // numericPiiza
-            // 
-            this.numericPiiza.Location = new System.Drawing.Point(109, 138);
-            this.numericPiiza.Name = "numericPiiza";
-            this.numericPiiza.Size = new System.Drawing.Size(150, 27);
-            this.numericPiiza.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 142);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 20);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Count";
-            // 
-            // checkBoxPomidor
-            // 
-            this.checkBoxPomidor.AutoSize = true;
-            this.checkBoxPomidor.Location = new System.Drawing.Point(329, 44);
-            this.checkBoxPomidor.Name = "checkBoxPomidor";
-            this.checkBoxPomidor.Size = new System.Drawing.Size(87, 24);
-            this.checkBoxPomidor.TabIndex = 16;
-            this.checkBoxPomidor.Text = "Pomidor";
-            this.checkBoxPomidor.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxGobelek
-            // 
-            this.checkBoxGobelek.AutoSize = true;
-            this.checkBoxGobelek.Location = new System.Drawing.Point(329, 74);
-            this.checkBoxGobelek.Name = "checkBoxGobelek";
-            this.checkBoxGobelek.Size = new System.Drawing.Size(86, 24);
-            this.checkBoxGobelek.TabIndex = 17;
-            this.checkBoxGobelek.Text = "Gobelek";
-            this.checkBoxGobelek.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxZeytun
-            // 
-            this.checkBoxZeytun.AutoSize = true;
-            this.checkBoxZeytun.Location = new System.Drawing.Point(329, 104);
-            this.checkBoxZeytun.Name = "checkBoxZeytun";
-            this.checkBoxZeytun.Size = new System.Drawing.Size(76, 24);
-            this.checkBoxZeytun.TabIndex = 18;
-            this.checkBoxZeytun.Text = "Zeytun";
-            this.checkBoxZeytun.UseVisualStyleBackColor = true;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(329, 21);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(113, 20);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "( Per / +1 AZN )";
             // 
             // checkBoxSous
             // 
@@ -273,13 +220,73 @@ namespace Pizza_Order_System
             this.checkBoxSous.Text = "Sous";
             this.checkBoxSous.UseVisualStyleBackColor = true;
             // 
+            // checkBoxZeytun
+            // 
+            this.checkBoxZeytun.AutoSize = true;
+            this.checkBoxZeytun.Location = new System.Drawing.Point(329, 104);
+            this.checkBoxZeytun.Name = "checkBoxZeytun";
+            this.checkBoxZeytun.Size = new System.Drawing.Size(76, 24);
+            this.checkBoxZeytun.TabIndex = 18;
+            this.checkBoxZeytun.Text = "Zeytun";
+            this.checkBoxZeytun.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxGobelek
+            // 
+            this.checkBoxGobelek.AutoSize = true;
+            this.checkBoxGobelek.Location = new System.Drawing.Point(329, 74);
+            this.checkBoxGobelek.Name = "checkBoxGobelek";
+            this.checkBoxGobelek.Size = new System.Drawing.Size(86, 24);
+            this.checkBoxGobelek.TabIndex = 17;
+            this.checkBoxGobelek.Text = "Gobelek";
+            this.checkBoxGobelek.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPomidor
+            // 
+            this.checkBoxPomidor.AutoSize = true;
+            this.checkBoxPomidor.Location = new System.Drawing.Point(329, 44);
+            this.checkBoxPomidor.Name = "checkBoxPomidor";
+            this.checkBoxPomidor.Size = new System.Drawing.Size(87, 24);
+            this.checkBoxPomidor.TabIndex = 16;
+            this.checkBoxPomidor.Text = "Pomidor";
+            this.checkBoxPomidor.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(27, 142);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 20);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Count";
+            // 
+            // numericPiiza
+            // 
+            this.numericPiiza.Location = new System.Drawing.Point(109, 138);
+            this.numericPiiza.Name = "numericPiiza";
+            this.numericPiiza.Size = new System.Drawing.Size(150, 27);
+            this.numericPiiza.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(27, 92);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Size";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(27, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Name";
+            // 
             // DrinkCombo
             // 
             this.DrinkCombo.FormattingEnabled = true;
-            this.DrinkCombo.Items.AddRange(new object[] {
-            "Mozorella",
-            "Toyuqlu",
-            "Qariwiq"});
             this.DrinkCombo.Location = new System.Drawing.Point(108, 36);
             this.DrinkCombo.Name = "DrinkCombo";
             this.DrinkCombo.Size = new System.Drawing.Size(151, 28);
@@ -390,15 +397,6 @@ namespace Pizza_Order_System
             this.AddDrink.Text = "Add to chart";
             this.AddDrink.UseVisualStyleBackColor = true;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(329, 21);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(113, 20);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "( Per / +1 AZN )";
-            // 
             // ReceiptCash
             // 
             this.ReceiptCash.AutoSize = true;
@@ -418,15 +416,6 @@ namespace Pizza_Order_System
             this.label13.Size = new System.Drawing.Size(87, 46);
             this.label13.TabIndex = 20;
             this.label13.Text = "AZN";
-            // 
-            // BeginBtn
-            // 
-            this.BeginBtn.Location = new System.Drawing.Point(133, 233);
-            this.BeginBtn.Name = "BeginBtn";
-            this.BeginBtn.Size = new System.Drawing.Size(214, 33);
-            this.BeginBtn.TabIndex = 8;
-            this.BeginBtn.Text = "Begin to Order";
-            this.BeginBtn.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

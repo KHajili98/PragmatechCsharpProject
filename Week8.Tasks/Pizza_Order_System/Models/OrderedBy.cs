@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pizza_Order_System.Models
 {
-    class OrderedBy
+    public class OrderedBy
     {
         public string Name { get; set; }
         public string Surname { get; set; }

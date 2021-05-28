@@ -6,6 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
+      "Pizza_Order_System/1.0.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0"
+        },
+        "runtime": {
+          "Pizza_Order_System.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "System.Collections/4.3.0": {
@@ -24,6 +32,11 @@
     }
   },
   "libraries": {
+    "Pizza_Order_System/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,

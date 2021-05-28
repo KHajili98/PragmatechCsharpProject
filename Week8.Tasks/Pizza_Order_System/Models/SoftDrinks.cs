@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Pizza_Order_System.Models
 {
-    class SoftDrinks<TypeOfDrink>
+    public class SoftDrinks<TypeOfDrink>
     {
         public TypeOfDrink TypeOfSok { get; set; }
         public decimal Count { get; set; }
     }
 
-    class TypeOfDrink
+    public class TypeOfDrink
     {
         public string Name { get; set; }
         public decimal Price { get; set; }
