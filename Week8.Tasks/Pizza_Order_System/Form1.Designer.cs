@@ -65,6 +65,7 @@ namespace Pizza_Order_System
             this.AddDrink = new System.Windows.Forms.Button();
             this.ReceiptCash = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBoxSifariwci.SuspendLayout();
             this.groupBoxPizza.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericPiiza)).BeginInit();
@@ -334,7 +335,7 @@ namespace Pizza_Order_System
             // 
             this.OrderList.FormattingEnabled = true;
             this.OrderList.ItemHeight = 20;
-            this.OrderList.Location = new System.Drawing.Point(465, 367);
+            this.OrderList.Location = new System.Drawing.Point(465, 388);
             this.OrderList.Name = "OrderList";
             this.OrderList.Size = new System.Drawing.Size(672, 204);
             this.OrderList.TabIndex = 13;
@@ -359,6 +360,7 @@ namespace Pizza_Order_System
             this.ClearBtn.TabIndex = 15;
             this.ClearBtn.Text = "Clear";
             this.ClearBtn.UseVisualStyleBackColor = true;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // DeleteOrdersBtn
             // 
@@ -421,11 +423,22 @@ namespace Pizza_Order_System
             this.label13.TabIndex = 20;
             this.label13.Text = "AZN";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(465, 339);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(188, 46);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Your chart :";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1210, 720);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.ReceiptCash);
             this.Controls.Add(this.AddDrink);
@@ -493,6 +506,7 @@ namespace Pizza_Order_System
         private System.Windows.Forms.Label ReceiptCash;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button BeginBtn;
+        private System.Windows.Forms.Label label12;
     }
 }
 

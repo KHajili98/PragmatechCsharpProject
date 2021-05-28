@@ -15,7 +15,7 @@ namespace Pizza_Order_System
     {
         public decimal cashForPizza;
         public string pizzaOrderForList;
-        public OrderedBy orderedBy = new OrderedBy();
+        public OrderedBy orderedBy = new OrderedBy() { Adress=null, Name=null,Phone=null,Surname=null};
         public List<Pizza> pizzas = new List<Pizza>()
         {
             new Pizza{Name="Mozorella",Small=5,Medium=10, Large=15},
@@ -65,47 +65,57 @@ namespace Pizza_Order_System
             orderedBy.Phone = PhoneInput.Text;
             orderedBy.Surname = SurnameInput.Text;
 
-            groupBoxSifariwci.Enabled = false;
-            groupBoxPizza.Enabled = true;
-            groupBoxSoftDrinks.Enabled = true;
-            OrderBtn.Enabled = true;
-            ClearBtn.Enabled = true;
-            DeleteOrdersBtn.Enabled = true;
-            AddDrink.Enabled = true;
-            AddPizza.Enabled = true;
-
-            #region pizza combo duzeliwi
-
-            PizzaNameCombo.SelectedItem = null;
-            PizzaNameCombo.SelectedText = "-----Select Pizza-----";
-
-            SizePizzaCombo.SelectedItem = null;
-            SizePizzaCombo.SelectedText = "-----Select Size-----";
-            foreach (var pizza in pizzas)
+            if ( !string.IsNullOrEmpty(NameInput.Text)  && !string.IsNullOrEmpty(AddressInput.Text) 
+                && !string.IsNullOrEmpty(PhoneInput.Text) && !string.IsNullOrEmpty(SurnameInput.Text))
             {
-                PizzaNameCombo.Items.Add(pizza.Name);
+                groupBoxSifariwci.Enabled = false;
+                groupBoxPizza.Enabled = true;
+                groupBoxSoftDrinks.Enabled = true;
+                OrderBtn.Enabled = true;
+                ClearBtn.Enabled = true;
+                DeleteOrdersBtn.Enabled = true;
+                AddDrink.Enabled = true;
+                AddPizza.Enabled = true;
+
+                #region pizza combo duzeliwi
+
+                PizzaNameCombo.SelectedItem = null;
+                PizzaNameCombo.SelectedText = "-----Select Pizza-----";
+
+                SizePizzaCombo.SelectedItem = null;
+                SizePizzaCombo.SelectedText = "-----Select Size-----";
+                foreach (var pizza in pizzas)
+                {
+                    PizzaNameCombo.Items.Add(pizza.Name);
+                }
+                List<string> sizes = new List<string>() { "Small", "Medium", "Large" };
+                foreach (var item in sizes)
+                {
+                    SizePizzaCombo.Items.Add(item);
+                }
+
+                #endregion
+
+
+
+                #region drink ucun combo duzeliwi
+
+                DrinkCombo.SelectedItem = null;
+                DrinkCombo.SelectedText = "-----Select Drink-----";
+
+                foreach (var drink in drinks)
+                {
+                    DrinkCombo.Items.Add(drink.Name);
+                }
+
+                #endregion
             }
-            List<string> sizes = new List<string>() { "Small", "Medium", "Large" };
-            foreach (var item in sizes)
+            else
             {
-                SizePizzaCombo.Items.Add(item);
+                MessageBox.Show($"Please add your information completely !", "Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
 
-            #endregion
-
-
-
-            #region drink ucun combo duzeliwi
-
-            DrinkCombo.SelectedItem = null;
-            DrinkCombo.SelectedText = "-----Select Drink-----";
-
-            foreach (var drink in drinks)
-            {
-                DrinkCombo.Items.Add(drink.Name);
-            }
-
-            #endregion
         }
 
         private void AddPizza_Click(object sender, EventArgs e)
@@ -238,7 +248,16 @@ namespace Pizza_Order_System
 
         private void OrderBtn_Click(object sender, EventArgs e)
         {
-            ReceiptCash.Text = totalAmount.ToString();
+            if (totalAmount!=0)
+            {
+                ReceiptCash.Text = totalAmount.ToString();
+
+            }
+            else
+            {
+                MessageBox.Show($"Please add somethings to your chart!", "Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
 
         private void DeleteOrdersBtn_Click(object sender, EventArgs e)
@@ -260,6 +279,48 @@ namespace Pizza_Order_System
 
             numericPiiza.Value = 0;
             numericUpDown2.Value = 0;
+            totalAmount = 0;
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            // default hala getirilir
+            groupBoxSifariwci.Enabled = true;
+            groupBoxPizza.Enabled = false;
+            groupBoxSoftDrinks.Enabled = false;
+            OrderBtn.Enabled = false;
+            ClearBtn.Enabled = false;
+            DeleteOrdersBtn.Enabled = false;
+            AddDrink.Enabled = false;
+            AddPizza.Enabled = false;
+
+            NameInput.Text = null;
+            SurnameInput.Text = null;
+            AddressInput.Text = null;
+            PhoneInput.Text = null;
+
+
+
+
+            // ikinci hissenin temizlenmesi
+            OrderList.Items.Clear();
+            ReceiptCash.Text = "0";
+            PizzaNameCombo.SelectedItem = null;
+            PizzaNameCombo.SelectedText = "-----Select Pizza-----";
+
+            SizePizzaCombo.SelectedItem = null;
+            SizePizzaCombo.SelectedText = "-----Select Size-----";
+            checkBoxPomidor.Checked = false;
+            checkBoxGobelek.Checked = false;
+            checkBoxSous.Checked = false;
+            checkBoxZeytun.Checked = false;
+
+            DrinkCombo.SelectedItem = null;
+            DrinkCombo.SelectedText = "-----Select Drink-----";
+
+            numericPiiza.Value = 0;
+            numericUpDown2.Value = 0;
+
         }
     }
 }
