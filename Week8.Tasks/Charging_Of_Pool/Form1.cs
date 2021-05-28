@@ -35,8 +35,18 @@ namespace Charging_Of_Pool
 
             volume =PoolProperties.GetVolume(height, length, width);
             VolumeLabel.Text = volume.ToString();
-            groupBoxTime.Enabled = true;
-            groupBoxVolume.Enabled = false;
+
+            if (volume!=0)
+            {
+                groupBoxTime.Enabled = true;
+                groupBoxVolume.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show($"Volume cannot be 0 !", "Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
 
 
         }
@@ -46,8 +56,18 @@ namespace Charging_Of_Pool
             var pipe1 = numericPipe1.Value;
             var pipe2 = numericPipe2.Value;
 
-            var elapsedTime = PoolProperties.CalculateTime(volume, pipe1, pipe2);
-            TimeLabel.Text = elapsedTime.ToString();
+            if (pipe1 == 0&&pipe2==0)
+            {
+                MessageBox.Show($"Both of pipes cannot be 0 !", "Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                var elapsedTime = PoolProperties.CalculateTime(volume, pipe1, pipe2);
+                TimeLabel.Text = elapsedTime.ToString();
+            }
+
+           
         }
     }
 }
