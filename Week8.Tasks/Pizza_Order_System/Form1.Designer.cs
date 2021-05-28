@@ -369,6 +369,7 @@ namespace Pizza_Order_System
             this.DeleteOrdersBtn.TabIndex = 16;
             this.DeleteOrdersBtn.Text = "Delete Orders";
             this.DeleteOrdersBtn.UseVisualStyleBackColor = true;
+            this.DeleteOrdersBtn.Click += new System.EventHandler(this.DeleteOrdersBtn_Click);
             // 
             // label9
             // 

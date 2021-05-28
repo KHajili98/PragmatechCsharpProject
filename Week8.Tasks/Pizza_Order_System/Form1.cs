@@ -240,5 +240,26 @@ namespace Pizza_Order_System
         {
             ReceiptCash.Text = totalAmount.ToString();
         }
+
+        private void DeleteOrdersBtn_Click(object sender, EventArgs e)
+        {
+            OrderList.Items.Clear();
+            ReceiptCash.Text = "0";
+            PizzaNameCombo.SelectedItem = null;
+            PizzaNameCombo.SelectedText = "-----Select Pizza-----";
+
+            SizePizzaCombo.SelectedItem = null;
+            SizePizzaCombo.SelectedText = "-----Select Size-----";
+            checkBoxPomidor.Checked = false;
+            checkBoxGobelek.Checked = false;
+            checkBoxSous.Checked = false;
+            checkBoxZeytun.Checked = false;
+
+            DrinkCombo.SelectedItem = null;
+            DrinkCombo.SelectedText = "-----Select Drink-----";
+
+            numericPiiza.Value = 0;
+            numericUpDown2.Value = 0;
+        }
     }
 }
