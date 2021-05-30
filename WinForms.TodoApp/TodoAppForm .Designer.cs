@@ -35,9 +35,11 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblDateTime = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.grpBoxOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,9 +58,9 @@
             this.grpBoxOperations.Controls.Add(this.btnGetAll);
             this.grpBoxOperations.Controls.Add(this.btnNew);
             this.grpBoxOperations.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpBoxOperations.Location = new System.Drawing.Point(0, 156);
+            this.grpBoxOperations.Location = new System.Drawing.Point(0, 256);
             this.grpBoxOperations.Name = "grpBoxOperations";
-            this.grpBoxOperations.Size = new System.Drawing.Size(284, 640);
+            this.grpBoxOperations.Size = new System.Drawing.Size(284, 540);
             this.grpBoxOperations.TabIndex = 2;
             this.grpBoxOperations.TabStop = false;
             this.grpBoxOperations.Text = "Operations";
@@ -99,26 +101,39 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::WinForms.TodoApp.Properties.Resources.todo_icon;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(284, 156);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(284, 256);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblDateTime);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(284, 717);
+            this.panel2.Location = new System.Drawing.Point(284, 741);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1098, 79);
+            this.panel2.Size = new System.Drawing.Size(1279, 55);
             this.panel2.TabIndex = 1;
+            // 
+            // lblDateTime
+            // 
+            this.lblDateTime.AutoSize = true;
+            this.lblDateTime.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblDateTime.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDateTime.Location = new System.Drawing.Point(1124, 0);
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(155, 31);
+            this.lblDateTime.TabIndex = 0;
+            this.lblDateTime.Text = "30.05.21 09:35";
             // 
             // TodoAppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1382, 796);
+            this.ClientSize = new System.Drawing.Size(1563, 796);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -130,6 +145,8 @@
             this.panel1.ResumeLayout(false);
             this.grpBoxOperations.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -143,5 +160,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnGetAll;
         private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Label lblDateTime;
     }
 }
