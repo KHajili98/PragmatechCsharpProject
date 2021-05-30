@@ -66,5 +66,11 @@ namespace Book_Stock
 
             },
         };
+
+        public override string ToString()
+        {
+
+            return Name;
+        }
     }
 }

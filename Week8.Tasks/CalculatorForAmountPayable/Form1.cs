@@ -25,6 +25,7 @@ namespace CalculatorForAmountPayable
             productListBox.Items.Clear();
             double result;
             string _name;
+
             if (!Double.TryParse(PriceInput.Text,  out result) || string.IsNullOrEmpty(NameInput.Text))
             {
                 MessageBox.Show($"Price or Name is not valid !", "Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -39,10 +40,6 @@ namespace CalculatorForAmountPayable
                     Price = result
                 });
             }
-
-          
-
-          
 
             foreach (var item in products)
             {

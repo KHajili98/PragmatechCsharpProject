@@ -12,9 +12,9 @@ namespace Book_Stock
 {
     public partial class Form1 : Form
     {
-        public static Book SelectedItem =null;
+        public static Book SelectedItem = null;
         private DetailPage detailPage;
-        
+
         public Form1(List<Book> books)
         {
             InitializeComponent();
@@ -26,11 +26,12 @@ namespace Book_Stock
         {
             BooksListCombo.SelectedItem = null;
             BooksListCombo.SelectedText = "--------Select your book--------";
+            // BooksListCombo.DataSource = Book.books;
             foreach (var item in Book.books)
             {
                 BooksListCombo.Items.Add(item.Name);
             }
-            Console.WriteLine(BooksListCombo.SelectedItem);
+
 
         }
 
@@ -39,8 +40,8 @@ namespace Book_Stock
 
             if (BooksListCombo.SelectedItem != null)
             {
-                SelectedItem = Book.books.FirstOrDefault(b => b.Name == BooksListCombo.SelectedItem.ToString());
-                detailPage = new DetailPage(SelectedItem);
+               SelectedItem = Book.books.FirstOrDefault(b => b.Name == BooksListCombo.SelectedItem.ToString());
+               detailPage = new DetailPage(SelectedItem);
                 detailPage.Show();
                 this.Hide();
             }

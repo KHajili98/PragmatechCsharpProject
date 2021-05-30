@@ -16,6 +16,7 @@ namespace Book_Stock
         public DetailPage(Book passingBook)
         {
             InitializeComponent();
+
         }
 
         

@@ -15,7 +15,7 @@ namespace Pizza_Order_System
     {
         public decimal cashForPizza;
         public string pizzaOrderForList;
-        public OrderedBy orderedBy = new OrderedBy() { Adress=null, Name=null,Phone=null,Surname=null};
+        public OrderedBy orderedBy = new OrderedBy();
         public List<Pizza> pizzas = new List<Pizza>()
         {
             new Pizza{Name="Mozorella",Small=5,Medium=10, Large=15},
@@ -60,6 +60,7 @@ namespace Pizza_Order_System
         }
         private void BeginBtn_Click(object sender, EventArgs e)
         {
+
             orderedBy.Name = NameInput.Text;
             orderedBy.Adress = AddressInput.Text;
             orderedBy.Phone = PhoneInput.Text;
@@ -88,7 +89,9 @@ namespace Pizza_Order_System
                 {
                     PizzaNameCombo.Items.Add(pizza.Name);
                 }
+
                 List<string> sizes = new List<string>() { "Small", "Medium", "Large" };
+
                 foreach (var item in sizes)
                 {
                     SizePizzaCombo.Items.Add(item);
