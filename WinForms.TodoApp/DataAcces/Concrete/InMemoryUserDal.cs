@@ -40,37 +40,4 @@ namespace WinForms.TodoApp.DataAcces.Concrete
 
         #endregion
     }
-
-    public class InMemoryTodoDal : ITodoDal
-    {
-        #region fields
-
-        private static readonly List<TodoEntity> _todoEntities;
-        #endregion
-
-
-        #region ctor
-
-        static InMemoryTodoDal()
-        {
-            _todoEntities = new List<TodoEntity>();
-        }
-
-        #endregion
-        #region Implementation of ITodoDal
-
-        public int Count()
-        {
-            return _todoEntities.Count;
-        }
-
-        public int Add(TodoEntity data)
-        {
-            _todoEntities.Add(data);
-
-            return 1;
-        }
-
-        #endregion
-    }
 }

@@ -13,11 +13,4 @@ namespace WinForms.TodoApp.DataAcces.Abstract
 
         void Add(UserEntity data);
     }
-
-    public interface ITodoDal
-    {
-        int Count();
-
-        int Add(TodoEntity data);
-    }
 }
