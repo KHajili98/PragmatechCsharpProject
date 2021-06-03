@@ -36,6 +36,7 @@ namespace WinForms.TodoApp
         {
             dataGridView.DataSource = _todoService.GetAll();
             dataGridView.Columns["Id"].Visible = false;
+            
         }
         private void btnGetAll_Click(object sender, EventArgs e)
         {
@@ -66,6 +67,7 @@ namespace WinForms.TodoApp
 
 
         #endregion
+
 
     }
 }
