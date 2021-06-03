@@ -33,6 +33,7 @@ namespace WinForms.TodoApp
         private void NewTodoForm_Load(object sender, EventArgs e)
         {
             comboBoxStatus.DataSource = Enum.GetValues(typeof(Status));
+            comboBoxImportanceLevel.DataSource = Enum.GetValues(typeof(ImportanceLevel));
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -42,8 +43,10 @@ namespace WinForms.TodoApp
                 Title = txtBoxTitle.Text,
                 ShortDescription = txtBoxShortDesc.Text,
                 Description = txtBoxDesc.Text,
-                ImportanceLevel = Convert.ToInt32(txtImportanceLevel.Text),
-                Status = (Status)comboBoxStatus.SelectedItem
+                ImportanceLevel = (ImportanceLevel)comboBoxImportanceLevel.SelectedItem,
+                Status = (Status)comboBoxStatus.SelectedItem,
+                CreatedDate = DateTime.Now
+                
             });
 
             if (result > 0)
@@ -116,8 +119,9 @@ namespace WinForms.TodoApp
             TextBox textBox = (TextBox)sender;
             textBox.BackColor = Color.White;
         }
-        #endregion
 
+
+        #endregion
 
         #endregion
 

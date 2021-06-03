@@ -36,9 +36,9 @@ namespace WinForms.TodoApp
             this.lblDesc = new System.Windows.Forms.Label();
             this.txtBoxDesc = new System.Windows.Forms.TextBox();
             this.lblILevel = new System.Windows.Forms.Label();
-            this.txtImportanceLevel = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.comboBoxImportanceLevel = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -107,15 +107,6 @@ namespace WinForms.TodoApp
             this.lblILevel.TabIndex = 0;
             this.lblILevel.Text = "Importance Level";
             // 
-            // txtImportanceLevel
-            // 
-            this.txtImportanceLevel.Location = new System.Drawing.Point(171, 443);
-            this.txtImportanceLevel.Name = "txtImportanceLevel";
-            this.txtImportanceLevel.Size = new System.Drawing.Size(330, 27);
-            this.txtImportanceLevel.TabIndex = 3;
-            this.txtImportanceLevel.Enter += new System.EventHandler(this.txtBox_Enter);
-            this.txtImportanceLevel.Leave += new System.EventHandler(this.txtBox_Leave);
-            // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
@@ -132,6 +123,13 @@ namespace WinForms.TodoApp
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(330, 28);
             this.comboBoxStatus.TabIndex = 4;
+            // 
+            // comboBoxImportanceLevel
+            // 
+            this.comboBoxImportanceLevel.Location = new System.Drawing.Point(171, 446);
+            this.comboBoxImportanceLevel.Name = "comboBoxImportanceLevel";
+            this.comboBoxImportanceLevel.Size = new System.Drawing.Size(330, 28);
+            this.comboBoxImportanceLevel.TabIndex = 6;
             // 
             // btnSave
             // 
@@ -150,7 +148,7 @@ namespace WinForms.TodoApp
             this.ClientSize = new System.Drawing.Size(598, 641);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.comboBoxStatus);
-            this.Controls.Add(this.txtImportanceLevel);
+            this.Controls.Add(this.comboBoxImportanceLevel);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblILevel);
             this.Controls.Add(this.txtBoxDesc);
@@ -177,9 +175,9 @@ namespace WinForms.TodoApp
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.TextBox txtBoxDesc;
         private System.Windows.Forms.Label lblILevel;
-        private System.Windows.Forms.TextBox txtImportanceLevel;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ComboBox comboBoxStatus;
+        private System.Windows.Forms.ComboBox comboBoxImportanceLevel;
         private System.Windows.Forms.Button btnSave;
     }
 }
