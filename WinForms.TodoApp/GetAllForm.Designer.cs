@@ -37,6 +37,8 @@ namespace WinForms.TodoApp
             this.btnGetAll = new System.Windows.Forms.Button();
             this.grpBoxList = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.btnInCompleted = new System.Windows.Forms.Button();
+            this.btnSuspended = new System.Windows.Forms.Button();
             this.panelLeftSideBar.SuspendLayout();
             this.groupBoxOperations.SuspendLayout();
             this.grpBoxList.SuspendLayout();
@@ -49,11 +51,13 @@ namespace WinForms.TodoApp
             this.panelLeftSideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftSideBar.Location = new System.Drawing.Point(0, 0);
             this.panelLeftSideBar.Name = "panelLeftSideBar";
-            this.panelLeftSideBar.Size = new System.Drawing.Size(267, 756);
+            this.panelLeftSideBar.Size = new System.Drawing.Size(267, 747);
             this.panelLeftSideBar.TabIndex = 0;
             // 
             // groupBoxOperations
             // 
+            this.groupBoxOperations.Controls.Add(this.btnSuspended);
+            this.groupBoxOperations.Controls.Add(this.btnInCompleted);
             this.groupBoxOperations.Controls.Add(this.btnCanceled);
             this.groupBoxOperations.Controls.Add(this.btnCompleted);
             this.groupBoxOperations.Controls.Add(this.btnPending);
@@ -61,7 +65,7 @@ namespace WinForms.TodoApp
             this.groupBoxOperations.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBoxOperations.Location = new System.Drawing.Point(0, 0);
             this.groupBoxOperations.Name = "groupBoxOperations";
-            this.groupBoxOperations.Size = new System.Drawing.Size(254, 756);
+            this.groupBoxOperations.Size = new System.Drawing.Size(254, 747);
             this.groupBoxOperations.TabIndex = 1;
             this.groupBoxOperations.TabStop = false;
             this.groupBoxOperations.Text = "Operations";
@@ -116,7 +120,7 @@ namespace WinForms.TodoApp
             this.grpBoxList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grpBoxList.Location = new System.Drawing.Point(267, 0);
             this.grpBoxList.Name = "grpBoxList";
-            this.grpBoxList.Size = new System.Drawing.Size(1017, 756);
+            this.grpBoxList.Size = new System.Drawing.Size(990, 747);
             this.grpBoxList.TabIndex = 1;
             this.grpBoxList.TabStop = false;
             this.grpBoxList.Text = "List";
@@ -130,14 +134,34 @@ namespace WinForms.TodoApp
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 29;
-            this.dataGridView.Size = new System.Drawing.Size(1011, 730);
+            this.dataGridView.Size = new System.Drawing.Size(984, 721);
             this.dataGridView.TabIndex = 2;
+            // 
+            // btnInCompleted
+            // 
+            this.btnInCompleted.Location = new System.Drawing.Point(3, 140);
+            this.btnInCompleted.Name = "btnInCompleted";
+            this.btnInCompleted.Size = new System.Drawing.Size(248, 29);
+            this.btnInCompleted.TabIndex = 3;
+            this.btnInCompleted.Text = "InCompleted";
+            this.btnInCompleted.UseVisualStyleBackColor = true;
+            this.btnInCompleted.Click += new System.EventHandler(this.btnInCompleted_Click);
+            // 
+            // btnSuspended
+            // 
+            this.btnSuspended.Location = new System.Drawing.Point(3, 169);
+            this.btnSuspended.Name = "btnSuspended";
+            this.btnSuspended.Size = new System.Drawing.Size(248, 29);
+            this.btnSuspended.TabIndex = 4;
+            this.btnSuspended.Text = "Suspended";
+            this.btnSuspended.UseVisualStyleBackColor = true;
+            this.btnSuspended.Click += new System.EventHandler(this.btnSuspended_Click);
             // 
             // GetAllForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 756);
+            this.ClientSize = new System.Drawing.Size(1257, 747);
             this.Controls.Add(this.grpBoxList);
             this.Controls.Add(this.panelLeftSideBar);
             this.Name = "GetAllForm";
@@ -161,5 +185,7 @@ namespace WinForms.TodoApp
         private System.Windows.Forms.Button btnGetAll;
         private System.Windows.Forms.GroupBox grpBoxList;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button btnInCompleted;
+        private System.Windows.Forms.Button btnSuspended;
     }
 }

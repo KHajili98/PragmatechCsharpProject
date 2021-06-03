@@ -65,6 +65,19 @@ namespace WinForms.TodoApp
 
         }
 
+        private void btnInCompleted_Click(object sender, EventArgs e)
+        {
+
+            dataGridView.DataSource = _todoService.GetAll(Status.InCompleted);
+            dataGridView.Columns["Id"].Visible = false;
+        }
+
+        private void btnSuspended_Click(object sender, EventArgs e)
+        {
+
+            dataGridView.DataSource = _todoService.GetAll(Status.Suspended);
+            dataGridView.Columns["Id"].Visible = false;
+        }
 
         #endregion
 
