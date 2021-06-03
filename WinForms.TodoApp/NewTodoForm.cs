@@ -79,6 +79,7 @@ namespace WinForms.TodoApp
                         DataGridView dataGridView = (DataGridView)listGroupBox.Controls["dataGridView"];
                         dataGridView.DataSource = null;
                         dataGridView.DataSource = _todoService.GetAll();
+                        dataGridView.Columns["Id"].Visible = false;
                         this.Close();
                     }
                 }
