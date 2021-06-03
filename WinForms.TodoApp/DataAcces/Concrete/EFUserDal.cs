@@ -22,6 +22,11 @@ namespace WinForms.TodoApp.DataAcces.Concrete
             throw new NotImplementedException();
         }
 
+        UserEntity IUserDal.GetUser(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }

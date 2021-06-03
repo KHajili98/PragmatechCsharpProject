@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WinForms.TodoApp.DataAcces.Abstract;
 using WinForms.TodoApp.Entities.Concrete;
 
-namespace WinForms.TodoApp.DataAcces.Concrete
+namespace WinForms.TodoApp.DataAccess.Concrete
 {
     public class InMemoryUserDal : IUserDal
     {
@@ -27,6 +25,12 @@ namespace WinForms.TodoApp.DataAcces.Concrete
         }
         #endregion
         #region Implementation of IUserDal
+
+        public UserEntity GetUser(string username, string password)
+        {
+            var user = _userEntities.SingleOrDefault(i => i.Username == username && i.Password == password);
+            return user;
+        }
 
         public List<UserEntity> GetAll()
         {

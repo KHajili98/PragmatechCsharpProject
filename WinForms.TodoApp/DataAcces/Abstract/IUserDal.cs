@@ -9,6 +9,7 @@ namespace WinForms.TodoApp.DataAcces.Abstract
 {
     public interface IUserDal
     {
+        UserEntity GetUser(string username, string password);
         List<UserEntity> GetAll();
 
         void Add(UserEntity data);

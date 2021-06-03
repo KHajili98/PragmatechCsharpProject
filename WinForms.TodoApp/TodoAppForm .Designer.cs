@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grpBoxOperations = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblDateTime = new System.Windows.Forms.Label();
+            this.timerDateTime = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.grpBoxOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -161,5 +163,6 @@
         private System.Windows.Forms.Button btnGetAll;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Label lblDateTime;
+        private System.Windows.Forms.Timer timerDateTime;
     }
 }

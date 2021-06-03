@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using WinForms.TodoApp.DataAcces.Abstract;
 using WinForms.TodoApp.Entities.Concrete;
 using WinForms.TodoApp.Enums;
 
-namespace WinForms.TodoApp.DataAcces.Concrete
+namespace WinForms.TodoApp.DataAccess.Concrete
 {
     public class InMemoryTodoDal : ITodoDal
     {
@@ -11,8 +13,6 @@ namespace WinForms.TodoApp.DataAcces.Concrete
 
         private static readonly List<TodoEntity> _todoEntities;
         #endregion
-
-
         #region ctor
 
         static InMemoryTodoDal()
@@ -30,19 +30,30 @@ namespace WinForms.TodoApp.DataAcces.Concrete
 
         public int Add(TodoEntity data)
         {
-            _todoEntities.Add(data);
+            int result;
+            try
+            {
+                _todoEntities.Add(data);
+                result = 1;
+            }
+            catch (Exception e)
+            {
+                result = 0;
+                throw;
+            }
 
-            return 1;
+
+            return result;
         }
 
-        List<TodoEntity> ITodoDal.GetAll()
+        public List<TodoEntity> GetAll()
         {
-            throw new System.NotImplementedException();
+            return _todoEntities;
         }
 
-        List<TodoEntity> ITodoDal.GetAll(Status status)
+        public List<TodoEntity> GetAll(Status status)
         {
-            throw new System.NotImplementedException();
+            return _todoEntities.Where(i => i.Status == status).ToList();
         }
 
         #endregion

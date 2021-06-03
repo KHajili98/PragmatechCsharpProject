@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WinForms.TodoApp.Bussiness.Abstract;
 using WinForms.TodoApp.DataAcces.Abstract;
-using WinForms.TodoApp.DataAcces.Concrete;
 using WinForms.TodoApp.Entities.Concrete;
+using WinForms.TodoApp.Enums;
 
-namespace WinForms.TodoApp.Bussiness.Concrete
+namespace WinForms.TodoApp.Business.Concrete
 {
     public class TodoService : ITodoService
     {
@@ -39,7 +36,12 @@ namespace WinForms.TodoApp.Bussiness.Concrete
 
         public List<TodoEntity> GetAll()
         {
-            throw new NotImplementedException();
+            return _todoDal.GetAll();
+        }
+
+        public List<TodoEntity> GetAll(Status status)
+        {
+            return _todoDal.GetAll(status);
         }
 
         #endregion

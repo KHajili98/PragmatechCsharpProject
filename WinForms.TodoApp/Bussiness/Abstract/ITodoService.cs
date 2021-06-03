@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WinForms.TodoApp.Entities.Concrete;
+using WinForms.TodoApp.Enums;
 
 namespace WinForms.TodoApp.Bussiness.Abstract
 {
@@ -12,9 +13,6 @@ namespace WinForms.TodoApp.Bussiness.Abstract
         int Count();
         int Add(TodoEntity data);
         List<TodoEntity> GetAll();
-    }
-
-    public interface IUserService
-    {
+        List<TodoEntity> GetAll(Status status);
     }
 }
