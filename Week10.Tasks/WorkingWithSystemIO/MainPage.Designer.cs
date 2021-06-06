@@ -40,16 +40,17 @@ namespace WorkingWithSystemIO
             this.label2 = new System.Windows.Forms.Label();
             this.btnCreateFile = new System.Windows.Forms.Button();
             this.btnCreateFolder = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileTable)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(1434, 334);
+            this.btnOpen.Location = new System.Drawing.Point(1369, 343);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(183, 40);
             this.btnOpen.TabIndex = 0;
-            this.btnOpen.Text = "Open File";
+            this.btnOpen.Text = "Load Directory";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
@@ -64,8 +65,9 @@ namespace WorkingWithSystemIO
             this.dataGridViewFileTable.Name = "dataGridViewFileTable";
             this.dataGridViewFileTable.RowHeadersWidth = 51;
             this.dataGridViewFileTable.RowTemplate.Height = 29;
-            this.dataGridViewFileTable.Size = new System.Drawing.Size(1629, 328);
+            this.dataGridViewFileTable.Size = new System.Drawing.Size(1564, 328);
             this.dataGridViewFileTable.TabIndex = 1;
+            this.dataGridViewFileTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFileTable_CellContentClick);
             // 
             // Name
             // 
@@ -83,14 +85,14 @@ namespace WorkingWithSystemIO
             // 
             // textBoxFileName
             // 
-            this.textBoxFileName.Location = new System.Drawing.Point(64, 391);
+            this.textBoxFileName.Location = new System.Drawing.Point(72, 369);
             this.textBoxFileName.Name = "textBoxFileName";
             this.textBoxFileName.Size = new System.Drawing.Size(467, 27);
             this.textBoxFileName.TabIndex = 2;
             // 
             // textBoxFolderName
             // 
-            this.textBoxFolderName.Location = new System.Drawing.Point(64, 433);
+            this.textBoxFolderName.Location = new System.Drawing.Point(72, 411);
             this.textBoxFolderName.Name = "textBoxFolderName";
             this.textBoxFolderName.Size = new System.Drawing.Size(467, 27);
             this.textBoxFolderName.TabIndex = 2;
@@ -98,7 +100,7 @@ namespace WorkingWithSystemIO
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 398);
+            this.label1.Location = new System.Drawing.Point(17, 376);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 20);
             this.label1.TabIndex = 3;
@@ -107,7 +109,7 @@ namespace WorkingWithSystemIO
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 440);
+            this.label2.Location = new System.Drawing.Point(15, 418);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 3;
@@ -115,7 +117,7 @@ namespace WorkingWithSystemIO
             // 
             // btnCreateFile
             // 
-            this.btnCreateFile.Location = new System.Drawing.Point(563, 389);
+            this.btnCreateFile.Location = new System.Drawing.Point(571, 367);
             this.btnCreateFile.Name = "btnCreateFile";
             this.btnCreateFile.Size = new System.Drawing.Size(147, 29);
             this.btnCreateFile.TabIndex = 4;
@@ -125,7 +127,7 @@ namespace WorkingWithSystemIO
             // 
             // btnCreateFolder
             // 
-            this.btnCreateFolder.Location = new System.Drawing.Point(563, 431);
+            this.btnCreateFolder.Location = new System.Drawing.Point(571, 409);
             this.btnCreateFolder.Name = "btnCreateFolder";
             this.btnCreateFolder.Size = new System.Drawing.Size(147, 29);
             this.btnCreateFolder.TabIndex = 4;
@@ -133,11 +135,21 @@ namespace WorkingWithSystemIO
             this.btnCreateFolder.UseVisualStyleBackColor = true;
             this.btnCreateFolder.Click += new System.EventHandler(this.btnCreateFolder_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 477);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(1564, 308);
+            this.richTextBox1.TabIndex = 5;
+            this.richTextBox1.Text = "";
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1629, 686);
+            this.ClientSize = new System.Drawing.Size(1564, 785);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnCreateFolder);
             this.Controls.Add(this.btnCreateFile);
             this.Controls.Add(this.label2);
@@ -168,6 +180,7 @@ namespace WorkingWithSystemIO
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCreateFile;
         private System.Windows.Forms.Button btnCreateFolder;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

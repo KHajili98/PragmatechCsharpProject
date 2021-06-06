@@ -103,5 +103,20 @@ namespace WorkingWithSystemIO
             textBoxFolderName.Clear();
 
         }
+
+        private void dataGridViewFileTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridViewFileTable.Rows[e.RowIndex];
+                string openedFile = directory + "\\" + row.Cells["Name"].Value.ToString();
+
+                if (File.Exists(openedFile))
+                {
+                  richTextBox1.LoadFile(openedFile,RichTextBoxStreamType.PlainText);
+                }
+
+            }
+        }
     }
 }
