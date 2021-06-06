@@ -1,5 +1,5 @@
-﻿### Tasks
-    1) Form icerisinde btnOpen klik olunan zaman folderBrowserDialog-dan secilen her hansisa directory-de 
+﻿### TasksserDia
+    1) Form icerisinde btnOpen klik olunan zaman folderBrowlog-dan secilen her hansisa directory-de 
     olan folder ve ya file-larin dataGrid-de gosterilmesi, dataGrid-de 2 column olacaq Name , Type 
     directory-de folder olarsa name hissede adi type hissede Folder deye qeyd edilecek,
     file olarsa Name hissede fileName Type hissesinde File , 
