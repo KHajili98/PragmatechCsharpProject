@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Week9.Tasks",
+    "\\Week9.Tasks\\WinForms.TodoApp"
   ],
+  "SelectedNode": "\\Week9.Tasks\\WinForms.TodoApp\\WinForms.TodoApp.sln",
   "PreviewInSolutionExplorer": false
 }
