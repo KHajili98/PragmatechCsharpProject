@@ -1,0 +1,15 @@
+﻿### Tasks
+    1) Form icerisinde btnOpen klik olunan zaman folderBrowserDialog-dan secilen her hansisa directory-de 
+    olan folder ve ya file-larin dataGrid-de gosterilmesi, dataGrid-de 2 column olacaq Name , Type 
+    directory-de folder olarsa name hissede adi type hissede Folder deye qeyd edilecek,
+    file olarsa Name hissede fileName Type hissesinde File , 
+
+    her ikisi ucun ad textBox vasitesile elave edilecek :
+       1 btnCreateFile klik olunan zaman eyni directory-de istenilen 
+    uzantili bir file yaradilir ve eyni anda dataGrid-de elave edilir,
+       2 btnCreateFolder klik olunan zaman eyni directory-de folder yaradilir ve eyni anda dataGrid-de elave edilir,
+
+    Datagrid-de uzantisi .html,.css,.js,.txt olan file olan setrlerden her hansisa birine klik olunan zaman muvafiq uzantiya
+    sahib file-in icerisindeki data richTextBoxda gosterilecek,(Meselen:.html uzantili bir file gosterilirse duzgun formatlandirin gorunusu)
+
+    Richtextbox-da deyisiklik olunarsa btnSave aktiv olur ve olunan deyisiklikler yadda saxlanir.
