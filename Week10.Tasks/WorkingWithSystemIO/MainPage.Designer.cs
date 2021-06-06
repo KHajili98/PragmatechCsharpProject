@@ -131,6 +131,7 @@ namespace WorkingWithSystemIO
             this.btnCreateFolder.TabIndex = 4;
             this.btnCreateFolder.Text = "Create Folder";
             this.btnCreateFolder.UseVisualStyleBackColor = true;
+            this.btnCreateFolder.Click += new System.EventHandler(this.btnCreateFolder_Click);
             // 
             // MainPage
             // 

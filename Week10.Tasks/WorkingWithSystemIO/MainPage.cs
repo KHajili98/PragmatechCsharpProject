@@ -51,10 +51,56 @@ namespace WorkingWithSystemIO
         private void btnCreateFile_Click(object sender, EventArgs e)
         {
             string fileName = textBoxFileName.Text; // extension buna daxildir...
-            FileStream fileStream = File.Create(directory+"\\"+fileName);
-            fileStream.Close();
-            dataGridViewFileTable.Rows.Add(fileName, "File");
+            string newfile = directory + "\\" + fileName;
 
+            try
+            {
+                if (!File.Exists(newfile) && !Directory.Exists(newfile))
+                {
+                    FileStream fileStream = File.Create(newfile);
+                    fileStream.Close();
+                    dataGridViewFileTable.Rows.Add(fileName, "File");
+                }
+                else
+                {
+                    MessageBox.Show("Same name of file or folder is already exist.");
+                }
+
+                textBoxFileName.Clear();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+        }
+
+        private void btnCreateFolder_Click(object sender, EventArgs e)
+        {
+            string folderName = textBoxFolderName.Text; 
+            string newFolder = directory + "\\" + folderName;
+            try
+            {
+                if (!Directory.Exists(newFolder))
+                {
+                    Directory.CreateDirectory(newFolder);
+                    dataGridViewFileTable.Rows.Add(folderName, "Folder");
+
+                }
+                else
+                {
+                    MessageBox.Show("This folder is already exist.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+            textBoxFolderName.Clear();
 
         }
     }
