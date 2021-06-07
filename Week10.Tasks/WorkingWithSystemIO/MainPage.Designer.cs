@@ -1,7 +1,7 @@
 ﻿
 namespace WorkingWithSystemIO
 {
-    partial class MainPage
+    partial class Form
     {
         /// <summary>
         ///  Required designer variable.
@@ -41,6 +41,7 @@ namespace WorkingWithSystemIO
             this.btnCreateFile = new System.Windows.Forms.Button();
             this.btnCreateFolder = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btnSaveChanges = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFileTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@ namespace WorkingWithSystemIO
             // 
             this.btnOpen.Location = new System.Drawing.Point(1369, 343);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(183, 40);
+            this.btnOpen.Size = new System.Drawing.Size(183, 53);
             this.btnOpen.TabIndex = 0;
             this.btnOpen.Text = "Load Directory";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -143,12 +144,25 @@ namespace WorkingWithSystemIO
             this.richTextBox1.Size = new System.Drawing.Size(1564, 308);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // MainPage
+            // btnSaveChanges
+            // 
+            this.btnSaveChanges.Enabled = false;
+            this.btnSaveChanges.Location = new System.Drawing.Point(1369, 429);
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.Size = new System.Drawing.Size(183, 42);
+            this.btnSaveChanges.TabIndex = 6;
+            this.btnSaveChanges.Text = "Save Changes";
+            this.btnSaveChanges.UseVisualStyleBackColor = true;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
+            // 
+            // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1564, 785);
+            this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnCreateFolder);
             this.Controls.Add(this.btnCreateFile);
@@ -181,6 +195,7 @@ namespace WorkingWithSystemIO
         private System.Windows.Forms.Button btnCreateFile;
         private System.Windows.Forms.Button btnCreateFolder;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button btnSaveChanges;
     }
 }
 

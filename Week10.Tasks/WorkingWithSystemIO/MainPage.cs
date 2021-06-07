@@ -11,12 +11,13 @@ using System.Windows.Forms;
 
 namespace WorkingWithSystemIO
 {
-    public partial class MainPage : Form
+    public partial class Form : System.Windows.Forms.Form
     {
         public string[] files;
         public string[] folders;
         public string directory;
-        public MainPage()
+        string openedFile;
+        public Form()
         {
             InitializeComponent();
         }
@@ -109,14 +110,23 @@ namespace WorkingWithSystemIO
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridViewFileTable.Rows[e.RowIndex];
-                string openedFile = directory + "\\" + row.Cells["Name"].Value.ToString();
+                openedFile = directory + "\\" + row.Cells["Name"].Value.ToString();
 
                 if (File.Exists(openedFile))
                 {
                   richTextBox1.LoadFile(openedFile,RichTextBoxStreamType.PlainText);
                 }
-
             }
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            btnSaveChanges.Enabled = true;
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SaveFile(openedFile, RichTextBoxStreamType.PlainText);
         }
     }
 }
