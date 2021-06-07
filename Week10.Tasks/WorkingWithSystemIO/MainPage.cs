@@ -51,29 +51,39 @@ namespace WorkingWithSystemIO
 
         private void btnCreateFile_Click(object sender, EventArgs e)
         {
-            string fileName = textBoxFileName.Text; // extension buna daxildir...
-            string newfile = directory + "\\" + fileName;
-
-            try
+            if (!string.IsNullOrEmpty(textBoxFileName.Text))
             {
-                if (!File.Exists(newfile) && !Directory.Exists(newfile))
-                {
-                    FileStream fileStream = File.Create(newfile);
-                    fileStream.Close();
-                    dataGridViewFileTable.Rows.Add(fileName, "File");
-                }
-                else
-                {
-                    MessageBox.Show("Same name of file or folder is already exist.");
-                }
+                string fileName = textBoxFileName.Text; // extension buna daxildir...
+                string newfile = directory + "\\" + fileName;
 
-                textBoxFileName.Clear();
+                try
+                {
+                    if (!File.Exists(newfile) && !Directory.Exists(newfile))
+                    {
+                        FileStream fileStream = File.Create(newfile);
+                        fileStream.Close();
+                        dataGridViewFileTable.Rows.Add(fileName, "File");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Same name of file or folder is already exist.");
+                    }
+
+                    textBoxFileName.Clear();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
+                MessageBox.Show("Give FILE name, it cannot be empty");
 
-                MessageBox.Show(ex.Message);
             }
+
+
 
 
 
@@ -81,27 +91,35 @@ namespace WorkingWithSystemIO
 
         private void btnCreateFolder_Click(object sender, EventArgs e)
         {
-            string folderName = textBoxFolderName.Text; 
-            string newFolder = directory + "\\" + folderName;
-            try
+            if (!string.IsNullOrEmpty(textBoxFolderName.Text))
             {
-                if (!Directory.Exists(newFolder))
+                string folderName = textBoxFolderName.Text;
+                string newFolder = directory + "\\" + folderName;
+                try
                 {
-                    Directory.CreateDirectory(newFolder);
-                    dataGridViewFileTable.Rows.Add(folderName, "Folder");
+                    if (!Directory.Exists(newFolder))
+                    {
+                        Directory.CreateDirectory(newFolder);
+                        dataGridViewFileTable.Rows.Add(folderName, "Folder");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("This folder is already exist.");
+                    }
+                    textBoxFolderName.Clear();
 
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("This folder is already exist.");
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Give FOLDER name, it cannot be empty");
             }
             
-            textBoxFolderName.Clear();
 
         }
 
@@ -126,7 +144,16 @@ namespace WorkingWithSystemIO
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            richTextBox1.SaveFile(openedFile, RichTextBoxStreamType.PlainText);
+            try
+            {
+                richTextBox1.SaveFile(openedFile, RichTextBoxStreamType.PlainText);
+                MessageBox.Show("Changes saved in same file");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
