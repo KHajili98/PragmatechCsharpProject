@@ -33,6 +33,8 @@ namespace PersonForm
 
         Person newPerson = new();
 
+        public  delegate void ShowHandler();
+
         private void showButton_Click(object sender, EventArgs e)
         {
             newPerson.Name = txtName.Text;
@@ -50,29 +52,10 @@ namespace PersonForm
 
             switch (listBoxFormat.SelectedIndex)
             {
-                case 0:
-                    lblName.Text = newPerson.Name;
-                    lblSurname.Text = newPerson.SurName;
-                    break;
-                case 1:
-                    lblName.Text = newPerson.Name;
-                    lblSurname.Text = newPerson.SurName;
-                    lblCountry.Text = newPerson.Country;
-                    break;
-                case 2:
-                    lblName.Text = newPerson.Name; 
-                    lblSurname.Text = newPerson.SurName; 
-                    lblCountry.Text = newPerson.Country; 
-                    lblCity.Text = newPerson.City;
-                    break;
-                case 3:
-                    lblName.Text = newPerson.Name; 
-                    lblSurname.Text = newPerson.SurName;
-                    lblCountry.Text = newPerson.Country;
-                    lblCity.Text = newPerson.City;
-                    lblBirthDay.Text = newPerson.BirthDate.ToString();
-                    break;
-
+                case 0: newPerson.ShowNS(newPerson, lblName, lblSurname); break;
+                case 1: newPerson.ShowNSCo(newPerson, lblName, lblSurname, lblCountry); break;
+                case 2:newPerson.ShowNSCoCi(newPerson, lblName, lblSurname, lblCountry, lblCity); break;
+                case 3: newPerson.ShowNSCoCiB(newPerson, lblName, lblSurname, lblCountry, lblCity, lblBirthDay); break;
             }
 
         }
