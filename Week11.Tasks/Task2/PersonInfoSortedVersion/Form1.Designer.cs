@@ -82,6 +82,7 @@ namespace PersonInfoSortedVersion
             this.orderByButton.TabIndex = 4;
             this.orderByButton.Text = "Sort";
             this.orderByButton.UseVisualStyleBackColor = true;
+            this.orderByButton.Click += new System.EventHandler(this.orderByButton_Click);
             // 
             // label2
             // 
@@ -107,6 +108,7 @@ namespace PersonInfoSortedVersion
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

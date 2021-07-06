@@ -37,10 +37,34 @@ namespace PersonInfoSortedVersion
         {
            
             InitializeComponent();
+            listBox1.Items.Add("Name");
+            listBox1.Items.Add("Profession");
+            listBox1.Items.Add("Country");
         }
 
-       
+        FakeMemory memory = new FakeMemory();
 
-        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = FakeMemory.FetchPeople().OrderBy(p=>p.Profession).ToList();
+            dataGridView1.Columns["Id"].Visible = false;
+            
+        }
+
+        private void orderByButton_Click(object sender, EventArgs e)
+        {
+            switch (listBox1.SelectedIndex)
+            {
+                case 0:
+                    dataGridView1.DataSource = FakeMemory.FetchPeople().OrderBy(p => p.Name).ToList();
+                    break;
+                case 1:
+                    dataGridView1.DataSource = FakeMemory.FetchPeople().OrderBy(p => p.Profession).ToList();
+                    break;
+                case 2:
+                    dataGridView1.DataSource = FakeMemory.FetchPeople().OrderBy(p => p.Country).ToList();
+                    break;
+            }
+        }
     }
 }

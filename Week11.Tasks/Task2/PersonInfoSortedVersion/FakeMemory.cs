@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace PersonInfoSortedVersion
 {
-    public static class FakeMemory
+     class FakeMemory
     {
-
         private static readonly List<Person> People;
 
         static FakeMemory()
@@ -16,9 +15,9 @@ namespace PersonInfoSortedVersion
             People = new List<Person>();
         }
 
-        static List<Person> GetPeople()
+        public static List<Person> FetchPeople()
         {
-            for (int i = 1; i <= 1000; i++)
+            for (int i = 1; i < 1000; i++)
             {
                 Person person = new Person
                 {
@@ -28,14 +27,13 @@ namespace PersonInfoSortedVersion
                     Country = FakeData.PlaceData.GetCountry(),
                     City = FakeData.PlaceData.GetCity(),
                     Phone = FakeData.PhoneNumberData.GetPhoneNumber(),
-                    Birthdate = FakeData.DateTimeData.GetDatetime(new DateTime(1950, 12, 12), new DateTime(2020, 12, 12)),
+                    Birthdate = FakeData.DateTimeData.GetDatetime(new DateTime(1960, 12, 12), new DateTime(2020, 12, 12)),
                     Profession = FakeData.NameData.GetCompanyName()
                 };
 
                 person.Email = $"{person.Name}.{person.Surname}@{FakeData.NetworkData.GetDomain()}";
                 People.Add(person);
             }
-
             return People;
         }
     }
