@@ -38,7 +38,18 @@ namespace PersonForm
             this.txtCountry = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.addButton = new System.Windows.Forms.Button();
+            this.showButton = new System.Windows.Forms.Button();
+            this.listBoxFormat = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblSurname = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblCountry = new System.Windows.Forms.Label();
+            this.lblBirthDay = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtName
@@ -107,27 +118,137 @@ namespace PersonForm
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(44, 384);
+            this.dateTimePicker.Location = new System.Drawing.Point(44, 365);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(250, 27);
             this.dateTimePicker.TabIndex = 2;
             // 
-            // addButton
+            // showButton
             // 
-            this.addButton.Location = new System.Drawing.Point(44, 452);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(94, 29);
-            this.addButton.TabIndex = 4;
-            this.addButton.Text = "Add Person";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.showButton.Location = new System.Drawing.Point(44, 575);
+            this.showButton.Name = "showButton";
+            this.showButton.Size = new System.Drawing.Size(94, 29);
+            this.showButton.TabIndex = 4;
+            this.showButton.Text = "Show";
+            this.showButton.UseVisualStyleBackColor = true;
+            this.showButton.Click += new System.EventHandler(this.showButton_Click);
+            // 
+            // listBoxFormat
+            // 
+            this.listBoxFormat.FormattingEnabled = true;
+            this.listBoxFormat.ItemHeight = 20;
+            this.listBoxFormat.Location = new System.Drawing.Point(44, 444);
+            this.listBoxFormat.Name = "listBoxFormat";
+            this.listBoxFormat.Size = new System.Drawing.Size(250, 104);
+            this.listBoxFormat.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(400, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 20);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Name :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(400, 110);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 20);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Surname :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(400, 153);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 20);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "City :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(400, 193);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 20);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Country :";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(400, 236);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 20);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Birthdate :";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(517, 62);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(15, 20);
+            this.lblName.TabIndex = 7;
+            this.lblName.Text = "-";
+            // 
+            // lblSurname
+            // 
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Location = new System.Drawing.Point(517, 110);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(15, 20);
+            this.lblSurname.TabIndex = 7;
+            this.lblSurname.Text = "-";
+            // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Location = new System.Drawing.Point(517, 153);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(15, 20);
+            this.lblCity.TabIndex = 7;
+            this.lblCity.Text = "-";
+            // 
+            // lblCountry
+            // 
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Location = new System.Drawing.Point(517, 193);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(15, 20);
+            this.lblCountry.TabIndex = 7;
+            this.lblCountry.Text = "-";
+            // 
+            // lblBirthDay
+            // 
+            this.lblBirthDay.AutoSize = true;
+            this.lblBirthDay.Location = new System.Drawing.Point(517, 236);
+            this.lblBirthDay.Name = "lblBirthDay";
+            this.lblBirthDay.Size = new System.Drawing.Size(15, 20);
+            this.lblBirthDay.TabIndex = 7;
+            this.lblBirthDay.Text = "-";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1775, 728);
-            this.Controls.Add(this.addButton);
+            this.ClientSize = new System.Drawing.Size(882, 728);
+            this.Controls.Add(this.lblBirthDay);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblCountry);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblCity);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblSurname);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.listBoxFormat);
+            this.Controls.Add(this.showButton);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -157,7 +278,18 @@ namespace PersonForm
         private System.Windows.Forms.TextBox txtCountry;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button showButton;
+        private System.Windows.Forms.ListBox listBoxFormat;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblSurname;
+        private System.Windows.Forms.Label lblCity;
+        private System.Windows.Forms.Label lblCountry;
+        private System.Windows.Forms.Label lblBirthDay;
     }
 }
 

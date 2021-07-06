@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Week10.Tasks"
+    "\\Week10.Tasks",
+    "\\Week11.Tasks",
+    "\\Week11.Tasks\\Task1",
+    "\\Week11.Tasks\\Task1\\PersonForm"
   ],
-  "SelectedNode": "\\Week10.Tasks",
+  "SelectedNode": "\\Week11.Tasks\\Task1\\PersonForm\\PersonForm.sln",
   "PreviewInSolutionExplorer": false
 }

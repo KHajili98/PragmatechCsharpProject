@@ -12,13 +12,21 @@ namespace PersonForm
 {
     public partial class Form1 : Form
     {
+        Person newPerson = new();
+
         public Form1()
         {
+           
             InitializeComponent();
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void showButton_Click(object sender, EventArgs e)
         {
+            txtName.Text = newPerson.Name;
+            txtSurname.Text = newPerson.SurName;
+            txtCity.Text = newPerson.City;
+            txtCountry.Text = newPerson.Country;
+
 
         }
     }
