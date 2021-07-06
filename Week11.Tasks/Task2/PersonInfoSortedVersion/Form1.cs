@@ -35,20 +35,21 @@ namespace PersonInfoSortedVersion
     {
         public Form1()
         {
-           
+
             InitializeComponent();
-            listBox1.Items.Add("Name");
-            listBox1.Items.Add("Profession");
-            listBox1.Items.Add("Country");
+
         }
 
         FakeMemory memory = new FakeMemory();
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = FakeMemory.FetchPeople().OrderBy(p=>p.Profession).ToList();
+            listBox1.Items.Add("Name");
+            listBox1.Items.Add("Profession");
+            listBox1.Items.Add("Country");
+            dataGridView1.DataSource = FakeMemory.FetchPeople().OrderBy(p => p.Profession).ToList();
             dataGridView1.Columns["Id"].Visible = false;
-            
+
         }
 
         private void orderByButton_Click(object sender, EventArgs e)
@@ -65,6 +66,26 @@ namespace PersonInfoSortedVersion
                     dataGridView1.DataSource = FakeMemory.FetchPeople().OrderBy(p => p.Country).ToList();
                     break;
             }
+            txtSearch.Text = null;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string search = txtSearch.Text;
+        
+           
+            var searchedList = FakeMemory.FetchPeople().Where(p => p.Name.StartsWith(search.ToUpper()) || p.Name.Contains(search)).ToList();
+
+            if (searchedList.Count != 0)
+            {
+                dataGridView1.DataSource = FakeMemory.FetchPeople().Where(p => p.Name.StartsWith(search)).ToList();
+
+            }
+            else
+            {
+                MessageBox.Show("Verilene uygun ad tapilmadi !","Bow List", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }

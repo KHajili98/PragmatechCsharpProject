@@ -55,6 +55,7 @@ namespace PersonInfoSortedVersion
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(411, 27);
             this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // listBox1
             // 
@@ -89,9 +90,9 @@ namespace PersonInfoSortedVersion
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(21, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 20);
+            this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Search";
+            this.label2.Text = "Search Name:";
             // 
             // Form1
             // 
