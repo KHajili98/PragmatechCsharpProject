@@ -139,7 +139,7 @@ namespace PersonForm
             this.listBoxFormat.ItemHeight = 20;
             this.listBoxFormat.Location = new System.Drawing.Point(44, 444);
             this.listBoxFormat.Name = "listBoxFormat";
-            this.listBoxFormat.Size = new System.Drawing.Size(250, 104);
+            this.listBoxFormat.Size = new System.Drawing.Size(344, 104);
             this.listBoxFormat.TabIndex = 5;
             // 
             // label6
