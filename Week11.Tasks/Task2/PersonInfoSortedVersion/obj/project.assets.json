@@ -1,11 +1,37 @@
 {
   "version": 3,
   "targets": {
-    "net5.0-windows7.0": {}
+    "net5.0-windows7.0": {
+      "FakeData/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/FakeData.dll": {}
+        },
+        "runtime": {
+          "lib/FakeData.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "FakeData/1.0.0": {
+      "sha512": "hHp5a569gbVo7Fg/whOeDSFExhaB/cidqDTUTFxQDphsMeQhuS0AEyxfg1WunJz5W4ZOPdwEqhQJqEfUCnl9Ow==",
+      "type": "package",
+      "path": "fakedata/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fakedata.1.0.0.nupkg.sha512",
+        "fakedata.nuspec",
+        "lib/FakeData.dll",
+        "lib/FakeData.pdb"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0-windows7.0": []
+    "net5.0-windows7.0": [
+      "FakeData >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\shaba\\.nuget\\packages\\": {},
@@ -50,6 +76,12 @@
     "frameworks": {
       "net5.0-windows7.0": {
         "targetAlias": "net5.0-windows",
+        "dependencies": {
+          "FakeData": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -71,5 +103,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FakeData 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FakeData",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
 }

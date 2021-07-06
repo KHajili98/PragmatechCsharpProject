@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "PchqgvCt0V4PcJAeeAauPyc+TsZzNKqFW1/HzLnjZlJv+klkSkigvP4wGjMRK76yRKSwyaCDNIvISOtvmRQPRg==",
+  "dgSpecHash": "Ph08lTCLoNdk7BUMRhrzi78FTFSYFr7SVwLzIEabrJ85T6q4LSKJ+a9I4UF7nj/37yMpPn3NmQ745Se+WDOrJQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\shaba\\source\\repos\\PragmatechCsharpProject\\Week11.Tasks\\Task2\\PersonInfoSortedVersion\\PersonInfoSortedVersion.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\shaba\\.nuget\\packages\\fakedata\\1.0.0\\fakedata.1.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FakeData 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FakeData",
+      "targetGraphs": [
+        "net5.0-windows7.0"
+      ]
+    }
+  ]
 }

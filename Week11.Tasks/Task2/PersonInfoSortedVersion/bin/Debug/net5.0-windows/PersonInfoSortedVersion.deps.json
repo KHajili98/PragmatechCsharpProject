@@ -6,6 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
+      "PersonInfoSortedVersion/1.0.0": {
+        "dependencies": {
+          "FakeData": "1.0.0"
+        },
+        "runtime": {
+          "PersonInfoSortedVersion.dll": {}
+        }
+      },
       "FakeData/1.0.0": {
         "runtime": {
           "lib/FakeData.dll": {
@@ -17,6 +25,11 @@
     }
   },
   "libraries": {
+    "PersonInfoSortedVersion/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "FakeData/1.0.0": {
       "type": "package",
       "serviceable": true,

@@ -6,4 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FakeData" Version="1.0.0" />
+  </ItemGroup>
+
 </Project>

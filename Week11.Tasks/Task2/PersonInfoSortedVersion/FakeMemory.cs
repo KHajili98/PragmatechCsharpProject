@@ -6,7 +6,37 @@ using System.Threading.Tasks;
 
 namespace PersonInfoSortedVersion
 {
-    class FakeMemory
+    public static class FakeMemory
     {
+
+        private static readonly List<Person> People;
+
+        static FakeMemory()
+        {
+            People = new List<Person>();
+        }
+
+        static List<Person> GetPeople()
+        {
+            for (int i = 1; i <= 1000; i++)
+            {
+                Person person = new Person
+                {
+                    Id = i,
+                    Name = FakeData.NameData.GetFirstName(),
+                    Surname = FakeData.NameData.GetSurname(),
+                    Country = FakeData.PlaceData.GetCountry(),
+                    City = FakeData.PlaceData.GetCity(),
+                    Phone = FakeData.PhoneNumberData.GetPhoneNumber(),
+                    Birthdate = FakeData.DateTimeData.GetDatetime(new DateTime(1950, 12, 12), new DateTime(2020, 12, 12)),
+                    Profession = FakeData.NameData.GetCompanyName()
+                };
+
+                person.Email = $"{person.Name}.{person.Surname}@{FakeData.NetworkData.GetDomain()}";
+                People.Add(person);
+            }
+
+            return People;
+        }
     }
 }
